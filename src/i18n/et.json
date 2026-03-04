@@ -19,6 +19,21 @@
     "Ajurveda", "Funktsionaalne meditsiin", "Särav tervis"
   ],
 
+  "seo": {
+    "defaultDescription": "QiNutritionist – holistiline heaolu, mis ühendab iidse tarkuse ja tänapäevase teaduse. Toitumisnõustamine, soolestiku tervis, hormoonide tasakaal ja palju muud.",
+    "websiteDescription": "Holistiline viljakus, soolestiku tervis ja hormoonide tasakaal — kus teadus kohtub traditsiooniga.",
+    "personJobTitle": "Holistiline toitumisnõustaja",
+    "personDescription": "Anett aitab naistel taastada tervist, tasakaalustada hormoone ja toetada viljakust holistilise toitumise, THM-i ja biohäkkimise abil.",
+    "personKnowsAbout": [
+      "Holistiline toitumine",
+      "Soolestiku tervis",
+      "Hormoonide tasakaal",
+      "Viljakuse tugi",
+      "Traditsiooniline hiina meditsiin",
+      "Biohäkkimine"
+    ]
+  },
+
   "footer": {
     "tagline": "Holistiline viljakus, soolestiku tervis ja hormoonide tasakaal — kus teadus kohtub traditsiooniga.",
     "navHeading": "Navigatsioon",

@@ -19,6 +19,21 @@
     "Ayurveda", "Medicina Funcional", "Salud Radiante"
   ],
 
+  "seo": {
+    "defaultDescription": "QiNutritionist – bienestar holístico con raíces en la sabiduría ancestral y la ciencia moderna. Terapia nutricional, salud intestinal, equilibrio hormonal y más.",
+    "websiteDescription": "Fertilidad holística, salud intestinal y equilibrio hormonal — donde la ciencia se encuentra con la tradición.",
+    "personJobTitle": "Nutricionista holística",
+    "personDescription": "Anett ayuda a las mujeres a recuperar su salud, equilibrar sus hormonas y optimizar su fertilidad mediante nutrición holística, MTC y biohacking.",
+    "personKnowsAbout": [
+      "Nutrición holística",
+      "Salud intestinal",
+      "Equilibrio hormonal",
+      "Apoyo a la fertilidad",
+      "Medicina tradicional china",
+      "Biohacking"
+    ]
+  },
+
   "footer": {
     "tagline": "Fertilidad holística, salud intestinal y equilibrio hormonal — donde la ciencia se encuentra con la tradición.",
     "navHeading": "Navegación",

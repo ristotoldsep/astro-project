@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro";
 import Marquee from "../components/Marquee.astro";
 import InstaStrip from "../components/InstaStrip.astro";
 import "../styles/global.scss";
-import { detectLocale, getLocalePath } from '../i18n/utils';
+import { detectLocale, getLocalePath, useTranslations } from '../i18n/utils';
 import type { Locale } from '../i18n/utils';
 
 interface Props {
@@ -18,13 +18,15 @@ interface Props {
 
 const {
   title,
-  description = "QiNutritionist – Holistic wellness rooted in ancient wisdom and modern science. Nutritional therapy, gut health, hormone balance & more.",
+  description: descriptionProp,
   ogImage = "/images/hero-crystalweed.avif",
   lang: langProp,
 } = Astro.props;
 
 const { lang, slug } = detectLocale(Astro.url.pathname);
 const effectiveLang: Locale = langProp ?? lang;
+const t = useTranslations(effectiveLang);
+const description = (descriptionProp ?? t('seo.defaultDescription')) as string;
 
 // hreflang alternate URLs
 const siteBase = (Astro.site ?? new URL("https://qinutritionist.com")).href.replace(/\/$/, '');
@@ -41,6 +43,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageAbsolute = new URL(ogImage, siteUrl).href;
 const ogLocaleMap: Record<Locale, string> = { en: 'en_US', et: 'et_EE', es: 'es_ES' };
 const ogLocale = ogLocaleMap[effectiveLang];
+const personKnowsAbout = t('seo.personKnowsAbout') as string[];
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -50,23 +53,20 @@ const jsonLd = JSON.stringify({
       "@id": `${siteUrl}#website`,
       "url": String(siteUrl),
       "name": "QiNutritionist",
-      "description": "Holistic fertility, gut health, and hormonal balance — where science meets tradition.",
+      "description": t('seo.websiteDescription'),
     },
     {
       "@type": "Person",
       "@id": `${siteUrl}#person`,
       "name": "Anett Randvee",
-      "jobTitle": "Holistic Nutritionist",
-      "description": "Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking.",
+      "jobTitle": t('seo.personJobTitle'),
+      "description": t('seo.personDescription'),
       "url": String(siteUrl),
       "sameAs": [
         "https://www.instagram.com/qinutritionist/",
         "https://www.facebook.com/randveeyoga/"
       ],
-      "knowsAbout": [
-        "Holistic Nutrition", "Gut Health", "Hormone Balance",
-        "Fertility Support", "Traditional Chinese Medicine", "Biohacking"
-      ]
+      "knowsAbout": personKnowsAbout
     }
   ]
 });

@@ -19,6 +19,21 @@
     "Ayurveda", "Functional Medicine", "Radiant Health"
   ],
 
+  "seo": {
+    "defaultDescription": "QiNutritionist – Holistic wellness rooted in ancient wisdom and modern science. Nutritional therapy, gut health, hormone balance & more.",
+    "websiteDescription": "Holistic fertility, gut health, and hormonal balance — where science meets tradition.",
+    "personJobTitle": "Holistic Nutritionist",
+    "personDescription": "Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking.",
+    "personKnowsAbout": [
+      "Holistic Nutrition",
+      "Gut Health",
+      "Hormone Balance",
+      "Fertility Support",
+      "Traditional Chinese Medicine",
+      "Biohacking"
+    ]
+  },
+
   "footer": {
     "tagline": "Holistic fertility, gut health, and hormonal balance — where science meets tradition.",
     "navHeading": "Navigation",
