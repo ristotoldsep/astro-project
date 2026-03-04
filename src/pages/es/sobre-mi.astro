@@ -2,27 +2,32 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageBanner from "../../components/PageBanner.astro";
 import Marquee from "../../components/Marquee.astro";
-import { Picture } from 'astro:assets';
-import portraitAnett from '../../assets/images/portrait-anett.avif';
-import serviceBiohacking from '../../assets/images/service-biohacking.avif';
-import { useTranslations, getLocalePath } from '../../i18n/utils';
+import { Picture } from "astro:assets";
+import portraitAnett from "../../assets/images/portrait-anett.avif";
+import serviceBiohacking from "../../assets/images/service-biohacking.avif";
+import { useTranslations, getLocalePath } from "../../i18n/utils";
 
-const lang = 'es';
+const lang = "es";
 const t = useTranslations(lang);
 const lp = (s: string) => getLocalePath(lang, s);
 
-const pillars = t('about.pillars') as Array<{icon:string;label:string;title:string;text:string}>;
+const pillars = t("about.pillars") as Array<{
+  icon: string;
+  label: string;
+  title: string;
+  text: string;
+}>;
 ---
 
 <BaseLayout
-  title={t('about.metaTitle') as string}
-  description={t('about.metaDescription') as string}
+  title={t("about.metaTitle") as string}
+  description={t("about.metaDescription") as string}
   ogImage="/images/portrait-anett.avif"
   lang={lang}
 >
   <PageBanner
-    label={t('about.bannerLabel') as string}
-    heading={`${t('about.bannerHeading')} <span class="serif-italic">${t('about.bannerHeadingItalic')}</span>`}
+    label={t("about.bannerLabel") as string}
+    heading={`${t("about.bannerHeading")} <span class="serif-italic">${t("about.bannerHeadingItalic")}</span>`}
     bgImage="/images/hero-alina.avif"
   />
 
@@ -40,17 +45,24 @@ const pillars = t('about.pillars') as Array<{icon:string;label:string;title:stri
             class="h-full"
             widths={[400, 600, 900]}
             sizes="(max-width: 900px) 100vw, 50vw"
-            formats={['avif', 'webp']}
+            formats={["avif", "webp"]}
           />
-          <div class="split__tag" aria-hidden="true">{t('about.bioTag')}</div>
+          <div class="split__tag" aria-hidden="true">{t("about.bioTag")}</div>
         </div>
         <div class="split__content reveal-right">
-          <span class="label">{t('about.bioLabel')}</span>
-          <h2 style="margin-top:12px;">{t('about.bioH2a')} <span class="serif-italic">{t('about.bioH2b')}</span></h2>
-          <p>{t('about.bioP1')}</p>
-          <p>{t('about.bioP2')}</p>
-          <p>{t('about.bioP3')}</p>
-          <a href={lp('/consultation')} class="btn btn-primary" style="margin-top:8px;">{t('about.bioCta')}</a>
+          <span class="label">{t("about.bioLabel")}</span>
+          <h2 style="margin-top:12px;">
+            {t("about.bioH2a")}
+            <span class="serif-italic">{t("about.bioH2b")}</span>
+          </h2>
+          <p>{t("about.bioP1")}</p>
+          <p>{t("about.bioP2")}</p>
+          <p>{t("about.bioP3")}</p>
+          <a
+            href={lp("/consultation")}
+            class="btn btn-primary"
+            style="margin-top:8px;">{t("about.bioCta")}</a
+          >
         </div>
       </div>
     </div>
@@ -60,18 +72,27 @@ const pillars = t('about.pillars') as Array<{icon:string;label:string;title:stri
   <section class="section section--linen">
     <div class="container">
       <div class="section__header text-center reveal">
-        <span class="label">{t('about.pillarsLabel')}</span>
-        <h2>{t('about.pillarsH2a')} <span class="serif-italic">{t('about.pillarsH2b')}</span></h2>
+        <span class="label">{t("about.pillarsLabel")}</span>
+        <h2>
+          {t("about.pillarsH2a")}
+          <span class="serif-italic">{t("about.pillarsH2b")}</span>
+        </h2>
       </div>
       <div class="pillars">
-        {pillars.map((p, i) => (
-          <div class={`pillar reveal delay-${i + 1}`}>
-            <span class="pillar__icon" aria-hidden="true">{p.icon}</span>
-            <p class="label" style="margin-bottom:16px;">{p.label}</p>
-            <h3 class="pillar__title">{p.title}</h3>
-            <p class="pillar__text">{p.text}</p>
-          </div>
-        ))}
+        {
+          pillars.map((p, i) => (
+            <div class={`pillar reveal delay-${i + 1}`}>
+              <span class="pillar__icon" aria-hidden="true">
+                {p.icon}
+              </span>
+              <p class="label" style="margin-bottom:16px;">
+                {p.label}
+              </p>
+              <h3 class="pillar__title">{p.title}</h3>
+              <p class="pillar__text">{p.text}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -81,14 +102,21 @@ const pillars = t('about.pillars') as Array<{icon:string;label:string;title:stri
     <div class="container">
       <div class="split split--reverse">
         <div class="split__content reveal-right">
-          <span class="label">{t('about.workLabel')}</span>
-          <h2>{t('about.workH2a')} <span class="serif-italic">{t('about.workH2b')}</span></h2>
-          <p>{t('about.workP1')}</p>
-          <p>{t('about.workP2')}</p>
-          <p>{t('about.workP3')}</p>
+          <span class="label">{t("about.workLabel")}</span>
+          <h2>
+            {t("about.workH2a")}
+            <span class="serif-italic">{t("about.workH2b")}</span>
+          </h2>
+          <p>{t("about.workP1")}</p>
+          <p>{t("about.workP2")}</p>
+          <p>{t("about.workP3")}</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
-            <a href={lp('/services')} class="btn btn-primary">{t('about.workCta1')}</a>
-            <a href={lp('/events')} class="btn btn-outline">{t('about.workCta2')}</a>
+            <a href={lp("/services")} class="btn btn-primary"
+              >{t("about.workCta1")}</a
+            >
+            <a href={lp("/events")} class="btn btn-outline"
+              >{t("about.workCta2")}</a
+            >
           </div>
         </div>
         <div class="split__media reveal-left">
@@ -99,7 +127,7 @@ const pillars = t('about.pillars') as Array<{icon:string;label:string;title:stri
             class="h-full"
             widths={[400, 600, 900]}
             sizes="(max-width: 900px) 100vw, 50vw"
-            formats={['avif', 'webp']}
+            formats={["avif", "webp"]}
           />
         </div>
       </div>
@@ -111,21 +139,32 @@ const pillars = t('about.pillars') as Array<{icon:string;label:string;title:stri
     <div class="container">
       <div class="quote-block reveal">
         <div class="quote-block__mark">"</div>
-        <p class="quote-block__text">{t('about.quoteText')}</p>
-        <p class="quote-block__attr">{t('about.quoteAttr')}</p>
+        <p class="quote-block__text">{t("about.quoteText")}</p>
+        <p class="quote-block__attr">{t("about.quoteAttr")}</p>
       </div>
     </div>
   </section>
 
   <!-- ══ PARALLAX CTA ══ -->
   <div class="parallax-band">
-    <div class="parallax-band__bg" style="background-image:url('/images/hero-heather.avif');"></div>
+    <div
+      class="parallax-band__bg"
+      style="background-image:url('/images/hero-heather.avif');"
+    >
+    </div>
     <div class="parallax-band__overlay"></div>
     <div class="parallax-band__content reveal">
-      <span class="label" style="color:rgba(253,250,246,.7);">{t('about.parallaxLabel')}</span>
-      <h2>{t('about.parallaxH2a')} <span class="serif-italic">{t('about.parallaxH2b')}</span></h2>
-      <p style="margin-bottom:28px;opacity:.85;">{t('about.parallaxText')}</p>
-      <a href={lp('/consultation')} class="btn btn-white">{t('about.parallaxCta')}</a>
+      <span class="label" style="color:rgba(253,250,246,.7);"
+        >{t("about.parallaxLabel")}</span
+      >
+      <h2>
+        {t("about.parallaxH2a")}
+        <span class="serif-italic">{t("about.parallaxH2b")}</span>
+      </h2>
+      <p style="margin-bottom:28px;opacity:.85;">{t("about.parallaxText")}</p>
+      <a href={lp("/consultation")} class="btn btn-white"
+        >{t("about.parallaxCta")}</a
+      >
     </div>
   </div>
 </BaseLayout>

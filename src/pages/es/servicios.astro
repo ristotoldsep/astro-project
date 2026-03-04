@@ -2,44 +2,56 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageBanner from "../../components/PageBanner.astro";
 import Marquee from "../../components/Marquee.astro";
-import { Picture } from 'astro:assets';
-import serviceGut from '../../assets/images/service-gut.avif';
-import serviceNutrition from '../../assets/images/service-nutrition.avif';
-import serviceBiohacking from '../../assets/images/service-biohacking.avif';
-import { useTranslations, getLocalePath } from '../../i18n/utils';
+import { Picture } from "astro:assets";
+import serviceGut from "../../assets/images/service-gut.avif";
+import serviceNutrition from "../../assets/images/service-nutrition.avif";
+import serviceBiohacking from "../../assets/images/service-biohacking.avif";
+import { useTranslations, getLocalePath } from "../../i18n/utils";
 
-const lang = 'es';
+const lang = "es";
 const t = useTranslations(lang);
 const lp = (s: string) => getLocalePath(lang, s);
 
-type ServiceItem = { tag: string; title: string; price: string; features: string[] };
-type ProgramItem = { tag: string; title: string; titleItalic: string; description: string; forLabel: string; features: string[] };
+type ServiceItem = {
+  tag: string;
+  title: string;
+  price: string;
+  features: string[];
+};
+type ProgramItem = {
+  tag: string;
+  title: string;
+  titleItalic: string;
+  description: string;
+  forLabel: string;
+  features: string[];
+};
 
-const services = t('services.services') as ServiceItem[];
-const programs = t('services.programs') as ProgramItem[];
+const services = t("services.services") as ServiceItem[];
+const programs = t("services.programs") as ProgramItem[];
 
 const serviceImages = [serviceGut, serviceNutrition, serviceBiohacking];
 const serviceAlts = [
-  'Anett revisando un plan nutricional de salud intestinal y fertilidad con una clienta',
-  'Comida nutritiva en el programa de nutrición holística',
-  'Herramientas de biohacking y adaptógenos naturales',
+  "Anett revisando un plan nutricional de salud intestinal y fertilidad con una clienta",
+  "Comida nutritiva en el programa de nutrición holística",
+  "Herramientas de biohacking y adaptógenos naturales",
 ];
 const programImages = [serviceNutrition, serviceGut];
 const programAlts = [
-  'Alimentos antiinflamatorios que sanan el intestino en el programa de 12 semanas',
-  'Apoyo vegetal y nutricional en el programa de fertilidad de 12 semanas',
+  "Alimentos antiinflamatorios que sanan el intestino en el programa de 12 semanas",
+  "Apoyo vegetal y nutricional en el programa de fertilidad de 12 semanas",
 ];
 ---
 
 <BaseLayout
-  title={t('services.metaTitle') as string}
-  description={t('services.metaDescription') as string}
+  title={t("services.metaTitle") as string}
+  description={t("services.metaDescription") as string}
   ogImage="/images/service-biohacking.avif"
   lang={lang}
 >
   <PageBanner
-    label={t('services.bannerLabel') as string}
-    heading={`<span class="serif-italic" style="color:white;">${t('services.bannerHeadingItalic')}</span>`}
+    label={t("services.bannerLabel") as string}
+    heading={`<span class="serif-italic" style="color:white;">${t("services.bannerHeadingItalic")}</span>`}
     bgImage="/images/service-biohacking.avif"
   />
 
@@ -49,9 +61,14 @@ const programAlts = [
   <section class="section section--linen">
     <div class="container">
       <div class="container--narrow text-center reveal">
-        <span class="label">{t('services.introLabel')}</span>
-        <h2 id="sessions-heading" style="margin-top:12px;">{t('services.introH2a')} <span class="serif-italic">{t('services.introH2b')}</span></h2>
-        <p style="margin-top:16px;color:var(--taupe);font-size:1.05rem;">{t('services.introText')}</p>
+        <span class="label">{t("services.introLabel")}</span>
+        <h2 id="sessions-heading" style="margin-top:12px;">
+          {t("services.introH2a")}
+          <span class="serif-italic">{t("services.introH2b")}</span>
+        </h2>
+        <p style="margin-top:16px;color:var(--taupe);font-size:1.05rem;">
+          {t("services.introText")}
+        </p>
       </div>
     </div>
   </section>
@@ -60,30 +77,44 @@ const programAlts = [
   <section class="section" aria-labelledby="sessions-heading">
     <div class="container">
       <div class="cards cards--3">
-        {services.map((s, i) => (
-          <div class={`card flex flex-col reveal delay-${i + 1}`}>
-            <div class="card__img">
-              <Picture
-                src={serviceImages[i]}
-                formats={['avif', 'webp']}
-                widths={[360, 540, 720]}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                alt={serviceAlts[i]}
-                loading="eager"
-                decoding="async"
-              />
+        {
+          services.map((s, i) => (
+            <div
+              class={`card flex flex-col reveal delay-${i + 1}`}
+              aria-labelledby={`service-${i}`}
+            >
+              <div class="card__img">
+                <Picture
+                  src={serviceImages[i]}
+                  formats={["avif", "webp"]}
+                  widths={[360, 540, 720]}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  alt={serviceAlts[i]}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="card__body flex flex-col flex-1">
+                <p class="card__tag">{s.tag}</p>
+                <h3 id={`service-${i}`} class="card__title">
+                  {s.title}
+                </h3>
+                <p class="card__price">{s.price}</p>
+                <ul class="card__features">
+                  {s.features.map((f) => (
+                    <li>{f}</li>
+                  ))}
+                </ul>
+                <a
+                  href={lp("/consultation")}
+                  class="btn btn-primary text-center mt-auto"
+                >
+                  {t("services.signUp")}
+                </a>
+              </div>
             </div>
-            <div class="card__body flex flex-col flex-1">
-              <p class="card__tag">{s.tag}</p>
-              <h3 class="card__title">{s.title}</h3>
-              <p class="card__price">{s.price}</p>
-              <ul class="card__features">
-                {s.features.map(f => <li>{f}</li>)}
-              </ul>
-              <a href={lp('/consultation')} class="btn btn-primary text-center mt-auto">{t('services.signUp')}</a>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -92,68 +123,146 @@ const programAlts = [
   <section class="section section--sand" aria-labelledby="programs-heading">
     <div class="container">
       <div class="section__header reveal">
-        <span class="label">{t('services.programsLabel')}</span>
-        <h2 id="programs-heading">{t('services.programsH2a')} <span class="serif-italic">{t('services.programsH2b')}</span></h2>
-        <p>{t('services.programsSubtitle')}</p>
+        <span class="label">{t("services.programsLabel")}</span>
+        <h2 id="programs-heading">
+          {t("services.programsH2a")}
+          <span class="serif-italic">{t("services.programsH2b")}</span>
+        </h2>
+        <p>{t("services.programsSubtitle")}</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:28px;">
-        {programs.map((p, i) => (
-          <div class="pkg-card reveal" aria-labelledby={`program-${i}`}>
-            <div class="pkg-card__img">
-              <Picture
-                src={programImages[i]}
-                formats={['avif', 'webp']}
-                widths={[480, 720, 960]}
-                sizes="(max-width: 720px) 100vw, 43vw"
-                alt={programAlts[i]}
-                loading="lazy"
-                decoding="async"
-              />
+        {
+          programs.map((p, i) => (
+            <div class="pkg-card reveal" aria-labelledby={`program-${i}`}>
+              <div class="pkg-card__img">
+                <Picture
+                  src={programImages[i]}
+                  formats={["avif", "webp"]}
+                  widths={[480, 720, 960]}
+                  sizes="(max-width: 720px) 100vw, 43vw"
+                  alt={programAlts[i]}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="pkg-card__body">
+                <p class="label" style="margin-bottom:10px;">
+                  {p.tag}
+                </p>
+                <h3 id={`program-${i}`}>
+                  {p.title} <span class="serif-italic">{p.titleItalic}</span>
+                </h3>
+                <p>{p.description}</p>
+                <p>{p.forLabel}</p>
+                <ul class="card__features">
+                  {p.features.map((f) => (
+                    <li>{f}</li>
+                  ))}
+                </ul>
+                <a href={lp("/consultation")} class="btn btn-primary">
+                  {t("services.bookDiscovery")}
+                </a>
+              </div>
             </div>
-            <div class="pkg-card__body">
-              <p class="label" style="margin-bottom:10px;">{p.tag}</p>
-              <h3 id={`program-${i}`}>{p.title} <span class="serif-italic">{p.titleItalic}</span></h3>
-              <p>{p.description}</p>
-              <p>{p.forLabel}</p>
-              <ul class="card__features">
-                {p.features.map(f => <li>{f}</li>)}
-              </ul>
-              <a href={lp('/consultation')} class="btn btn-primary">{t('services.bookDiscovery')}</a>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- ══ PARALLAX CTA ══ -->
   <div class="parallax-band">
-    <div class="parallax-band__bg" style="background-image:url('/images/hero-heather.avif');"></div>
+    <div
+      class="parallax-band__bg"
+      style="background-image:url('/images/hero-heather.avif');"
+    >
+    </div>
     <div class="parallax-band__overlay"></div>
     <div class="parallax-band__content reveal">
-      <span class="label" style="color:rgba(253,250,246,.7);">{t('services.parallaxLabel')}</span>
-      <h2>{t('services.parallaxH2a')} <span class="serif-italic">{t('services.parallaxH2b')}</span></h2>
-      <p style="margin-bottom:28px;opacity:.85;">{t('services.parallaxText')}</p>
-      <a href={lp('/consultation')} class="btn btn-white">{t('services.parallaxCta')}</a>
+      <span class="label" style="color:rgba(253,250,246,.7);"
+        >{t("services.parallaxLabel")}</span
+      >
+      <h2>
+        {t("services.parallaxH2a")}
+        <span class="serif-italic">{t("services.parallaxH2b")}</span>
+      </h2>
+      <p style="margin-bottom:28px;opacity:.85;">
+        {t("services.parallaxText")}
+      </p>
+      <a href={lp("/consultation")} class="btn btn-white"
+        >{t("services.parallaxCta")}</a
+      >
     </div>
   </div>
 </BaseLayout>
 
 <style>
-  .pkg-card { background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);display:grid;grid-template-columns:1fr 1.3fr;transition:transform var(--transition),box-shadow var(--transition); }
-  .pkg-card:hover { transform:translateY(-6px);box-shadow:var(--shadow-lg); }
-  .pkg-card__img { overflow:hidden;min-height:280px; }
-  .pkg-card__img img { width:100%;height:100%;object-fit:cover;transition:transform .8s ease; }
-  .pkg-card:hover .pkg-card__img img { transform:scale(1.06); }
-  .pkg-card__body { padding:44px 48px;display:flex;flex-direction:column;justify-content:center; }
-  .pkg-card__body h3 { font-size:1.5rem;margin:0 0 16px;color:var(--brown); }
-  .pkg-card__body p { color:var(--brown);opacity:.8;font-size:.97rem;line-height:1.75;margin-bottom:20px; }
-  .pkg-card__body .card__features { margin-bottom:24px; }
-  .pkg-card__body .btn { align-self:flex-start; }
-  @media (max-width:720px) {
-    .pkg-card { grid-template-columns:1fr; }
-    .pkg-card__img { min-height:220px;height:270px; }
-    .pkg-card__body { padding:32px 28px; }
-    .card__img { height:270px;aspect-ratio:auto; }
+  .pkg-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition);
+  }
+  .pkg-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+  .pkg-card__img {
+    overflow: hidden;
+    min-height: 280px;
+  }
+  .pkg-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+  .pkg-card:hover .pkg-card__img img {
+    transform: scale(1.06);
+  }
+  .pkg-card__body {
+    padding: 44px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .pkg-card__body h3 {
+    font-size: 1.5rem;
+    margin: 0 0 16px;
+    color: var(--brown);
+  }
+  .pkg-card__body p {
+    color: var(--brown);
+    opacity: 0.8;
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .pkg-card__body .card__features {
+    margin-bottom: 24px;
+  }
+  .pkg-card__body .btn {
+    align-self: flex-start;
+  }
+  @media (max-width: 720px) {
+    .pkg-card {
+      grid-template-columns: 1fr;
+    }
+    .pkg-card__img {
+      min-height: 220px;
+      height: 270px;
+    }
+    .pkg-card__body {
+      padding: 32px 28px;
+    }
+    .card__img {
+      height: 270px;
+      aspect-ratio: auto;
+    }
   }
 </style>

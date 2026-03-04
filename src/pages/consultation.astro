@@ -14,66 +14,13 @@ type Step = { num: string; title: string; text: string };
 
 const contactDetails = t('consultation.contactDetails') as ContactDetail[];
 const steps = t('consultation.steps') as Step[];
-
-// ── Legacy static data (replaced by i18n) ────────────────────────────────────
-const _unused = [
-  {
-    icon: "📞",
-    label: "Phone",
-    type: "link",
-    href: "tel:+37256505371",
-    text: "+372 56505371",
-  },
-  {
-    icon: "✉️",
-    label: "Email",
-    type: "link",
-    href: "mailto:randveeyoga@gmail.com",
-    text: "randveeyoga@gmail.com",
-  },
-  {
-    icon: "📍",
-    label: "Locations",
-    type: "text",
-    lines: ["Tallinn, Estonia & Barcelona, Spain"],
-    note: "Sessions also available online worldwide",
-  },
-  {
-    icon: "📸",
-    label: "Instagram",
-    type: "link",
-    href: "https://www.instagram.com/qinutritionist/",
-    text: "@qinutritionist",
-    external: true,
-  },
-];
-
-const _stepsLegacy = [
-  {
-    num: "01",
-    id: "step-reach-out",
-    title: "You Reach Out",
-    text: "Fill out the short form or send me a direct message. Tell me a little about what you're experiencing and what you're hoping to change.",
-  },
-  {
-    num: "02",
-    id: "step-discovery",
-    title: "20-Min Discovery Call",
-    text: "We have a relaxed, free 20-minute call where we get to know each other, discuss your health goals, and I answer any questions you have about my approach.",
-  },
-  {
-    num: "03",
-    id: "step-plan",
-    title: "Your Custom Plan",
-    text: "Together we choose the program or session type that suits you best, and you walk away with a clear first step toward feeling your best.",
-  },
-];
 ---
 
 <BaseLayout
   title={t('consultation.metaTitle') as string}
   description={t('consultation.metaDescription') as string}
   ogImage="/images/hero-heather.avif"
+  lang={lang}
 >
   <PageBanner
     label={t('consultation.bannerLabel') as string}
