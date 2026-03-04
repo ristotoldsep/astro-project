@@ -1,44 +1,24 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageBanner from "../components/PageBanner.astro";
-import Marquee from "../components/Marquee.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageBanner from "../../components/PageBanner.astro";
+import Marquee from "../../components/Marquee.astro";
 import { Picture } from 'astro:assets';
-import portraitAnett from '../assets/images/portrait-anett.avif';
-import serviceBiohacking from '../assets/images/service-biohacking.avif';
-import { useTranslations, getLocalePath } from '../i18n/utils';
+import portraitAnett from '../../assets/images/portrait-anett.avif';
+import serviceBiohacking from '../../assets/images/service-biohacking.avif';
+import { useTranslations, getLocalePath } from '../../i18n/utils';
 
-const lang = 'en';
+const lang = 'es';
 const t = useTranslations(lang);
 const lp = (s: string) => getLocalePath(lang, s);
 
 const pillars = t('about.pillars') as Array<{icon:string;label:string;title:string;text:string}>;
-
-const _pillarsFallback = [
-  {
-    icon: '🔬',
-    label: 'Pillar I',
-    title: 'Science Meets Holistic Healing',
-    text: 'With a background in Nutritional Science from Stanford Medicine, I bridge the gap between modern science and ancient wisdom. My approach is rooted in both Western medical research and Eastern healing traditions, ensuring that every client gets a well-rounded, effective strategy for long-term health.',
-  },
-  {
-    icon: '🌺',
-    label: 'Pillar II',
-    title: 'A Whole-Body Approach',
-    text: 'I believe true healing happens when we address the body as a whole\u2014physical, mental, emotional, and spiritual health are all connected. Whether you\u2019re struggling with hormonal imbalances, gut issues, or fertility concerns, I help uncover the root causes and create sustainable solutions tailored to you.',
-  },
-  {
-    icon: '💫',
-    label: 'Pillar III',
-    title: 'Transformative Results',
-    text: 'By integrating Traditional Chinese Medicine, biohacking, and evidence-based nutrition, I help women heal their gut, regulate their cycle, and optimize their fertility. My goal is to empower you with the knowledge and tools to feel energized, confident, and hormonally aligned—so you can step into the most radiant version of yourself.',
-  },
-];
 ---
 
 <BaseLayout
   title={t('about.metaTitle') as string}
   description={t('about.metaDescription') as string}
   ogImage="/images/portrait-anett.avif"
+  lang={lang}
 >
   <PageBanner
     label={t('about.bannerLabel') as string}
@@ -55,7 +35,7 @@ const _pillarsFallback = [
         <div class="split__media reveal-left" style="aspect-ratio:3/4;">
           <Picture
             src={portraitAnett}
-            alt="Anett Randvee, QiNutritionist — holistic nutritionist and women's wellness expert"
+            alt="Anett Randvee, QiNutritionist — nutricionista holística y experta en bienestar femenino"
             loading="eager"
             class="h-full"
             widths={[400, 600, 900]}
@@ -96,7 +76,7 @@ const _pillarsFallback = [
     </div>
   </section>
 
-  <!-- ══ WORK WITH ME SPLIT ══ -->
+  <!-- ══ WORK WITH ME ══ -->
   <section class="section section--sand">
     <div class="container">
       <div class="split split--reverse">
@@ -114,7 +94,7 @@ const _pillarsFallback = [
         <div class="split__media reveal-left">
           <Picture
             src={serviceBiohacking}
-            alt="Holistic wellness practice — herbs and natural supplements"
+            alt="Práctica de bienestar holístico — hierbas y suplementos naturales"
             loading="lazy"
             class="h-full"
             widths={[400, 600, 900]}

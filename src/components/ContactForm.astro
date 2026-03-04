@@ -1,0 +1,405 @@
+---
+/**
+ * ContactForm — reusable contact / booking form.
+ *
+ * Props:
+ *  heading       – h3 heading displayed inside the card
+ *  subjectPrefix – prepended to the interest value in the email subject
+ *  lang          – locale; defaults to 'en'
+ */
+import { useTranslations } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  heading?: string;
+  subjectPrefix?: string;
+  lang?: Locale;
+}
+
+const {
+  lang = 'en',
+  subjectPrefix = "QiNutritionist",
+} = Astro.props;
+
+const t = useTranslations(lang);
+
+const heading = Astro.props.heading ?? t('consultation.formHeading') as string;
+const interests = t('consultation.formInterests') as string[];
+
+// Strings injected as data-attrs for the client-side JS
+const js = {
+  formAriaLabel:   t('form.formAriaLabel') as string,
+  formLabel:       t('consultation.formLabel') as string,
+  nameLabel:       t('form.nameLabel') as string,
+  namePlaceholder: t('form.namePlaceholder') as string,
+  emailLabel:      t('form.emailLabel') as string,
+  emailPlaceholder:t('form.emailPlaceholder') as string,
+  phoneLabel:      t('form.phoneLabel') as string,
+  phonePlaceholder:t('form.phonePlaceholder') as string,
+  phoneOptional:   t('form.phoneOptional') as string,
+  interestLabel:   t('form.interestLabel') as string,
+  interestPlaceholder: t('form.interestPlaceholder') as string,
+  messageLabel:    t('form.messageLabel') as string,
+  messagePlaceholder:  t('form.messagePlaceholder') as string,
+  messageHint:     t('form.messageHint') as string,
+  submitBtn:       t('form.submitBtn') as string,
+  sendingMsg:      t('form.sendingMsg') as string,
+  successMsg:      t('form.successMsg') as string,
+  errorGeneral:    t('form.errorGeneral') as string,
+  errorSend:       t('form.errorSend') as string,
+  errorFix:        t('form.errorFix') as string,
+  errName:         t('form.errName') as string,
+  errNameShort:    t('form.errNameShort') as string,
+  errEmail:        t('form.errEmail') as string,
+  errEmailInvalid: t('form.errEmailInvalid') as string,
+  errInterest:     t('form.errInterest') as string,
+  formPrivacy:     t('consultation.formPrivacy') as string,
+};
+---
+
+<div class="form-card reveal-right">
+  <span class="label">{js.formLabel}</span>
+  <h3 style="margin-top:10px;margin-bottom:28px;" set:html={heading} />
+
+  <!-- ── Status region (ARIA live) ── -->
+  <div
+    id="formStatus"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    class="form-status"
+    style="display:none;"
+  >
+  </div>
+
+  <form id="contactForm" novalidate aria-label={js.formAriaLabel}
+    data-sending={js.sendingMsg}
+    data-success={js.successMsg}
+    data-err-general={js.errorGeneral}
+    data-err-send={js.errorSend}
+    data-err-fix={js.errorFix}
+    data-err-name={js.errName}
+    data-err-name-short={js.errNameShort}
+    data-err-email={js.errEmail}
+    data-err-email-invalid={js.errEmailInvalid}
+    data-err-interest={js.errInterest}
+  >
+    <!-- Honeypot — hidden from real users, bots fill it in -->
+    <div class="form-honeypot" aria-hidden="true">
+      <label for="website">Website</label>
+      <input
+        type="text"
+        id="website"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">{js.nameLabel} <span aria-hidden="true" class="required-star">*</span></label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder={js.namePlaceholder}
+        required
+        autocomplete="name"
+        aria-required="true"
+        aria-describedby="name-error"
+      />
+      <p id="name-error" class="field-error" role="alert" aria-live="assertive"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="email">{js.emailLabel} <span aria-hidden="true" class="required-star">*</span></label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder={js.emailPlaceholder}
+        required
+        autocomplete="email"
+        aria-required="true"
+        aria-describedby="email-error"
+      />
+      <p id="email-error" class="field-error" role="alert" aria-live="assertive"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">{js.phoneLabel} <span class="optional-hint">{js.phoneOptional}</span></label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder={js.phonePlaceholder}
+        autocomplete="tel"
+        aria-describedby="phone-error"
+      />
+      <p id="phone-error" class="field-error" role="alert" aria-live="assertive"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="interest">{js.interestLabel} <span aria-hidden="true" class="required-star">*</span></label>
+      <select id="interest" name="interest" required aria-required="true" aria-describedby="interest-error">
+        <option value="" disabled selected>{js.interestPlaceholder}</option>
+        {interests.map((i) => <option value={i}>{i}</option>)}
+      </select>
+      <p id="interest-error" class="field-error" role="alert" aria-live="assertive"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="message">{js.messageLabel}</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        placeholder={js.messagePlaceholder}
+        aria-describedby="message-hint"></textarea>
+      <p id="message-hint" class="field-hint">{js.messageHint}</p>
+    </div>
+
+    <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;padding:18px;">
+      {js.submitBtn}
+    </button>
+  </form>
+
+  <p style="font-size:.78rem;color:var(--taupe);margin-top:20px;text-align:center;">{js.formPrivacy}</p>
+</div>
+
+<style>
+  .form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .required-star {
+    color: var(--terracotta);
+    margin-left: 2px;
+  }
+
+  .optional-hint {
+    font-size: 0.78rem;
+    color: var(--taupe);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .field-hint {
+    font-size: 0.78rem;
+    color: var(--taupe);
+    margin-top: 4px;
+  }
+
+  .field-error {
+    font-size: 0.82rem;
+    color: #c0392b;
+    margin-top: 4px;
+    min-height: 1.2em;
+  }
+
+  .field-error:empty {
+    display: none;
+  }
+
+  .form-group input[aria-invalid="true"],
+  .form-group select[aria-invalid="true"],
+  .form-group textarea[aria-invalid="true"] {
+    border-color: #c0392b;
+  }
+
+  .form-group input[aria-invalid="false"],
+  .form-group select[aria-invalid="false"],
+  .form-group textarea[aria-invalid="false"] {
+    border-color: #5a8a5e;
+  }
+
+  .form-status {
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  .form-status--success {
+    background: #f0f7f1;
+    border: 1px solid #5a8a5e;
+    color: #2d4d30;
+  }
+
+  .form-status--error {
+    background: #fdf2f2;
+    border: 1px solid #c0392b;
+    color: #7b1a1a;
+  }
+
+  .form-status--loading {
+    background: var(--sand);
+    border: 1px solid var(--taupe);
+    color: var(--taupe);
+  }
+
+  button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .form-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: clamp(28px, 4vw, 48px);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.07);
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--taupe);
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e0d9d0;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    background: var(--cream);
+    color: var(--bark);
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--terracotta);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("formStatus");
+    const submitBtn = document.getElementById("submitBtn");
+
+    if (!form) return;
+
+    // Read localized strings from data attributes
+    const d = form.dataset;
+
+    // ── Helpers ──────────────────────────────────────────────────────────────
+
+    function setError(fieldId, msg) {
+      const field = document.getElementById(fieldId);
+      const errorEl = document.getElementById(fieldId + "-error");
+      if (field) field.setAttribute("aria-invalid", msg ? "true" : "false");
+      if (errorEl) errorEl.textContent = msg || "";
+      return !!msg;
+    }
+
+    function clearError(fieldId) { setError(fieldId, ""); }
+
+    function showStatus(msg, type) {
+      statusEl.textContent = msg;
+      statusEl.className = "form-status form-status--" + type;
+      statusEl.style.display = "block";
+    }
+
+    function hideStatus() {
+      statusEl.style.display = "none";
+      statusEl.textContent = "";
+      statusEl.className = "form-status";
+    }
+
+    function isValidEmail(val) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+    }
+
+    // ── Per-field live validation (on blur) ───────────────────────────────────
+
+    form.addEventListener("blur", function (e) {
+      var el = e.target;
+      if (el.id === "name") validateName(el.value);
+      if (el.id === "email") validateEmail(el.value);
+      if (el.id === "interest") validateInterest(el.value);
+    }, true);
+
+    function validateName(val) {
+      if (!val.trim()) return setError("name", d.errName || "Please enter your full name.");
+      if (val.trim().length < 2) return setError("name", d.errNameShort || "Name must be at least 2 characters.");
+      clearError("name");
+      return false;
+    }
+
+    function validateEmail(val) {
+      if (!val.trim()) return setError("email", d.errEmail || "Please enter your email address.");
+      if (!isValidEmail(val)) return setError("email", d.errEmailInvalid || "Please enter a valid email address.");
+      clearError("email");
+      return false;
+    }
+
+    function validateInterest(val) {
+      if (!val) return setError("interest", d.errInterest || "Please choose a topic.");
+      clearError("interest");
+      return false;
+    }
+
+    // ── Submit ────────────────────────────────────────────────────────────────
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      hideStatus();
+
+      var honeypot = form.querySelector('[name="website"]');
+      if (honeypot && honeypot.value) return;
+
+      var name = form.querySelector('[name="name"]').value;
+      var email = form.querySelector('[name="email"]').value;
+      var interest = form.querySelector('[name="interest"]').value;
+
+      var hasErrors = false;
+      if (validateName(name)) hasErrors = true;
+      if (validateEmail(email)) hasErrors = true;
+      if (validateInterest(interest)) hasErrors = true;
+
+      if (hasErrors) {
+        showStatus(d.errFix || "Please fix the errors above before submitting.", "error");
+        var firstBad = form.querySelector('[aria-invalid="true"]');
+        if (firstBad) firstBad.focus();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      showStatus(d.sending || "Sending your message…", "loading");
+
+      var data = new FormData(form);
+
+      fetch("/mail.php", { method: "POST", body: data })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          submitBtn.disabled = false;
+          if (json.success) {
+            form.style.display = "none";
+            showStatus(d.success || "✓ Thank you! I'll be in touch within 24 hours. 🌿", "success");
+          } else {
+            showStatus(json.error || d.errGeneral || "Something went wrong. Please try again or email directly.", "error");
+          }
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          showStatus(d.errSend || "Could not send — please email randveeyoga@gmail.com directly.", "error");
+        });
+    });
+  })();
+</script>

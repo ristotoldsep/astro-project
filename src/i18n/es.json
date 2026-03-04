@@ -1,0 +1,377 @@
+{
+  "lang": "es",
+
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "events": "Eventos y Retiros",
+    "services": "Servicios",
+    "consultation": "Consulta Gratuita",
+    "bookFreeCall": "Reservar Llamada Gratuita",
+    "announcement": "✦ EMPODERANDO A LAS MUJERES A TRAVÉS DE LA SANACIÓN HOLÍSTICA ✦",
+    "toggleMenu": "Abrir menú"
+  },
+
+  "marquee": [
+    "Sanación Holística", "Salud Intestinal", "Equilibrio Hormonal",
+    "Medicina Tradicional China", "Biohacking", "Bienestar Femenino",
+    "Apoyo a la Fertilidad", "Sanación de la Causa Raíz", "Ciencia y Tradición",
+    "Ayurveda", "Medicina Funcional", "Salud Radiante"
+  ],
+
+  "footer": {
+    "tagline": "Fertilidad holística, salud intestinal y equilibrio hormonal — donde la ciencia se encuentra con la tradición.",
+    "navHeading": "Navegación",
+    "servicesHeading": "Servicios",
+    "contactHeading": "Contacto",
+    "bottomRight": "Bienestar Holístico · Tallin y Barcelona",
+    "socialLabel": "Redes sociales",
+    "footerLabel": "Pie de página",
+    "facebookLabel": "Sigue a QiNutritionist en Facebook",
+    "instagramLabel": "Sigue a QiNutritionist en Instagram",
+    "serviceLinks": ["Salud Intestinal y Fertilidad", "Coaching Nutricional", "Biohacking y Longevidad", "Programas de 3 Meses"]
+  },
+
+  "home": {
+    "metaTitle": "QiNutritionist – Bienestar Holístico",
+    "metaDescription": "Anett ayuda a las mujeres a recuperar su salud, equilibrar sus hormonas y optimizar su fertilidad mediante nutrición holística, MTC y biohacking.",
+    "heroEyebrow": "Fertilidad Holística y Salud Intestinal",
+    "heroSubtitle": "Donde la Ciencia se Encuentra con la Tradición",
+    "heroCta1": "Reservar Consulta Gratuita",
+    "heroCta2": "Conocer a Anett",
+    "heroScroll": "Desplazarse",
+    "welcomeLabel": "Bienvenida, querida",
+    "welcomeH2a": "Recupera tu",
+    "welcomeH2b": "Resplandor",
+    "welcomeP1": "Soy Anett y estoy aquí para ayudarte a recuperar tu salud, equilibrar tus hormonas y convertirte en tu versión más radiante y llena de energía.",
+    "welcomeP2": "Me apasiona guiar a las mujeres hacia un bienestar duradero y la fertilidad a través de un enfoque personalizado que combina la ciencia moderna con la sanación holística probada a lo largo del tiempo.",
+    "welcomeP3": "Si te sientes perdida en tu viaje de salud, sabe que no estás sola — y hay un camino a seguir. El camino de cada mujer es único y juntas crearemos un plan que realmente funcione para ti.",
+    "welcomeP4": "Tu salud es tu poder. ¿Lista para brillar desde adentro hacia afuera?",
+    "welcomeCta": "Reservar Consulta Gratuita",
+    "welcomeTag": "Sanación Holística",
+    "pillarsLabel": "Mi Enfoque",
+    "pillarsH2a": "Arraigada en el",
+    "pillarsH2b": "Equilibrio",
+    "pillarsSubtitle": "Tres pilares que guían el viaje de transformación de cada cliente.",
+    "pillars": [
+      {
+        "icon": "🌿",
+        "label": "Ciencia",
+        "title": "La Ciencia se Encuentra con la Sanación Holística",
+        "text": "Con formación en Ciencias de la Nutrición de Stanford Medicine, tiendo un puente entre la ciencia moderna y la sabiduría ancestral, garantizando una estrategia eficaz e integral para la salud a largo plazo."
+      },
+      {
+        "icon": "🌸",
+        "label": "Totalidad",
+        "title": "Un Enfoque de Cuerpo Completo",
+        "text": "La verdadera sanación ocurre cuando tratamos el cuerpo como un todo — la salud física, mental, emocional y espiritual están todas interconectadas. Ayudo a descubrir las causas raíz y a crear soluciones sostenibles adaptadas a ti."
+      },
+      {
+        "icon": "✨",
+        "label": "Resultados",
+        "title": "Resultados Transformadores",
+        "text": "Al integrar la Medicina Tradicional China, el biohacking y la nutrición basada en evidencias, ayudo a las mujeres a sanar su intestino, regular su ciclo y optimizar su fertilidad — para que puedas convertirte en tu versión más radiante."
+      }
+    ],
+    "storyLabel": "Mi Historia",
+    "storyH2a": "La Sanación es",
+    "storyH2b": "Posible",
+    "storyP1": "Sé de primera mano lo frustrante que puede ser lidiar con desequilibrios hormonales, problemas intestinales o dificultades de fertilidad — y también que la verdadera sanación es posible. Mi enfoque combina nutrición, biohacking y medicina oriental para que te sientas increíble, por dentro y por fuera.",
+    "storyP2": "Ya sea que busques coaching personalizado, un reset profundo o un retiro para recargar energías, estoy aquí. ¡Volvamos juntas al equilibrio!",
+    "storyP3": "Explora mi coaching personalizado, programas estructurados y retiros de bienestar para encontrar lo que más se adapta a ti.",
+    "storyCta": "Leer Mi Historia Completa",
+    "servicesLabel": "Cómo Puedo Ayudarte",
+    "servicesH2a": "Mis",
+    "servicesH2b": "Servicios",
+    "servicesSubtitle": "Sesiones 1:1 personalizadas y programas estructurados diseñados para restaurar el equilibrio desde adentro.",
+    "servicesLearnMore": "Saber Más",
+    "servicesViewAll": "Ver Todos los Servicios",
+    "servicesPreview": [
+      {
+        "tag": "60 min · 90€–110€",
+        "title": "Salud Intestinal y Fertilidad Holística",
+        "text": "Análisis profundo de la salud intestinal, el equilibrio hormonal y las preocupaciones de fertilidad con recomendaciones personalizadas de nutrición y plantas medicinales."
+      },
+      {
+        "tag": "60 min · 70€–90€",
+        "title": "Coaching Nutricional Holístico",
+        "text": "Orientación nutricional 1:1 personalizada con un plan de alimentación diseñado para apoyar la sanación intestinal y el equilibrio hormonal."
+      },
+      {
+        "tag": "60 min · 70€–90€",
+        "title": "Biohacking y Longevidad",
+        "text": "Estrategias para mejorar la energía, la digestión y la salud metabólica usando hongos funcionales, adaptógenos y suplementos."
+      }
+    ],
+    "quoteText": "Tu salud es tu poder. Juntas crearemos un plan que realmente funcione para ti — cuerpo, mente y alma.",
+    "quoteAttr": "— Anett, QiNutritionist",
+    "parallaxLabel": "Próximos",
+    "parallaxH2a": "Retiros y",
+    "parallaxH2b": "Eventos",
+    "parallaxText": "Retiro de Bienestar de Lujo de 3 Días · Barcelona · Taller de Repostería Saludable · Tallin",
+    "parallaxCta": "Explorar Eventos",
+    "guideLabel": "Recurso Gratuito",
+    "guideH2": "¡Obtén Mi Guía Gratuita sobre Fertilidad y Salud Intestinal!",
+    "guideText": "Estrategias prácticas y respaldadas por la ciencia que puedes empezar hoy — completamente gratis.",
+    "guideCta": "Descargar Guía Gratuita"
+  },
+
+  "about": {
+    "metaTitle": "Sobre Mí – QiNutritionist",
+    "metaDescription": "Conoce el viaje de Anett desde sus propias dificultades de salud hasta convertirse en nutricionista holística y experta en bienestar femenino.",
+    "bannerLabel": "Mi Historia",
+    "bannerHeading": "Sobre",
+    "bannerHeadingItalic": "Mí",
+    "bioLabel": "Mi Filosofía",
+    "bioH2a": "Del Sufrimiento a la",
+    "bioH2b": "Transformación",
+    "bioP1": "Mi camino hacia la salud femenina, las hormonas y la fertilidad comenzó con mis propias dificultades. Siempre soñé con ser madre, pero cuando me dijeron que mi fertilidad estaba irreparablemente dañada, me negué a aceptar eso como mi realidad. En cambio, me sumergí en la nutrición, el biohacking y la Medicina Tradicional China (MTC) para sanar mi cuerpo desde adentro. A través de un enfoque holístico pero respaldado por la ciencia, restauré mi ciclo, sané mi intestino y recuperé mi bienestar.",
+    "bioP2": "Esta experiencia encendió mi pasión por tender un puente entre la medicina oriental y occidental para ayudar a otras mujeres. Estudié Ciencias de la Nutrición en Stanford y exploré el Ayurveda, la fitoterapia y la medicina funcional, aprendiendo que el verdadero bienestar no se trata de soluciones rápidas, sino de entender el cuerpo como un todo.",
+    "bioP3": "Hoy ayudo a las mujeres a superar desequilibrios hormonales, problemas intestinales y desafíos de fertilidad con un enfoque de causa raíz que combina la ciencia moderna con la sanación holística probada a lo largo del tiempo.",
+    "bioCta": "Trabajar Conmigo",
+    "bioTag": "Anett, QiNutritionist",
+    "pillarsLabel": "Lo Que Defiendo",
+    "pillarsH2a": "Mis Tres",
+    "pillarsH2b": "Pilares",
+    "pillars": [
+      {
+        "icon": "🔬",
+        "label": "Pilar I",
+        "title": "La Ciencia se Encuentra con la Sanación Holística",
+        "text": "Con formación en Ciencias de la Nutrición de Stanford Medicine, tiendo un puente entre la ciencia moderna y la sabiduría ancestral. Mi enfoque se basa tanto en la investigación médica occidental como en las tradiciones de sanación orientales, garantizando que cada cliente reciba una estrategia integral y efectiva para la salud a largo plazo."
+      },
+      {
+        "icon": "🌺",
+        "label": "Pilar II",
+        "title": "Un Enfoque de Cuerpo Completo",
+        "text": "Creo que la verdadera sanación ocurre cuando tratamos el cuerpo como un todo — la salud física, mental, emocional y espiritual están todas interconectadas. Ya sea que estés lidiando con desequilibrios hormonales, problemas intestinales o preocupaciones de fertilidad, ayudo a descubrir las causas raíz y a crear soluciones sostenibles adaptadas a ti."
+      },
+      {
+        "icon": "💫",
+        "label": "Pilar III",
+        "title": "Resultados Transformadores",
+        "text": "Al integrar la Medicina Tradicional China, el biohacking y la nutrición basada en evidencias, ayudo a las mujeres a sanar su intestino, regular su ciclo y optimizar su fertilidad. Mi objetivo es empoderarte con el conocimiento y las herramientas para sentirte llena de energía, segura y en armonía hormonal."
+      }
+    ],
+    "workLabel": "Trabajemos Juntas",
+    "workH2a": "De Vuelta al",
+    "workH2b": "Equilibrio",
+    "workP1": "Ya sea que estés lidiando con problemas intestinales, desequilibrios hormonales, desafíos de fertilidad, o simplemente quieras sentirte más vibrante y llena de energía, estoy aquí para caminar a tu lado.",
+    "workP2": "Ofrezco sesiones 1:1 y programas estructurados adaptados a tus necesidades únicas, así como retiros de bienestar y talleres inmersivos donde puedes sanar en comunidad con otras mujeres.",
+    "workP3": "Cada plan que creo es profundamente personalizado — porque tu historia, tu cuerpo y tus objetivos son completamente propios.",
+    "workCta1": "Ver Servicios",
+    "workCta2": "Próximos Eventos",
+    "quoteText": "El verdadero bienestar no se trata de soluciones rápidas — sino de entender tu cuerpo como un todo y darle exactamente lo que necesita para prosperar.",
+    "quoteAttr": "— Anett",
+    "parallaxLabel": "¿Lista?",
+    "parallaxH2a": "Comienza tu",
+    "parallaxH2b": "Transformación",
+    "parallaxText": "Reserva tu consulta gratuita y creemos juntas un plan que realmente funcione para ti.",
+    "parallaxCta": "Reservar Consulta Gratuita"
+  },
+
+  "services": {
+    "metaTitle": "Servicios – QiNutritionist",
+    "metaDescription": "Sesiones de nutrición 1:1 personalizadas y programas de transformación de 3 meses para la salud intestinal, el equilibrio hormonal y la fertilidad.",
+    "bannerLabel": "Cuidándote de Vuelta a la Salud",
+    "bannerHeadingItalic": "Servicios",
+    "introLabel": "Sesiones Individuales 1:1",
+    "introH2a": "Sanación",
+    "introH2b": "Personalizada",
+    "introText": "¿Estás lista para llevar tu salud y felicidad al siguiente nivel? Juntas elevaremos tu estado de ánimo, energía, equilibrio hormonal y te haremos aún más radiante.",
+    "signUp": "Inscribirse",
+    "services": [
+      {
+        "tag": "Sesión de 60 min",
+        "title": "Salud Intestinal y Fertilidad Holística",
+        "price": "90€ – 110€",
+        "features": [
+          "Análisis profundo de la salud intestinal, el equilibrio hormonal y las preocupaciones de fertilidad",
+          "Recomendaciones personalizadas de nutrición, plantas medicinales y estilo de vida",
+          "Orientación sobre pruebas funcionales"
+        ]
+      },
+      {
+        "tag": "Sesión de 60 min",
+        "title": "Coaching Nutricional Holístico",
+        "price": "70€ – 90€",
+        "features": [
+          "Orientación nutricional 1:1 personalizada",
+          "Plan de alimentación para la sanación intestinal y el equilibrio hormonal",
+          "Estrategias de alimentos y suplementos para la fertilidad y la salud general"
+        ]
+      },
+      {
+        "tag": "Sesión de 60 min",
+        "title": "Biohacking y Longevidad",
+        "price": "70€ – 90€",
+        "features": [
+          "Estrategias para mejorar la energía, la digestión y la salud metabólica",
+          "Hongos funcionales, adaptógenos y suplementos para la longevidad",
+          "Herramientas personalizadas de biohacking para un óptimo bienestar"
+        ]
+      }
+    ],
+    "programsLabel": "Programas Estructurados",
+    "programsH2a": "Transformación Profunda de",
+    "programsH2b": "3 Meses",
+    "programsSubtitle": "Programas integrales que te guían a través de un reseteo completo hormonal e intestinal a lo largo de 12 semanas.",
+    "bookDiscovery": "Reservar una Llamada de Descubrimiento Gratuita",
+    "programs": [
+      {
+        "tag": "Programa de 12 Semanas",
+        "title": "Optimización de la",
+        "titleItalic": "Salud Intestinal",
+        "description": "Un viaje holístico de 3 meses para sanar tu intestino, reducir la inflamación y restaurar el equilibrio natural de tu cuerpo a través de la nutrición, la MTC y las prácticas de estilo de vida.",
+        "forLabel": "Diseñado para mujeres que quieren:",
+        "features": [
+          "Sanar la hinchazón, el estreñimiento y la inflamación intestinal",
+          "Reducir el estrés y calmar el sistema nervioso para el equilibrio hormonal",
+          "Apoyar la desintoxicación del hígado y mejorar la digestión con hierbas y nutrición MTC",
+          "Sentirse llenas de energía, concentradas y en armonía hormonal"
+        ]
+      },
+      {
+        "tag": "Programa de 12 Semanas",
+        "title": "Equilibrio de Fertilidad y",
+        "titleItalic": "Hormonas",
+        "description": "Restaura la armonía en tu cuerpo a través de métodos de sanación naturales y ancestrales combinados con nutrición funcional moderna para apoyar tu viaje de fertilidad único.",
+        "forLabel": "Diseñado para mujeres que quieren:",
+        "features": [
+          "Restaurar la armonía en su cuerpo a través de métodos de sanación naturales y ancestrales",
+          "Regular el ciclo menstrual y equilibrar las hormonas de forma natural",
+          "Profundizar su conexión con su ciclo y los ritmos naturales de su cuerpo",
+          "Usar métodos holísticos y no invasivos para mejorar la fertilidad y la vitalidad"
+        ]
+      }
+    ],
+    "parallaxLabel": "Comenzar",
+    "parallaxH2a": "¿No sabes por dónde",
+    "parallaxH2b": "empezar?",
+    "parallaxText": "Reserva una llamada de descubrimiento gratuita de 20 minutos y encontraremos juntas el camino correcto.",
+    "parallaxCta": "Reservar Consulta Gratuita"
+  },
+
+  "events": {
+    "metaTitle": "Eventos y Retiros – QiNutritionist",
+    "metaDescription": "Retiros de bienestar y talleres inmersivos con Anett — desde retiros de lujo en Barcelona hasta talleres de repostería saludable en Tallin.",
+    "bannerLabel": "Optimizando la Salud, el Bienestar y el Rendimiento Femenino",
+    "bannerH2a": "Eventos y",
+    "bannerH2b": "Retiros",
+    "introLabel": "Experiencias Inmersivas",
+    "introH2a": "Desacelera y",
+    "introH2b": "Reconéctate",
+    "introText": "Aléjate del ruido de la vida cotidiana y sumérgete en experiencias transformadoras diseñadas para nutrir tu cuerpo, calmar tu mente y reconectarte con tu esencia femenina.",
+    "barcelonaBadge": "Retiro · Barcelona",
+    "barcelonaTag": "Fin de Semana de 3 Días",
+    "barcelonaH2a": "Retiro de Bienestar de Lujo",
+    "barcelonaH2b": "cerca de Barcelona, España",
+    "barcelonaP1": "Escapa del ruido de la vida cotidiana y sumérgete en un retiro transformador de 3 días diseñado para nutrir tu cuerpo, equilibrar tus hormonas y despertar tu energía femenina.",
+    "barcelonaP2": "A solo 45 minutos de Barcelona, en una impresionante villa de lujo rodeada por la serena naturaleza de Cataluña, este retiro es tu invitación a desacelerar, reconectarte contigo misma y abrirte a una sanación profunda.",
+    "barcelonaFeatures": [
+      "Yoga y Pilates Diarios – Muévete con intención, despierta tu cuerpo y libera la tensión acumulada.",
+      "Ceremonia de Cacao y Sanación Femenina – Conecta con tu intuición y abraza el poder de la hermandad.",
+      "Nutrición Holística para el Equilibrio Hormonal – Disfruta de comidas nutritivas que apoyan tus hormonas y nutren tu vitalidad.",
+      "Talleres de Bienestar y Biohacking – Aprende a optimizar tu salud con herramientas prácticas para la longevidad, la energía y el equilibrio.",
+      "Prácticas de Manifestación y Mindfulness – Alinéate con tus deseos y conviértete en tu versión más radiante.",
+      "Tiempo de Spa y Sauna – Indúlgete en una relajación profunda y libera el estrés en un ambiente tranquilo."
+    ],
+    "barcelonaCta": "Reservar Tu Lugar",
+    "barcelonaMediaTag": "Barcelona, Cataluña",
+    "quoteText": "Este retiro es tu invitación a desacelerar, reconectarte contigo misma y abrirte a una sanación profunda en un espacio de hermandad y naturaleza.",
+    "quoteAttr": "— Anett",
+    "tallinnBadge": "Taller · Tallin",
+    "tallinnTag": "Experiencia Práctica",
+    "tallinnH2a": "Taller de Repostería",
+    "tallinnH2b": "Saludable",
+    "tallinnP1": "Únete a Anett para una experiencia práctica de repostería donde lo delicioso se encuentra con lo nutritivo. Aprende a crear delicias fáciles de digerir y que apoyan las hormonas, que saben tan bien como te hacen sentir.",
+    "tallinnFeatures": [
+      "Recetas simples y saludables con ingredientes que apoyan las hormonas",
+      "Sustitutos intestinalmente amigables para los ingredientes básicos de repostería tradicional",
+      "Repostería y degustación práctica en un ambiente acogedor"
+    ],
+    "tallinnP2": "Perfecto para amantes del bienestar y gastrónomas que quieren hornear sin hinchazón.",
+    "tallinnComingSoon": "Plazas limitadas — ¡detalles próximamente!",
+    "tallinnCta": "Notificarme",
+    "tallinnMediaTag": "Tallin, Estonia",
+    "parallaxLabel": "¿Preguntas?",
+    "parallaxH2a": "Conectemos",
+    "parallaxH2b": "",
+    "parallaxText": "Contáctame directamente o reserva una llamada gratuita para hablar sobre qué experiencia es la adecuada para ti.",
+    "parallaxCta1": "Reservar Llamada Gratuita",
+    "parallaxCta2": "Enviar Email"
+  },
+
+  "consultation": {
+    "metaTitle": "Consulta Gratuita – QiNutritionist",
+    "metaDescription": "Reserva tu llamada de descubrimiento gratuita de 20 minutos con Anett y da el primer paso hacia la sanación de tu intestino, el equilibrio de tus hormonas y la reconexión con tu cuerpo.",
+    "bannerLabel": "Sin Compromiso",
+    "bannerHeading": "Consulta",
+    "bannerHeadingItalic": "Gratuita",
+    "bannerSubtitle": "Comencemos tu transformación juntas",
+    "contactLabel": "Contacto",
+    "contactH2a": "Hablemos",
+    "contactH2b": "",
+    "contactIntro": "Ya sea que tengas curiosidad sobre mis servicios, tengas preguntas o estés lista para comenzar — me encantaría saber de ti. Completa el formulario y me pondré en contacto en 24 horas.",
+    "contactDetails": [
+      { "icon": "📞", "label": "Teléfono", "type": "link", "href": "tel:+37256505371", "text": "+372 56505371" },
+      { "icon": "✉️", "label": "Email", "type": "link", "href": "mailto:randveeyoga@gmail.com", "text": "randveeyoga@gmail.com" },
+      { "icon": "📍", "label": "Ubicaciones", "type": "text", "lines": ["Tallin, Estonia y Barcelona, España"], "note": "Sesiones también disponibles online en todo el mundo" },
+      { "icon": "📸", "label": "Instagram", "type": "link", "href": "https://www.instagram.com/qinutritionist/", "text": "@qinutritionist", "external": true }
+    ],
+    "formHeading": "Reserva Tu<br /><span class=\"serif-italic\">Llamada de Descubrimiento Gratuita</span>",
+    "formLabel": "Enviar Mensaje",
+    "formPrivacy": "Tu información es privada y nunca se comparte con terceros.",
+    "processLabel": "El Proceso",
+    "processH2a": "Qué",
+    "processH2b": "Esperar",
+    "processSubtitle": "Una conversación gratuita y sin presión para explorar qué te detiene y cómo puedo ayudarte.",
+    "steps": [
+      { "num": "01", "title": "Tú Te Comunicas", "text": "Completa el breve formulario o envíame un mensaje directo. Cuéntame un poco sobre lo que estás experimentando y lo que esperas cambiar." },
+      { "num": "02", "title": "Llamada de Descubrimiento de 20 Min", "text": "Tenemos una relajada llamada gratuita de 20 minutos donde nos conocemos, discutimos tus objetivos de salud y respondo cualquier pregunta que tengas sobre mi enfoque." },
+      { "num": "03", "title": "Tu Plan Personalizado", "text": "Juntas elegimos el programa o el tipo de sesión que más te convenga, y te vas con un primer paso claro hacia sentirte lo mejor posible." }
+    ],
+    "commitmentLabel": "El Compromiso de Anett",
+    "commitmentH2a": "No Estás",
+    "commitmentH2b": "Sola",
+    "commitmentText": "El camino de cada mujer es único — y también lo es el camino hacia la sanación. Estoy comprometida a encontrarme contigo exactamente donde estás, con compasión, expertise y un plan personalizado que verdaderamente honre tu cuerpo y tu vida.",
+    "formInterests": [
+      "Salud Intestinal y Fertilidad",
+      "Coaching Nutricional Holístico",
+      "Biohacking y Longevidad",
+      "Programa Intestinal de 3 Meses",
+      "Programa de Fertilidad de 3 Meses",
+      "Retiro en Barcelona",
+      "Taller de Repostería en Tallin",
+      "Otro / Todavía No Estoy Segura"
+    ]
+  },
+
+  "form": {
+    "namePlaceholder": "María García",
+    "nameLabel": "Nombre Completo",
+    "emailPlaceholder": "maria@ejemplo.com",
+    "emailLabel": "Dirección de Email",
+    "phonePlaceholder": "+34 …",
+    "phoneLabel": "Teléfono",
+    "phoneOptional": "(opcional)",
+    "interestLabel": "Me interesa…",
+    "interestPlaceholder": "Elegir un tema",
+    "messageLabel": "Tu Mensaje",
+    "messagePlaceholder": "¿Qué esperas lograr? ¿Qué desafíos estás enfrentando?",
+    "messageHint": "Opcional, pero cuanto más compartas, mejor preparadas estaremos.",
+    "submitBtn": "Enviar Mensaje",
+    "sendingMsg": "Enviando tu mensaje…",
+    "successMsg": "✓ ¡Gracias! Me pondré en contacto dentro de 24 horas para programar nuestra llamada. 🌿",
+    "errorGeneral": "Algo salió mal. Por favor inténtalo de nuevo o escribe directamente al email.",
+    "errorSend": "No se pudo enviar — por favor envía un email a randveeyoga@gmail.com directamente.",
+    "errorFix": "Por favor corrige los errores anteriores antes de enviar.",
+    "errName": "Por favor ingresa tu nombre completo.",
+    "errNameShort": "El nombre debe tener al menos 2 caracteres.",
+    "errEmail": "Por favor ingresa tu dirección de email.",
+    "errEmailInvalid": "Por favor ingresa una dirección de email válida.",
+    "errInterest": "Por favor elige un tema.",
+    "openNewTab": "(se abre en una nueva pestaña)",
+    "formAriaLabel": "Formulario de contacto y reserva"
+  }
+}

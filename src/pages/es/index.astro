@@ -1,0 +1,268 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Marquee from "../../components/Marquee.astro";
+import { Picture } from 'astro:assets';
+import heroAlina from '../../assets/images/hero-alina.avif';
+import serviceGut from '../../assets/images/service-gut.avif';
+import serviceNutrition from '../../assets/images/service-nutrition.avif';
+import serviceBiohacking from '../../assets/images/service-biohacking.avif';
+import { useTranslations, getLocalePath } from '../../i18n/utils';
+
+const lang = 'es';
+const t = useTranslations(lang);
+const lp = (s: string) => getLocalePath(lang, s);
+
+const pillars = t('home.pillars') as Array<{icon:string;label:string;title:string;text:string}>;
+const servicesPreview = [
+  { image: serviceGut, alt: 'Salud intestinal y fertilidad' },
+  { image: serviceNutrition, alt: 'Coaching nutricional' },
+  { image: serviceBiohacking, alt: 'Biohacking y longevidad' },
+];
+const spData = t('home.servicesPreview') as Array<{tag:string;title:string;text:string}>;
+
+const heroSlides = [
+  { img: '/images/hero-crystalweed.avif', pos: 'center 50%', cls: 'hero__slide--1' },
+  { img: '/images/hero-heather.avif',    pos: 'center 30%', cls: 'hero__slide--3' },
+  { img: '/images/hero-alina.avif',      pos: 'center 20%', cls: 'hero__slide--2' },
+];
+---
+
+<BaseLayout
+  title={t('home.metaTitle') as string}
+  description={t('home.metaDescription') as string}
+  ogImage="/images/hero-alina.avif"
+  lang={lang}
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/images/hero-crystalweed.avif" fetchpriority="high" />
+  </Fragment>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    {heroSlides.map(s => (
+      <div class={`hero__slide ${s.cls}`} style={{ backgroundImage: `url(${s.img})`, backgroundPosition: s.pos }} aria-hidden="true" />
+    ))}
+    <div class="hero__overlay"></div>
+    <div class="hero__leaf">
+      <svg width="220" height="320" viewBox="0 0 220 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M110 300 C110 300 60 240 40 180 C20 120 50 60 110 20 C170 60 200 120 180 180 C160 240 110 300 110 300Z" fill="white" opacity=".9"/>
+        <path d="M110 300 L110 20" stroke="white" stroke-width="1" opacity=".5"/>
+        <path d="M110 200 C90 175 60 165 40 160" stroke="white" stroke-width=".8" opacity=".4"/>
+        <path d="M110 200 C130 175 160 165 180 160" stroke="white" stroke-width=".8" opacity=".4"/>
+        <path d="M110 150 C95 128 70 118 50 115" stroke="white" stroke-width=".8" opacity=".35"/>
+        <path d="M110 150 C125 128 150 118 170 115" stroke="white" stroke-width=".8" opacity=".35"/>
+        <path d="M110 100 C100 82 80 72 65 70" stroke="white" stroke-width=".8" opacity=".3"/>
+        <path d="M110 100 C120 82 140 72 155 70" stroke="white" stroke-width=".8" opacity=".3"/>
+      </svg>
+    </div>
+    <div class="hero__content">
+      <div class="hero__pre-line">
+        <p class="hero__eyebrow">{t('home.heroEyebrow')}</p>
+      </div>
+      <h1 class="hero__title">Qi<span class="serif-italic">Nutritionist</span></h1>
+      <p class="hero__subtitle">{t('home.heroSubtitle')}</p>
+      <div class="hero__actions">
+        <a href={lp('/consultation')} class="btn btn-glass-terra">{t('home.heroCta1')}</a>
+        <a href={lp('/about')} class="btn btn-glass">{t('home.heroCta2')}</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      {t('home.heroScroll')}
+    </div>
+  </section>
+
+  <Marquee />
+
+  <!-- ══ WELCOME ══ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="container">
+      <div class="split">
+        <div class="split__content reveal-left">
+          <span class="label">{t('home.welcomeLabel')}</span>
+          <h2 style="margin-top:12px;">{t('home.welcomeH2a')}<br /><span class="serif-italic">{t('home.welcomeH2b')}</span></h2>
+          <p>{t('home.welcomeP1')}</p>
+          <p>{t('home.welcomeP2')}</p>
+          <p>{t('home.welcomeP3')}</p>
+          <p style="margin-bottom:32px;">{t('home.welcomeP4')}</p>
+          <a href={lp('/consultation')} class="btn btn-primary">{t('home.welcomeCta')}</a>
+        </div>
+        <div class="split__media reveal-right">
+          <Picture
+            src={heroAlina}
+            alt="QiNutritionist Anett Randvee"
+            loading="lazy"
+            class="h-full"
+            widths={[530, 768, 1060]}
+            sizes="(max-width: 900px) 100vw, 530px"
+            formats={['avif', 'webp']}
+          />
+          <div class="split__tag">{t('home.welcomeTag')}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ THREE PILLARS ══ -->
+  <section class="section section--linen section--card">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="label">{t('home.pillarsLabel')}</span>
+        <h2>{t('home.pillarsH2a')} <span class="serif-italic">{t('home.pillarsH2b')}</span></h2>
+        <p style="margin-inline:auto;">{t('home.pillarsSubtitle')}</p>
+      </div>
+      <div class="pillars">
+        {pillars.map((p, i) => (
+          <div class={`pillar reveal delay-${i + 1}`}>
+            <span class="pillar__icon">{p.icon}</span>
+            <p class="label" style="margin-bottom:16px;">{p.label}</p>
+            <h3 class="pillar__title">{p.title}</h3>
+            <p class="pillar__text">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STORY ══ -->
+  <section class="section" style="position:relative;">
+    <div class="container">
+      <div class="split split--reverse split_video_wrapper">
+        <div class="split__content reveal-right">
+          <span class="label">{t('home.storyLabel')}</span>
+          <h2 style="margin-top:12px;">{t('home.storyH2a')} <span class="serif-italic">{t('home.storyH2b')}</span></h2>
+          <p>{t('home.storyP1')}</p>
+          <p>{t('home.storyP2')}</p>
+          <p>{t('home.storyP3')}</p>
+          <a href={lp('/about')} class="btn btn-outline" style="margin-top:8px;">{t('home.storyCta')}</a>
+        </div>
+        <div class="split__media video_wrapper reveal-left" style="aspect-ratio:9/16;">
+          <video id="storyVideo" autoplay muted loop playsinline style="width:100%;height:100%;border-radius:var(--radius-lg);object-fit:cover;display:block;">
+            <source src="/videos/video2.mp4" type="video/mp4" />
+            <source src="/videos/video1.mp4" type="video/mp4" />
+          </video>
+          <div class="video-spinner" aria-hidden="true">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="48" />
+              <defs><path id="spinnerPath" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" /></defs>
+              <text font-size="9" font-family="Jost,sans-serif" font-weight="300" letter-spacing="3" text-anchor="start">
+                <textPath href="#spinnerPath"> HOLISTIC · WELLNESS · HEALING ·</textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES PREVIEW ══ -->
+  <section class="section section--sand section--card">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">{t('home.servicesLabel')}</span>
+        <h2>{t('home.servicesH2a')} <span class="serif-italic">{t('home.servicesH2b')}</span></h2>
+        <p>{t('home.servicesSubtitle')}</p>
+      </div>
+      <div class="cards cards--3">
+        {servicesPreview.map((s, i) => (
+          <div class={`card reveal delay-${i + 1}`}>
+            <div class="card__img">
+              <Picture src={s.image} alt={s.alt} loading="lazy" widths={[400, 600, 800]} sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px" formats={['avif', 'webp']} />
+            </div>
+            <div class="card__body">
+              <p class="card__tag">{spData[i].tag}</p>
+              <h3 class="card__title">{spData[i].title}</h3>
+              <p class="card__text">{spData[i].text}</p>
+              <a href={lp('/services')} class="btn btn-outline">{t('home.servicesLearnMore')}</a>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:40px;" class="reveal">
+        <a href={lp('/services')} class="btn btn-primary">{t('home.servicesViewAll')}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUOTE + PARALLAX ══ -->
+  <div style="position:relative;">
+    <section class="section section--linen quote_band">
+      <div class="container">
+        <div class="quote-block reveal">
+          <div class="quote-block__mark">"</div>
+          <p class="quote-block__text">{t('home.quoteText')}</p>
+          <p class="quote-block__attr">{t('home.quoteAttr')}</p>
+        </div>
+      </div>
+    </section>
+    <div class="lotus-mandala" aria-hidden="true">
+      <svg class="lotus-mandala__svg" width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="160" cy="160" r="148" stroke="white" stroke-width="0.7" stroke-dasharray="3 8" opacity=".45"/>
+        <g opacity=".36">
+          {[0,45,90,135,180,225,270,315].map(deg => (
+            <>
+              <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white" transform={`rotate(${deg} 160 160)`}/>
+              <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5" transform={`rotate(${deg} 160 160)`}/>
+            </>
+          ))}
+        </g>
+        <circle cx="160" cy="160" r="90" stroke="white" stroke-width="0.5" opacity=".22"/>
+        <circle cx="160" cy="160" r="26" stroke="white" stroke-width="0.8" opacity=".5"/>
+        <circle cx="160" cy="160" r="17" fill="white" opacity=".45"/>
+        <circle cx="160" cy="160" r="8" fill="white" opacity=".75"/>
+      </svg>
+    </div>
+    <div class="parallax-band">
+      <div class="parallax-band__bg" style="background-image:url('/images/hero-crystalweed.avif');"></div>
+      <div class="parallax-band__overlay"></div>
+      <div class="parallax-band__content reveal">
+        <span class="label" style="color:rgba(253,250,246,.7);">{t('home.parallaxLabel')}</span>
+        <h2>{t('home.parallaxH2a')} <span class="serif-italic">{t('home.parallaxH2b')}</span></h2>
+        <p style="margin-bottom:28px;opacity:.85;">{t('home.parallaxText')}</p>
+        <a href={lp('/events')} class="btn btn-white">{t('home.parallaxCta')}</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FREE GUIDE ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="guide-banner reveal-scale" style="position:relative;">
+        <div class="section-corner section-corner--tl"></div>
+        <div class="section-corner section-corner--br"></div>
+        <span class="label white" style="color:rgba(253,250,246,.75);margin-bottom:15px;">{t('home.guideLabel')}</span>
+        <h2>{t('home.guideH2')}</h2>
+        <p>{t('home.guideText')}</p>
+        <a href="https://drive.google.com/file/d/1u4HkJE_qpRXUgZITjpKtE3siaKUZtGhI/view?usp=sharing" class="btn btn-white" target="_blank" rel="noopener">{t('home.guideCta')}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lotus-mandala { position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;pointer-events:none; }
+  .lotus-mandala__svg { animation:mandalaSpin 80s linear infinite;opacity:.8;filter:drop-shadow(0 0 18px rgba(255,255,255,.25)); }
+  @keyframes mandalaSpin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+  @media (prefers-reduced-motion:reduce) { .lotus-mandala__svg { animation:none; } }
+</style>
+
+<script>
+  const storyVideo = document.getElementById("storyVideo") as HTMLVideoElement | null;
+  if (storyVideo) {
+    const vidObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) storyVideo.play(); else storyVideo.pause(); });
+    }, { threshold: 0.2 });
+    vidObs.observe(storyVideo);
+  }
+  const cardEls = document.querySelectorAll<HTMLElement>(".section--card");
+  function updateCardRadius() {
+    const vh = window.innerHeight;
+    cardEls.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const progress = Math.min(Math.max((vh - rect.top) / (vh * 0.45), 0), 1);
+      card.style.borderRadius = (progress * 30).toFixed(1) + "px";
+    });
+  }
+  window.addEventListener("scroll", updateCardRadius, { passive: true });
+  updateCardRadius();
+</script>

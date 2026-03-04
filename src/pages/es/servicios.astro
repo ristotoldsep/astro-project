@@ -1,14 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageBanner from "../components/PageBanner.astro";
-import Marquee from "../components/Marquee.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageBanner from "../../components/PageBanner.astro";
+import Marquee from "../../components/Marquee.astro";
 import { Picture } from 'astro:assets';
-import serviceGut from '../assets/images/service-gut.avif';
-import serviceNutrition from '../assets/images/service-nutrition.avif';
-import serviceBiohacking from '../assets/images/service-biohacking.avif';
-import { useTranslations, getLocalePath } from '../i18n/utils';
+import serviceGut from '../../assets/images/service-gut.avif';
+import serviceNutrition from '../../assets/images/service-nutrition.avif';
+import serviceBiohacking from '../../assets/images/service-biohacking.avif';
+import { useTranslations, getLocalePath } from '../../i18n/utils';
 
-const lang = 'en';
+const lang = 'es';
 const t = useTranslations(lang);
 const lp = (s: string) => getLocalePath(lang, s);
 
@@ -20,22 +20,22 @@ const programs = t('services.programs') as ProgramItem[];
 
 const serviceImages = [serviceGut, serviceNutrition, serviceBiohacking];
 const serviceAlts = [
-  "Anett reviewing gut health and fertility nutrition plan with a client during a 60-minute holistic session",
-  "Wholesome nutrient-dense meal prepared as part of a holistic nutrition coaching program",
-  "Biohacking tools and natural adaptogens used in Anett's longevity and metabolic health programme",
+  'Anett revisando un plan nutricional de salud intestinal y fertilidad con una clienta',
+  'Comida nutritiva en el programa de nutrición holística',
+  'Herramientas de biohacking y adaptógenos naturales',
 ];
 const programImages = [serviceNutrition, serviceGut];
 const programAlts = [
-  "Anti-inflammatory gut-healing foods central to the 12-week Gut Health Optimization program",
-  "Herbal and nutritional support used in the 12-week Fertility & Hormone Balance program",
+  'Alimentos antiinflamatorios que sanan el intestino en el programa de 12 semanas',
+  'Apoyo vegetal y nutricional en el programa de fertilidad de 12 semanas',
 ];
-
 ---
 
 <BaseLayout
   title={t('services.metaTitle') as string}
   description={t('services.metaDescription') as string}
   ogImage="/images/service-biohacking.avif"
+  lang={lang}
 >
   <PageBanner
     label={t('services.bannerLabel') as string}
@@ -61,7 +61,7 @@ const programAlts = [
     <div class="container">
       <div class="cards cards--3">
         {services.map((s, i) => (
-          <div class={`card flex flex-col reveal delay-${i + 1}`} aria-labelledby={`service-${i}`}>
+          <div class={`card flex flex-col reveal delay-${i + 1}`}>
             <div class="card__img">
               <Picture
                 src={serviceImages[i]}
@@ -75,7 +75,7 @@ const programAlts = [
             </div>
             <div class="card__body flex flex-col flex-1">
               <p class="card__tag">{s.tag}</p>
-              <h3 id={`service-${i}`} class="card__title">{s.title}</h3>
+              <h3 class="card__title">{s.title}</h3>
               <p class="card__price">{s.price}</p>
               <ul class="card__features">
                 {s.features.map(f => <li>{f}</li>)}
@@ -140,83 +140,20 @@ const programAlts = [
 </BaseLayout>
 
 <style>
-  .pkg-card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    transition: transform var(--transition), box-shadow var(--transition);
-  }
-
-  .pkg-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .pkg-card__img {
-    overflow: hidden;
-    min-height: 280px;
-  }
-
-  .pkg-card__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .8s ease;
-  }
-
-  .pkg-card:hover .pkg-card__img img {
-    transform: scale(1.06);
-  }
-
-  .pkg-card__body {
-    padding: 44px 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .pkg-card__body h3 {
-    font-size: 1.5rem;
-    margin: 0 0 16px;
-    color: var(--brown);
-  }
-
-  .pkg-card__body p {
-    color: var(--brown);
-    opacity: .8;
-    font-size: .97rem;
-    line-height: 1.75;
-    margin-bottom: 20px;
-  }
-
-  .pkg-card__body .card__features {
-    margin-bottom: 24px;
-  }
-
-  .pkg-card__body .btn {
-    align-self: flex-start;
-  }
-
-  @media (max-width: 720px) {
-    .pkg-card {
-      grid-template-columns: 1fr;
-    }
-
-    .pkg-card__img {
-      min-height: 220px;
-      height: 270px;
-    }
-
-    .pkg-card__body {
-      padding: 32px 28px;
-    }
-
-    .card__img {
-      height: 270px;
-      aspect-ratio: auto;
-    }
+  .pkg-card { background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);display:grid;grid-template-columns:1fr 1.3fr;transition:transform var(--transition),box-shadow var(--transition); }
+  .pkg-card:hover { transform:translateY(-6px);box-shadow:var(--shadow-lg); }
+  .pkg-card__img { overflow:hidden;min-height:280px; }
+  .pkg-card__img img { width:100%;height:100%;object-fit:cover;transition:transform .8s ease; }
+  .pkg-card:hover .pkg-card__img img { transform:scale(1.06); }
+  .pkg-card__body { padding:44px 48px;display:flex;flex-direction:column;justify-content:center; }
+  .pkg-card__body h3 { font-size:1.5rem;margin:0 0 16px;color:var(--brown); }
+  .pkg-card__body p { color:var(--brown);opacity:.8;font-size:.97rem;line-height:1.75;margin-bottom:20px; }
+  .pkg-card__body .card__features { margin-bottom:24px; }
+  .pkg-card__body .btn { align-self:flex-start; }
+  @media (max-width:720px) {
+    .pkg-card { grid-template-columns:1fr; }
+    .pkg-card__img { min-height:220px;height:270px; }
+    .pkg-card__body { padding:32px 28px; }
+    .card__img { height:270px;aspect-ratio:auto; }
   }
 </style>

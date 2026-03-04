@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageBanner from "../../components/PageBanner.astro";
+import Marquee from "../../components/Marquee.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import { useTranslations, getLocalePath } from '../../i18n/utils';
+
+const lang = 'et';
+const t = useTranslations(lang);
+const lp = (s: string) => getLocalePath(lang, s);
+
+type ContactDetail = { icon: string; label: string; type: 'link' | 'text'; href?: string; text?: string; external?: boolean; lines?: string[]; note?: string };
+type Step = { num: string; title: string; text: string };
+
+const contactDetails = t('consultation.contactDetails') as ContactDetail[];
+const steps = t('consultation.steps') as Step[];
+---
+
+<BaseLayout
+  title={t('consultation.metaTitle') as string}
+  description={t('consultation.metaDescription') as string}
+  ogImage="/images/hero-heather.avif"
+  lang={lang}
+>
+  <PageBanner
+    label={t('consultation.bannerLabel') as string}
+    heading={`${t('consultation.bannerHeading')} <span class="serif-italic">${t('consultation.bannerHeadingItalic')}</span>`}
+    bgImage="/images/hero-heather.avif"
+    overlay="linear-gradient(to bottom,rgba(74,55,40,.72) 0%,rgba(74,55,40,.45) 60%,rgba(253,250,246,0) 100%)"
+  >
+    <p style="font-family:var(--font-display);font-style:italic;font-size:1.2rem;color:rgba(253,250,246,.85);margin-top:12px;">
+      {t('consultation.bannerSubtitle')}
+    </p>
+  </PageBanner>
+
+  <Marquee bgColor="white" />
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <section class="consult-hero" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="consult-hero__inner">
+        <!-- Left: Contact info -->
+        <div class="reveal-left">
+          <span class="label">{t('consultation.contactLabel')}</span>
+          <h2 id="contact-heading" style="margin-top:12px;">
+            {t('consultation.contactH2a')} <span class="serif-italic">{t('consultation.contactH2b')}</span>
+          </h2>
+          <p style="color:var(--taupe);margin-block:16px 32px;font-size:1.05rem;">{t('consultation.contactIntro')}</p>
+
+          {contactDetails.map(d => (
+            <div class="contact-detail">
+              <span class="contact-detail__icon" aria-hidden="true">{d.icon}</span>
+              <div>
+                <p class="contact-detail__label">{d.label}</p>
+                {d.type === 'link' ? (
+                  <a href={d.href} {...(d.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+                    {d.text}
+                    {d.external && <span class="visually-hidden"> {t('form.openNewTab')}</span>}
+                  </a>
+                ) : (
+                  <>
+                    {d.lines?.map(line => <p>{line}</p>)}
+                    {d.note && <p style="font-size:.88rem;color:var(--taupe);margin-top:4px;">{d.note}</p>}
+                  </>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Right: Form component -->
+        <ContactForm lang={lang} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT TO EXPECT ══ -->
+  <section class="section section--sand" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="label">{t('consultation.processLabel')}</span>
+        <h2 id="process-heading">{t('consultation.processH2a')} <span class="serif-italic">{t('consultation.processH2b')}</span></h2>
+        <p class="mx-auto">{t('consultation.processSubtitle')}</p>
+      </div>
+      <ol class="what-to-expect" aria-label={t('consultation.processLabel') as string}>
+        {steps.map((step, i) => (
+          <li class={`expect-item reveal delay-${i + 1}`} aria-labelledby={`step-${i}`}>
+            <div class="expect-item__num" aria-hidden="true">{step.num}</div>
+            <h4 id={`step-${i}`} class="expect-item__title">{step.title}</h4>
+            <p class="expect-item__text">{step.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══ REASSURANCE ══ -->
+  <section class="section" aria-labelledby="commitment-heading">
+    <div class="container--narrow text-center">
+      <div class="reveal">
+        <span class="label">{t('consultation.commitmentLabel')}</span>
+        <h2 id="commitment-heading" style="margin-top:12px;">
+          {t('consultation.commitmentH2a')} <span class="serif-italic">{t('consultation.commitmentH2b')}</span>
+        </h2>
+        <p style="margin-top:16px;color:var(--taupe);font-size:1.05rem;max-width:580px;margin-inline:auto;">{t('consultation.commitmentText')}</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .consult-hero { background:var(--linen);padding-block:clamp(64px,10vw,120px); }
+  .consult-hero__inner { display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start; }
+  @media (max-width:768px) { .consult-hero__inner { grid-template-columns:1fr;gap:40px; } }
+  .contact-detail { display:flex;gap:16px;align-items:flex-start;margin-bottom:20px; }
+  .contact-detail__icon { font-size:1.25rem;line-height:1;padding-top:2px;flex-shrink:0; }
+  .contact-detail__label { font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--taupe);margin-bottom:2px; }
+  .contact-detail a { color:var(--bark);text-decoration:none;font-size:1rem; }
+  .contact-detail a:hover { color:var(--terracotta); }
+  .visually-hidden { position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap; }
+  .what-to-expect { display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;list-style:none;padding:0; }
+  @media (max-width:640px) { .what-to-expect { grid-template-columns:1fr; } }
+  .expect-item { text-align:center;padding:32px 20px;border-radius:var(--radius-md);background:var(--white);box-shadow:var(--shadow-sm);border:1px solid transparent;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease; }
+  .expect-item:hover { transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:rgba(158,107,90,.15); }
+  .expect-item__num { font-family:var(--font-display);font-size:3rem;color:var(--terracotta);opacity:.3;font-weight:300;line-height:1;margin-bottom:12px; }
+  .expect-item__title { font-family:var(--font-display);font-size:1.1rem;color:var(--brown);margin-bottom:8px; }
+  .expect-item__text { font-size:.88rem;color:var(--taupe);line-height:1.75; }
+</style>

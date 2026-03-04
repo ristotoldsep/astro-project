@@ -1,14 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Marquee from "../components/Marquee.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Marquee from "../../components/Marquee.astro";
 import { Picture } from "astro:assets";
-import heroAlina from "../assets/images/hero-alina.avif";
-import serviceGut from "../assets/images/service-gut.avif";
-import serviceNutrition from "../assets/images/service-nutrition.avif";
-import serviceBiohacking from "../assets/images/service-biohacking.avif";
-import { useTranslations, getLocalePath } from "../i18n/utils";
+import heroAlina from "../../assets/images/hero-alina.avif";
+import serviceGut from "../../assets/images/service-gut.avif";
+import serviceNutrition from "../../assets/images/service-nutrition.avif";
+import serviceBiohacking from "../../assets/images/service-biohacking.avif";
+import { useTranslations, getLocalePath } from "../../i18n/utils";
 
-const lang = "en";
+const lang = "et";
 const t = useTranslations(lang);
 const lp = (s: string) => getLocalePath(lang, s);
 
@@ -19,9 +19,9 @@ const pillars = t("home.pillars") as Array<{
   text: string;
 }>;
 const servicesPreview = [
-  { image: serviceGut, alt: "Gut health and fertility nutrition" },
-  { image: serviceNutrition, alt: "Holistic nutrition coaching" },
-  { image: serviceBiohacking, alt: "Biohacking and longevity" },
+  { image: serviceGut, alt: "Soolestiku ja viljakuse nõustamine" },
+  { image: serviceNutrition, alt: "Toitumisnõustamine" },
+  { image: serviceBiohacking, alt: "Biohäkkimine ja pikaealisus" },
 ];
 const spData = t("home.servicesPreview") as Array<{
   tag: string;
@@ -48,6 +48,7 @@ const heroSlides = [
   title={t("home.metaTitle") as string}
   description={t("home.metaDescription") as string}
   ogImage="/images/hero-alina.avif"
+  lang={lang}
 >
   <Fragment slot="head">
     <link
@@ -57,9 +58,9 @@ const heroSlides = [
       fetchpriority="high"
     />
   </Fragment>
+
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <!-- Crossfading slide layers -->
     {
       heroSlides.map((s) => (
         <div
@@ -72,10 +73,7 @@ const heroSlides = [
         />
       ))
     }
-
     <div class="hero__overlay"></div>
-
-    <!-- Botanical leaf decoration -->
     <div class="hero__leaf">
       <svg
         width="220"
@@ -122,25 +120,6 @@ const heroSlides = [
           opacity=".3"></path>
       </svg>
     </div>
-
-    <!-- Second smaller leaf top-left -->
-    <div
-      style="position:absolute;top:8%;left:3%;opacity:.07;pointer-events:none;animation:leafFloat 11s ease-in-out 2s infinite alternate;z-index:2;"
-    >
-      <svg
-        width="120"
-        height="180"
-        viewBox="0 0 120 180"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M60 170 C60 170 20 130 10 90 C0 50 25 15 60 5 C95 15 120 50 110 90 C100 130 60 170 60 170Z"
-          fill="white"></path>
-        <path d="M60 170 L60 5" stroke="white" stroke-width=".8"></path>
-      </svg>
-    </div>
-
     <div class="hero__content">
       <div class="hero__pre-line">
         <p class="hero__eyebrow">{t("home.heroEyebrow")}</p>
@@ -156,55 +135,16 @@ const heroSlides = [
         <a href={lp("/about")} class="btn btn-glass">{t("home.heroCta2")}</a>
       </div>
     </div>
-
     <div class="hero__scroll">
       <div class="hero__scroll-line"></div>
       {t("home.heroScroll")}
     </div>
   </section>
 
-  <!-- ══ MARQUEE ══ -->
   <Marquee />
 
-  <!-- ══ WELCOME SPLIT ══ -->
+  <!-- ══ WELCOME ══ -->
   <section class="section" style="position:relative;overflow:hidden;">
-    <!-- Petal accent top-right -->
-    <div class="leaf-deco leaf-deco--tr reveal" style="opacity:0;" data-leaf>
-      <svg
-        width="160"
-        height="220"
-        viewBox="0 0 160 220"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M80 210 C80 210 30 165 15 115 C0 65 30 20 80 5 C130 20 160 65 145 115 C130 165 80 210 80 210Z"
-          fill="#9E6B5A"
-          opacity=".08"></path>
-        <path d="M80 210 L80 5" stroke="#9E6B5A" stroke-width=".8" opacity=".08"
-        ></path>
-        <path
-          d="M80 140 C65 120 40 112 22 108"
-          stroke="#9E6B5A"
-          stroke-width=".7"
-          opacity=".07"></path>
-        <path
-          d="M80 140 C95 120 120 112 138 108"
-          stroke="#9E6B5A"
-          stroke-width=".7"
-          opacity=".07"></path>
-        <path
-          d="M80 90 C68 72 48 65 32 62"
-          stroke="#9E6B5A"
-          stroke-width=".7"
-          opacity=".06"></path>
-        <path
-          d="M80 90 C92 72 112 65 128 62"
-          stroke="#9E6B5A"
-          stroke-width=".7"
-          opacity=".06"></path>
-      </svg>
-    </div>
     <div class="container">
       <div class="split">
         <div class="split__content reveal-left">
@@ -265,39 +205,8 @@ const heroSlides = [
     </div>
   </section>
 
-  <!-- ══ STORY / VIDEO SECTION ══ -->
+  <!-- ══ STORY ══ -->
   <section class="section" style="position:relative;">
-    <!-- Bottom-left leaf -->
-    <div
-      class="leaf-deco leaf-deco--br reveal"
-      data-leaf
-      style="right:10px;bottom:-50px;left:auto;"
-    >
-      <svg
-        width="140"
-        height="200"
-        viewBox="0 0 140 200"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M70 190 C70 190 25 148 10 100 C-5 52 22 12 70 2 C118 12 145 52 130 100 C115 148 70 190 70 190Z"
-          fill="#7B9D7E"
-          opacity=".09"></path>
-        <path d="M70 190 L70 2" stroke="#7B9D7E" stroke-width=".8" opacity=".08"
-        ></path>
-        <path
-          d="M70 125 C55 108 35 100 18 97"
-          stroke="#7B9D7E"
-          stroke-width=".7"
-          opacity=".07"></path>
-        <path
-          d="M70 80 C58 65 40 58 26 55"
-          stroke="#7B9D7E"
-          stroke-width=".7"
-          opacity=".07"></path>
-      </svg>
-    </div>
     <div class="container">
       <div class="split split--reverse split_video_wrapper">
         <div class="split__content reveal-right">
@@ -328,15 +237,15 @@ const heroSlides = [
             <source src="/videos/video2.mp4" type="video/mp4" />
             <source src="/videos/video1.mp4" type="video/mp4" />
           </video>
-          <!-- Rotating badge -->
           <div class="video-spinner" aria-hidden="true">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
               <circle cx="50" cy="50" r="48"></circle>
-              <defs>
-                <path
+              <defs
+                ><path
                   id="spinnerPath"
-                  d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"></path>
-              </defs>
+                  d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"
+                ></path></defs
+              >
               <text
                 font-size="9"
                 font-family="Jost,sans-serif"
@@ -400,9 +309,8 @@ const heroSlides = [
     </div>
   </section>
 
-  <!-- ══ QUOTE BAND + PARALLAX (shared stacking context) ══ -->
+  <!-- ══ QUOTE + PARALLAX ══ -->
   <div style="position:relative;">
-    <!-- ══ QUOTE BAND ══ -->
     <section class="section section--linen quote_band">
       <div class="container">
         <div class="quote-block reveal">
@@ -412,8 +320,6 @@ const heroSlides = [
         </div>
       </div>
     </section>
-
-    <!-- ══ LOTUS MANDALA (centered over quote/parallax boundary) ══ -->
     <div class="lotus-mandala" aria-hidden="true">
       <svg
         class="lotus-mandala__svg"
@@ -423,7 +329,6 @@ const heroSlides = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <!-- Outer dashed circuit ring -->
         <circle
           cx="160"
           cy="160"
@@ -432,88 +337,26 @@ const heroSlides = [
           stroke-width="0.7"
           stroke-dasharray="3 8"
           opacity=".45"></circle>
-        <!-- 8 outer petals (large, pointed, with vein) -->
         <g opacity=".36">
-          <path
-            d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
-            fill="white"></path>
-          <path
-            d="M160 52 L160 154"
-            stroke="white"
-            stroke-width="0.6"
-            opacity=".5"></path>
-          <path
-            d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
-            fill="white"
-            transform="rotate(45 160 160)"></path>
-          <path
-            d="M160 52 L160 154"
-            stroke="white"
-            stroke-width="0.6"
-            opacity=".5"
-            transform="rotate(45 160 160)"></path>
-          <path
-            d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
-            fill="white"
-            transform="rotate(90 160 160)"></path>
-          <path
-            d="M160 52 L160 154"
-            stroke="white"
-            stroke-width="0.6"
-            opacity=".5"
-            transform="rotate(90 160 160)"></path>
-          <path
-            d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
-            fill="white"
-            transform="rotate(135 160 160)"></path>
-          <path
-            d="M160 52 L160 154"
-            stroke="white"
-            stroke-width="0.6"
-            opacity=".5"
-            transform="rotate(135 160 160)"></path>
-          <path
-            d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
-            fill="white"
-            transform="rotate(180 160 160)"></path>
-          <path
-            d="M160 52 L160 154"
-            stroke="white"
-            stroke-width="0.6"
-            opacity=".5"
-            transform="rotate(180 160 160)"></path>
-          <path
-            d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
-            fill="white"
-            transform="rotate(225 160 160)"></path>
-          <path
-            d="M160 52 L160 154"
-            stroke="white"
-            stroke-width="0.6"
-            opacity=".5"
-            transform="rotate(225 160 160)"></path>
-          <path
-            d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
-            fill="white"
-            transform="rotate(270 160 160)"></path>
-          <path
-            d="M160 52 L160 154"
-            stroke="white"
-            stroke-width="0.6"
-            opacity=".5"
-            transform="rotate(270 160 160)"></path>
-          <path
-            d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
-            fill="white"
-            transform="rotate(315 160 160)"></path>
-          <path
-            d="M160 52 L160 154"
-            stroke="white"
-            stroke-width="0.6"
-            opacity=".5"
-            transform="rotate(315 160 160)"></path>
+          {
+            [0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+              <>
+                <path
+                  d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z"
+                  fill="white"
+                  transform={`rotate(${deg} 160 160)`}
+                />
+                <path
+                  d="M160 52 L160 154"
+                  stroke="white"
+                  stroke-width="0.6"
+                  opacity=".5"
+                  transform={`rotate(${deg} 160 160)`}
+                />
+              </>
+            ))
+          }
         </g>
-        <!-- Mid accent ring -->
         <circle
           cx="160"
           cy="160"
@@ -521,60 +364,6 @@ const heroSlides = [
           stroke="white"
           stroke-width="0.5"
           opacity=".22"></circle>
-        <!-- 8 inner petals (shorter, offset 22.5°) -->
-        <g opacity=".24">
-          <path
-            d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z"
-            fill="white"
-            transform="rotate(22.5 160 160)"></path>
-          <path
-            d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z"
-            fill="white"
-            transform="rotate(67.5 160 160)"></path>
-          <path
-            d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z"
-            fill="white"
-            transform="rotate(112.5 160 160)"></path>
-          <path
-            d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z"
-            fill="white"
-            transform="rotate(157.5 160 160)"></path>
-          <path
-            d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z"
-            fill="white"
-            transform="rotate(202.5 160 160)"></path>
-          <path
-            d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z"
-            fill="white"
-            transform="rotate(247.5 160 160)"></path>
-          <path
-            d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z"
-            fill="white"
-            transform="rotate(292.5 160 160)"></path>
-          <path
-            d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z"
-            fill="white"
-            transform="rotate(337.5 160 160)"></path>
-        </g>
-        <!-- Dot ring at r≈104 (outer petal tips) -->
-        <g fill="white" opacity=".55">
-          <circle cx="160" cy="56" r="2.8"></circle>
-          <circle cx="160" cy="56" r="2.8" transform="rotate(45 160 160)"
-          ></circle>
-          <circle cx="160" cy="56" r="2.8" transform="rotate(90 160 160)"
-          ></circle>
-          <circle cx="160" cy="56" r="2.8" transform="rotate(135 160 160)"
-          ></circle>
-          <circle cx="160" cy="56" r="2.8" transform="rotate(180 160 160)"
-          ></circle>
-          <circle cx="160" cy="56" r="2.8" transform="rotate(225 160 160)"
-          ></circle>
-          <circle cx="160" cy="56" r="2.8" transform="rotate(270 160 160)"
-          ></circle>
-          <circle cx="160" cy="56" r="2.8" transform="rotate(315 160 160)"
-          ></circle>
-        </g>
-        <!-- Center motif -->
         <circle
           cx="160"
           cy="160"
@@ -586,8 +375,6 @@ const heroSlides = [
         <circle cx="160" cy="160" r="8" fill="white" opacity=".75"></circle>
       </svg>
     </div>
-
-    <!-- ══ PARALLAX EVENTS TEASER ══ -->
     <div class="parallax-band">
       <div
         class="parallax-band__bg"
@@ -610,7 +397,7 @@ const heroSlides = [
     </div>
   </div>
 
-  <!-- ══ FREE GUIDE BANNER ══ -->
+  <!-- ══ FREE GUIDE ══ -->
   <section class="section">
     <div class="container">
       <div class="guide-banner reveal-scale" style="position:relative;">
@@ -618,7 +405,7 @@ const heroSlides = [
         <div class="section-corner section-corner--br"></div>
         <span
           class="label white"
-          style="color:rgba(253,250,246,.75); margin-bottom: 15px;"
+          style="color:rgba(253,250,246,.75);margin-bottom:15px;"
           >{t("home.guideLabel")}</span
         >
         <h2>{t("home.guideH2")}</h2>
@@ -664,7 +451,6 @@ const heroSlides = [
 </style>
 
 <script>
-  /* Video play/pause when in viewport */
   const storyVideo = document.getElementById(
     "storyVideo",
   ) as HTMLVideoElement | null;
@@ -672,19 +458,14 @@ const heroSlides = [
     const vidObs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) {
-            storyVideo.play();
-          } else {
-            storyVideo.pause();
-          }
+          if (e.isIntersecting) storyVideo.play();
+          else storyVideo.pause();
         });
       },
       { threshold: 0.2 },
     );
     vidObs.observe(storyVideo);
   }
-
-  /* Scroll-driven card border-radius animation */
   const cardEls = document.querySelectorAll<HTMLElement>(".section--card");
   function updateCardRadius() {
     const vh = window.innerHeight;

@@ -1,17 +1,19 @@
 ---
+import { useTranslations, detectLocale } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
 interface Props {
   variant?: 'footer';
   /** CSS color value to override the strip background, e.g. "white" or "#EDE0D4" or "var(--sand)" */
   bgColor?: string;
+  lang?: Locale;
 }
-const { variant, bgColor } = Astro.props;
+const { variant, bgColor, lang: langProp } = Astro.props;
+const { lang: urlLang } = detectLocale(Astro.url.pathname);
+const lang: Locale = langProp ?? urlLang;
+const t = useTranslations(lang);
 
-const items = [
-  'Holistic Healing', 'Gut Health', 'Hormone Balance',
-  'Traditional Chinese Medicine', 'Biohacking', 'Women\'s Wellness',
-  'Fertility Support', 'Root Cause Healing', 'Science Meets Tradition',
-  'Ayurveda', 'Functional Medicine', 'Radiant Health',
-];
+const items = t('marquee') as string[];
 ---
 <div class:list={['marquee-strip', variant]} style={bgColor ? `--marquee-bg:${bgColor}` : undefined}>
   <div class="marquee-track" aria-hidden="true">

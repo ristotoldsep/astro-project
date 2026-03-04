@@ -4,23 +4,43 @@ import Footer from "../components/Footer.astro";
 import Marquee from "../components/Marquee.astro";
 import InstaStrip from "../components/InstaStrip.astro";
 import "../styles/global.scss";
+import { detectLocale, getLocalePath } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
 
 interface Props {
   title: string;
   description?: string;
   /** Path to the OG share image (relative to domain root). Defaults to hero-crystalweed. */
   ogImage?: string;
+  /** BCP-47 language tag for this page. Auto-detected from URL if omitted. */
+  lang?: Locale;
 }
 
 const {
   title,
   description = "QiNutritionist – Holistic wellness rooted in ancient wisdom and modern science. Nutritional therapy, gut health, hormone balance & more.",
   ogImage = "/images/hero-crystalweed.avif",
+  lang: langProp,
 } = Astro.props;
+
+const { lang, slug } = detectLocale(Astro.url.pathname);
+const effectiveLang: Locale = langProp ?? lang;
+
+// hreflang alternate URLs
+const siteBase = (Astro.site ?? new URL("https://qinutritionist.com")).href.replace(/\/$/, '');
+const lhref = (l: Locale) => { const p = getLocalePath(l, slug); return `${siteBase}${p === '/' ? '' : p}`; };
+const hreflangs = [
+  { hreflang: 'en',         href: lhref('en') },
+  { hreflang: 'et',         href: lhref('et') },
+  { hreflang: 'es',         href: lhref('es') },
+  { hreflang: 'x-default',  href: lhref('en') },
+];
 
 const siteUrl = Astro.site ?? new URL("https://qinutritionist.com");
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageAbsolute = new URL(ogImage, siteUrl).href;
+const ogLocaleMap: Record<Locale, string> = { en: 'en_US', et: 'et_EE', es: 'es_ES' };
+const ogLocale = ogLocaleMap[effectiveLang];
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -53,7 +73,7 @@ const jsonLd = JSON.stringify({
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={effectiveLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,7 +90,11 @@ const jsonLd = JSON.stringify({
     <meta property="og:image" content={ogImageAbsolute} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="800" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={ogLocale} />
+    <!-- hreflang alternate links -->
+    {hreflangs.map(({ hreflang, href }) => (
+      <link rel="alternate" hreflang={hreflang} href={href} />
+    ))}
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -89,15 +113,16 @@ const jsonLd = JSON.stringify({
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
+    <slot name="head" />
   </head>
   <body>
-    <Nav />
+    <Nav lang={effectiveLang} />
     <main>
       <slot />
     </main>
     <InstaStrip />
     <Marquee variant="footer" />
-    <Footer />
+    <Footer lang={effectiveLang} />
 
     <!-- Shared scroll-reveal observer -->
     <script>

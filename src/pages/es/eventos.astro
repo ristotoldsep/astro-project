@@ -1,0 +1,249 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageBanner from "../../components/PageBanner.astro";
+import Marquee from "../../components/Marquee.astro";
+import { Picture } from "astro:assets";
+import heroCrystalweed from "../../assets/images/hero-crystalweed.avif";
+import eventsBarcelona from "../../assets/images/events-barcelona.avif";
+import { useTranslations, getLocalePath } from "../../i18n/utils";
+
+const lang = "es";
+const t = useTranslations(lang);
+const lp = (s: string) => getLocalePath(lang, s);
+
+const barcelonaFeatures = t("events.barcelonaFeatures") as string[];
+const tallinnFeatures = t("events.tallinnFeatures") as string[];
+---
+
+<BaseLayout
+  title={t("events.metaTitle") as string}
+  description={t("events.metaDescription") as string}
+  ogImage="/images/hero-crystalweed.avif"
+  lang={lang}
+>
+  <PageBanner
+    label={t("events.bannerLabel") as string}
+    heading={`${t("events.bannerH2a")} <span class="serif-italic">${t("events.bannerH2b")}</span>`}
+    bgImage="/images/hero-crystalweed.avif"
+  />
+
+  <Marquee bgColor="white" />
+
+  <!-- ══ INTRO ══ -->
+  <section class="section section--linen">
+    <div class="container">
+      <div class="container--narrow text-center reveal">
+        <span class="label">{t("events.introLabel")}</span>
+        <h2 style="margin-top:12px;">
+          {t("events.introH2a")}
+          <span class="serif-italic">{t("events.introH2b")}</span>
+        </h2>
+        <p>{t("events.introText")}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BARCELONA RETREAT ══ -->
+  <section class="section" aria-labelledby="barcelona-heading">
+    <div class="container">
+      <div class="split split--reverse">
+        <div class="split__content reveal-right">
+          <span class="badge badge-green" style="margin-bottom:16px;"
+            >{t("events.barcelonaBadge")}</span
+          >
+          <span
+            class="label second_label"
+            style="display:inline-block;margin-left:8px;"
+            >{t("events.barcelonaTag")}</span
+          >
+          <h2 id="barcelona-heading">
+            {t("events.barcelonaH2a")}
+            <span class="serif-italic">{t("events.barcelonaH2b")}</span>
+          </h2>
+          <p style="margin-top:16px;color:var(--taupe);">
+            {t("events.barcelonaP1")}
+          </p>
+          <p style="margin-top:12px;color:var(--taupe);">
+            {t("events.barcelonaP2")}
+          </p>
+          <ul class="event-feature-list">
+            {
+              barcelonaFeatures.map((f) => {
+                const [bold, rest] = f.split(" – ");
+                return (
+                  <li>
+                    {rest ? (
+                      <>
+                        <strong>{bold}</strong> – {rest}
+                      </>
+                    ) : (
+                      f
+                    )}
+                  </li>
+                );
+              })
+            }
+          </ul>
+          <a href={lp("/consultation")} class="btn btn-primary"
+            >{t("events.barcelonaCta")}</a
+          >
+        </div>
+        <div class="split__media reveal-left">
+          <Picture
+            src={heroCrystalweed}
+            formats={["avif", "webp"]}
+            widths={[480, 768, 1024, 1280]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Lujosa villa en la naturaleza catalana, sede del retiro de bienestar de 3 días cerca de Barcelona"
+            loading="eager"
+            decoding="async"
+            class="h-full"
+          />
+          <div class="split__tag">{t("events.barcelonaMediaTag")}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUOTE BAND ══ -->
+  <section class="section section--terra">
+    <div class="container">
+      <div class="quote-block reveal">
+        <div
+          class="quote-block__mark"
+          style="color:rgba(253,250,246,.3);"
+          aria-hidden="true"
+        >
+          "
+        </div>
+        <p class="quote-block__text" style="color:var(--cream);">
+          {t("events.quoteText")}
+        </p>
+        <p class="quote-block__attr" style="color:rgba(253,250,246,.75);">
+          {t("events.quoteAttr")}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TALLINN WORKSHOP ══ -->
+  <section class="section section--sand" aria-labelledby="tallinn-heading">
+    <div class="container">
+      <div class="split">
+        <div class="split__media reveal-left">
+          <Picture
+            src={eventsBarcelona}
+            formats={["avif", "webp"]}
+            widths={[480, 768, 1024, 1280]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Participantes en el taller de cocina saludable de Anett en Tallin"
+            loading="lazy"
+            decoding="async"
+            class="h-full"
+          />
+          <div class="split__tag">{t("events.tallinnMediaTag")}</div>
+        </div>
+        <div class="split__content reveal-right">
+          <span class="badge badge-terra" style="margin-bottom:16px;"
+            >{t("events.tallinnBadge")}</span
+          >
+          <span class="label" style="display:block;margin-bottom:8px;"
+            >{t("events.tallinnTag")}</span
+          >
+          <h2 id="tallinn-heading">
+            {t("events.tallinnH2a")}<br /><span class="serif-italic"
+              >{t("events.tallinnH2b")}</span>
+          </h2>
+          <p style="margin-top:16px;color:var(--taupe);">
+            {t("events.tallinnP1")}
+          </p>
+          <ul class="event-feature-list">
+            {tallinnFeatures.map((f) => <li>{f}</li>)}
+          </ul>
+          <p>{t("events.tallinnP2")}</p>
+          <p
+            style="color:var(--terracotta);font-family:var(--font-display);font-style:italic;margin-bottom:24px;"
+          >
+            {t("events.tallinnComingSoon")}
+          </p>
+          <a href={lp("/consultation")} class="btn btn-outline"
+            >{t("events.tallinnCta")}</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PARALLAX CTA ══ -->
+  <div class="parallax-band">
+    <div
+      class="parallax-band__bg"
+      style="background-image:url('/images/hero-heather.avif');"
+    >
+    </div>
+    <div class="parallax-band__overlay"></div>
+    <div class="parallax-band__content reveal">
+      <span class="label" style="color:rgba(253,250,246,.7);"
+        >{t("events.parallaxLabel")}</span
+      >
+      <h2>
+        {t("events.parallaxH2a")}
+        <span class="serif-italic">{t("events.parallaxH2b")}</span>
+      </h2>
+      <p style="margin-bottom:28px;opacity:.85;">{t("events.parallaxText")}</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href={lp("/consultation")} class="btn btn-white"
+          >{t("events.parallaxCta1")}</a
+        >
+        <a
+          href="mailto:randveeyoga@gmail.com"
+          class="btn btn-outline"
+          style="border-color:rgba(253,250,246,.6);color:var(--cream);"
+          >{t("events.parallaxCta2")}</a
+        >
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-green {
+    background: var(--sage-l);
+    color: #2d4d30;
+  }
+  .badge-terra {
+    background: var(--sand);
+    color: var(--terracotta-d);
+  }
+  .event-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .event-feature-list li {
+    padding-left: 22px;
+    position: relative;
+    color: var(--taupe);
+    font-size: 0.95rem;
+  }
+  .event-feature-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-size: 0.7rem;
+    top: 3px;
+  }
+</style>

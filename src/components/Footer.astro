@@ -1,29 +1,47 @@
 ---
 import LotusIcon from "./LotusIcon.astro";
+import { useTranslations, getLocalePath, detectLocale } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang: langProp } = Astro.props;
+const { lang: urlLang } = detectLocale(Astro.url.pathname);
+const lang: Locale = langProp ?? urlLang;
+const t = useTranslations(lang);
+const lp = (s: string) => getLocalePath(lang, s);
+
+const navLinks = [
+  { href: '/',             label: t('nav.home') as string },
+  { href: '/about',        label: t('nav.about') as string },
+  { href: '/events',       label: t('nav.events') as string },
+  { href: '/services',     label: t('nav.services') as string },
+  { href: '/consultation', label: t('nav.consultation') as string },
+];
+const serviceLinks = t('footer.serviceLinks') as string[];
 ---
 
-<footer class="footer" aria-label="Site footer">
+<footer class="footer" aria-label={t('footer.footerLabel') as string}>
   <div class="container">
     <div class="footer__grid">
       <!-- ── Brand column ──────────────────────────── -->
       <div>
-        <a href="/" class="footer__logo">
+        <a href={lp('/')} class="footer__logo">
           <span class="footer__logo-icon">
             <LotusIcon size={30} />
           </span>
           QiNutritionist
         </a>
-        <p class="footer__tagline">
-          Holistic fertility, gut health, and hormonal balance — where science
-          meets tradition.
-        </p>
-        <ul class="footer__social" aria-label="Social media links">
+        <p class="footer__tagline">{t('footer.tagline')}</p>
+        <ul class="footer__social" aria-label={t('footer.socialLabel') as string}>
           <li>
             <a
               href="https://www.facebook.com/randveeyoga/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Follow QiNutritionist on Facebook"
+              aria-label={t('footer.facebookLabel') as string}
             >
               <svg
                 width="16"
@@ -44,7 +62,7 @@ import LotusIcon from "./LotusIcon.astro";
               href="https://www.instagram.com/qinutritionist/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Follow QiNutritionist on Instagram"
+              aria-label={t('footer.instagramLabel') as string}
             >
               <svg
                 width="16"
@@ -70,131 +88,38 @@ import LotusIcon from "./LotusIcon.astro";
         </ul>
       </div>
 
-      <!-- ── Navigation column ─────────────────────── -->
-      <nav class="footer__col" aria-label="Footer navigation">
-        <h5>Navigation</h5>
+      <nav class="footer__col" aria-label={t('footer.navHeading') as string}>
+        <h5>{t('footer.navHeading')}</h5>
         <ul>
-          <li>
-            <a href="/">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/about">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              About Me
-            </a>
-          </li>
-          <li>
-            <a href="/events">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              Events &amp; Retreats
-            </a>
-          </li>
-          <li>
-            <a href="/services">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="/consultation">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              Free Consultation
-            </a>
-          </li>
+          {navLinks.map(link => (
+            <li>
+              <a href={lp(link.href)}>
+                <svg class="footer-icon" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M9 18l6-6-6-6"></path></svg>
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
 
       <!-- ── Services column ───────────────────────── -->
       <div class="footer__col">
-        <h5>Services</h5>
+        <h5>{t('footer.servicesHeading')}</h5>
         <ul>
-          <li>
-            <a href="/services">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              Gut &amp; Fertility
-            </a>
-          </li>
-          <li>
-            <a href="/services">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              Nutrition Coaching
-            </a>
-          </li>
-          <li>
-            <a href="/services">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              Biohacking &amp; Longevity
-            </a>
-          </li>
-          <li>
-            <a href="/services">
-              <svg
-                class="footer-icon"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                aria-hidden="true"
-                focusable="false"><path d="M9 18l6-6-6-6"></path></svg
-              >
-              3-Month Programs
-            </a>
-          </li>
+          {serviceLinks.map(label => (
+            <li>
+              <a href={lp('/services')}>
+                <svg class="footer-icon" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M9 18l6-6-6-6"></path></svg>
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
       <!-- ── Contact column ────────────────────────── -->
       <address class="footer__col not-italic">
-        <h5>Contact</h5>
+        <h5>{t('footer.contactHeading')}</h5>
         <ul>
           <li>
             <a href="mailto:randveeyoga@gmail.com">
@@ -256,7 +181,7 @@ import LotusIcon from "./LotusIcon.astro";
 
     <div class="footer__bottom">
       <span>© <span id="footer-year">2026</span> QiNutritionist · Anett 🤍</span>
-      <span>Holistic Wellness · Tallinn &amp; Barcelona</span>
+      <span>{t('footer.bottomRight')}</span>
     </div>
   </div>
 </footer>

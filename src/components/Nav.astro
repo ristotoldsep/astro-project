@@ -1,67 +1,92 @@
 ---
 import LotusIcon from './LotusIcon.astro';
+import { useTranslations, getLocalePath, detectLocale, localeLabels } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
 
-const p = Astro.url.pathname;
-const isActive = (href: string) =>
-  href === '/' ? p === '/' || p === '' : p.startsWith(href);
+interface Props {
+  lang?: Locale;
+}
+const { lang: langProp } = Astro.props;
+const { lang: urlLang, slug } = detectLocale(Astro.url.pathname);
+const lang: Locale = langProp ?? urlLang;
+const t = useTranslations(lang);
+
+const lp = (s: string) => getLocalePath(lang, s);
+const isActive = (slug: string) =>
+  slug === '/' ? Astro.url.pathname === lp('/') || Astro.url.pathname === `/${lang === 'en' ? '' : lang}` : Astro.url.pathname.startsWith(lp(slug));
 
 const navLinks = [
-  { href: '/',             label: 'Home' },
-  { href: '/about',        label: 'About Me' },
-  { href: '/events',       label: 'Events & Retreats' },
-  { href: '/services',     label: 'Services' },
-  { href: '/consultation', label: 'Free Consultation' },
+  { href: '/',             label: t('nav.home') as string },
+  { href: '/about',        label: t('nav.about') as string },
+  { href: '/events',       label: t('nav.events') as string },
+  { href: '/services',     label: t('nav.services') as string },
+  { href: '/consultation', label: t('nav.consultation') as string },
+];
+
+// Language switcher options — build hrefs pointing to equivalent page in each locale
+const langOptions = [
+  { code: 'en' as Locale, label: localeLabels.en, href: getLocalePath('en', slug) },
+  { code: 'et' as Locale, label: localeLabels.et, href: getLocalePath('et', slug) },
+  { code: 'es' as Locale, label: localeLabels.es, href: getLocalePath('es', slug) },
 ];
 ---
 
 <!-- Announcement Bar -->
 <div class="announcement-bar">
-  ✦ EMPOWERING WOMEN THROUGH HOLISTIC HEALING ✦
+  {t('nav.announcement')}
 </div>
 
 <!-- Navigation -->
 <nav class="nav" id="mainNav">
-  <a href="/" class="nav__logo">
+  <a href={lp('/')} class="nav__logo">
     <span class="nav__logo-icon">
       <LotusIcon size={30} />
     </span>
     QiNutritionist
   </a>
 
-  <ul class="nav__links" id="navLinks">
+  <div class="nav__links-wrap">
     <div class="nav-highlight" id="navHighlight"></div>
-    {navLinks.map(link => (
-      <li>
-        <a href={link.href} class={isActive(link.href) ? 'active' : ''}>
-          {link.label}
-        </a>
-      </li>
-    ))}
-  </ul>
+    <ul class="nav__links" id="navLinks">
+      {navLinks.map(link => (
+        <li>
+          <a href={lp(link.href)} class={isActive(link.href) ? 'active' : ''}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
 
   <div style="display:flex;align-items:center;gap:8px;margin-left:auto;">
     <!-- Language Switcher -->
     <div class="lang-switch" id="langSwitch">
-      <button class="lang-switch__btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
-        <span id="currentLang">ENG</span>
+      <button class="lang-switch__btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+        <span id="currentLang">{localeLabels[lang]}</span>
         <svg class="lang-switch__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </button>
       <ul class="lang-switch__menu" role="listbox" id="langMenu">
-        <li class="lang-switch__opt active" data-lang="ENG" role="option">ENG</li>
-        <li class="lang-switch__opt" data-lang="EST" role="option">EST</li>
-        <li class="lang-switch__opt" data-lang="ESP" role="option">ESP</li>
+        {langOptions.map(opt => (
+          <li
+            class={`lang-switch__opt${opt.code === lang ? ' active' : ''}`}
+            data-lang={opt.label}
+            data-href={opt.href}
+            role="option"
+            aria-selected={opt.code === lang ? 'true' : 'false'}
+          >{opt.label}</li>
+        ))}
       </ul>
     </div>
 
     <!-- CTA -->
-    <a href="/consultation" class="btn btn-primary nav__cta">
-      Book Free Call
+    <a href={lp('/consultation')} class="btn btn-primary nav__cta">
+      {t('nav.bookFreeCall')}
     </a>
 
     <!-- Burger -->
-    <button class="nav__burger" id="navBurger" aria-label="Toggle menu">
+    <button class="nav__burger" id="navBurger" aria-label={t('nav.toggleMenu') as string}>
       <span></span>
       <span></span>
       <span></span>
@@ -72,9 +97,9 @@ const navLinks = [
 <!-- Mobile Menu -->
 <div class="nav__mobile" id="navMobile">
   {navLinks.map(link => (
-    <a href={link.href}>{link.label}</a>
+    <a href={lp(link.href)}>{link.label}</a>
   ))}
-  <a href="/consultation" class="btn btn-primary" style="margin-top:16px;">Book Free Call</a>
+  <a href={lp('/consultation')} class="btn btn-primary" style="margin-top:16px;">{t('nav.bookFreeCall')}</a>
 </div>
 
 <script>
@@ -136,10 +161,8 @@ const navLinks = [
 
   langMenu.querySelectorAll('.lang-switch__opt').forEach(opt => {
     opt.addEventListener('click', () => {
-      langMenu.querySelectorAll('.lang-switch__opt').forEach(o => o.classList.remove('active'));
-      opt.classList.add('active');
-      currentLangEl.textContent = opt.getAttribute('data-lang') ?? 'ENG';
-      langSwitch.classList.remove('open');
+      const href = opt.getAttribute('data-href');
+      if (href) window.location.href = href;
     });
   });
 
