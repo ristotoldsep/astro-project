@@ -48,6 +48,7 @@ const heroSlides = [
   title={t("home.metaTitle") as string}
   description={t("home.metaDescription") as string}
   ogImage="/images/hero-alina.avif"
+  lang={lang}
 >
   <Fragment slot="head">
     <link
@@ -358,18 +359,27 @@ const heroSlides = [
   <!-- ══ SERVICES PREVIEW ══ -->
   <section class="section section--sand section--card">
     <div class="container">
-      <div class="section__header reveal">
-        <span class="label">{t("home.servicesLabel")}</span>
-        <h2>
-          {t("home.servicesH2a")}
-          <span class="serif-italic">{t("home.servicesH2b")}</span>
-        </h2>
-        <p>{t("home.servicesSubtitle")}</p>
+      <div class="services-header-row reveal">
+        <div class="section__header services-header-main">
+          <span class="label">{t("home.servicesLabel")}</span>
+          <h2>
+            {t("home.servicesH2a")}
+            <span class="serif-italic">{t("home.servicesH2b")}</span>
+          </h2>
+          <p>{t("home.servicesSubtitle")}</p>
+        </div>
+        <a href={lp("/services")} class="btn btn-outline services-header-cta">
+          <span>{t("home.servicesViewAll")}</span>
+          <svg viewBox="0 0 40 12" aria-hidden="true" focusable="false">
+            <path d="M1 6h35"></path>
+            <path d="M31 1l7 5-7 5"></path>
+          </svg>
+        </a>
       </div>
       <div class="cards cards--3">
         {
           servicesPreview.map((s, i) => (
-            <div class={`card reveal delay-${i + 1}`}>
+            <div class={`card flex flex-col reveal delay-${i + 1}`}>
               <div class="card__img">
                 <Picture
                   src={s.image}
@@ -380,22 +390,17 @@ const heroSlides = [
                   formats={["avif", "webp"]}
                 />
               </div>
-              <div class="card__body">
+              <div class="card__body flex flex-col flex-1">
                 <p class="card__tag">{spData[i].tag}</p>
                 <h3 class="card__title">{spData[i].title}</h3>
                 <p class="card__text">{spData[i].text}</p>
-                <a href={lp("/services")} class="btn btn-outline">
+                <a href={lp("/services")} class="text-center mt-auto btn btn-outline">
                   {t("home.servicesLearnMore")}
                 </a>
               </div>
             </div>
           ))
         }
-      </div>
-      <div style="text-align:center;margin-top:40px;" class="reveal">
-        <a href={lp("/services")} class="btn btn-primary"
-          >{t("home.servicesViewAll")}</a
-        >
       </div>
     </div>
   </section>
@@ -635,6 +640,57 @@ const heroSlides = [
 </BaseLayout>
 
 <style>
+  .services-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: clamp(36px, 5vw, 64px);
+  }
+
+  .services-header-main {
+    margin-bottom: 0;
+  }
+
+  .services-header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    padding-inline: 22px;
+  }
+
+  .services-header-cta svg {
+    width: 40px;
+    height: 12px;
+    overflow: visible;
+  }
+
+  .services-header-cta svg path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .28s cubic-bezier(.2, .65, .2, 1);
+  }
+
+  .services-header-cta svg path:first-child {
+    transform-origin: left center;
+  }
+
+  .services-header-cta svg path:last-child {
+    transform-origin: center;
+  }
+
+  .services-header-cta:hover svg path:first-child {
+    transform: scaleX(1.08);
+  }
+
+  .services-header-cta:hover svg path:last-child {
+    transform: translateX(2px);
+  }
+
   .lotus-mandala {
     position: absolute;
     top: 50%;
@@ -659,6 +715,13 @@ const heroSlides = [
   @media (prefers-reduced-motion: reduce) {
     .lotus-mandala__svg {
       animation: none;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .services-header-row {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>

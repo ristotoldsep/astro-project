@@ -1,12 +1,23 @@
 ---
+import { useTranslations, detectLocale } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang: langProp } = Astro.props;
+const { lang: urlLang } = detectLocale(Astro.url.pathname);
+const lang: Locale = langProp ?? urlLang;
+const t = useTranslations(lang);
 ---
 <section class="insta-strip">
-  <span class="label" style="margin-bottom:16px;">For daily tips follow</span>
+  <span class="label" style="margin-bottom:16px;">{t('footer.instaStripLabel')}</span>
   <a
     href="https://instagram.com/qinutritionist"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Follow @qinutritionist on Instagram"
+    aria-label={t('footer.instagramLabel') as string}
   >
     @qinutritionist
   </a>

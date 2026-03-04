@@ -425,6 +425,14 @@ p {
                 color: var(--terracotta);
             }
         }
+
+        .btn {
+            padding: 12px 36px;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            font-family: var(--font-body);
+            font-weight: 300;
+        }
     }
 }
 
@@ -580,7 +588,7 @@ p {
 
     &__content {
         text-align: center;
-        max-width: 740px;
+        max-width: 800px;
         position: relative;
         z-index: 2;
         color: var(--cream);

@@ -3,11 +3,11 @@
 
   "nav": {
     "home": "Inicio",
-    "about": "Sobre Mí",
+    "about": "Sobre mí",
     "events": "Eventos y Retiros",
     "services": "Servicios",
-    "consultation": "Consulta Gratuita",
-    "bookFreeCall": "Reservar Llamada Gratuita",
+    "consultation": "Consulta",
+    "bookFreeCall": "Reservar llamada",
     "announcement": "✦ EMPODERANDO A LAS MUJERES A TRAVÉS DE LA SANACIÓN HOLÍSTICA ✦",
     "toggleMenu": "Abrir menú"
   },
@@ -26,6 +26,7 @@
     "contactHeading": "Contacto",
     "bottomRight": "Bienestar Holístico · Tallin y Barcelona",
     "socialLabel": "Redes sociales",
+    "instaStripLabel": "Para consejos diarios, sigue",
     "footerLabel": "Pie de página",
     "facebookLabel": "Sigue a QiNutritionist en Facebook",
     "instagramLabel": "Sigue a QiNutritionist en Instagram",
@@ -35,9 +36,9 @@
   "home": {
     "metaTitle": "QiNutritionist – Bienestar Holístico",
     "metaDescription": "Anett ayuda a las mujeres a recuperar su salud, equilibrar sus hormonas y optimizar su fertilidad mediante nutrición holística, MTC y biohacking.",
-    "heroEyebrow": "Fertilidad Holística y Salud Intestinal",
-    "heroSubtitle": "Donde la Ciencia se Encuentra con la Tradición",
-    "heroCta1": "Reservar Consulta Gratuita",
+    "heroEyebrow": "Fertilidad holística y salud intestinal",
+    "heroSubtitle": "Donde la ciencia se encuentra con la tradición",
+    "heroCta1": "Reservar consulta gratuita",
     "heroCta2": "Conocer a Anett",
     "heroScroll": "Desplazarse",
     "welcomeLabel": "Bienvenida, querida",
@@ -45,11 +46,11 @@
     "welcomeH2b": "Resplandor",
     "welcomeP1": "Soy Anett y estoy aquí para ayudarte a recuperar tu salud, equilibrar tus hormonas y convertirte en tu versión más radiante y llena de energía.",
     "welcomeP2": "Me apasiona guiar a las mujeres hacia un bienestar duradero y la fertilidad a través de un enfoque personalizado que combina la ciencia moderna con la sanación holística probada a lo largo del tiempo.",
-    "welcomeP3": "Si te sientes perdida en tu viaje de salud, sabe que no estás sola — y hay un camino a seguir. El camino de cada mujer es único y juntas crearemos un plan que realmente funcione para ti.",
+    "welcomeP3": "Si te sientes perdida en tu proceso de salud, sabes que no estás sola — y sí hay un camino. Cada mujer tiene una historia única, y juntas crearemos un plan que sí funcione para ti.",
     "welcomeP4": "Tu salud es tu poder. ¿Lista para brillar desde adentro hacia afuera?",
-    "welcomeCta": "Reservar Consulta Gratuita",
+    "welcomeCta": "Reservar consulta gratuita",
     "welcomeTag": "Sanación Holística",
-    "pillarsLabel": "Mi Enfoque",
+    "pillarsLabel": "Mi enfoque",
     "pillarsH2a": "Arraigada en el",
     "pillarsH2b": "Equilibrio",
     "pillarsSubtitle": "Tres pilares que guían el viaje de transformación de cada cliente.",
@@ -77,15 +78,15 @@
     "storyH2a": "La Sanación es",
     "storyH2b": "Posible",
     "storyP1": "Sé de primera mano lo frustrante que puede ser lidiar con desequilibrios hormonales, problemas intestinales o dificultades de fertilidad — y también que la verdadera sanación es posible. Mi enfoque combina nutrición, biohacking y medicina oriental para que te sientas increíble, por dentro y por fuera.",
-    "storyP2": "Ya sea que busques coaching personalizado, un reset profundo o un retiro para recargar energías, estoy aquí. ¡Volvamos juntas al equilibrio!",
+    "storyP2": "Si buscas acompañamiento personalizado, un reset profundo o un retiro para recargar energía, estoy aquí. Volvamos juntas al equilibrio.",
     "storyP3": "Explora mi coaching personalizado, programas estructurados y retiros de bienestar para encontrar lo que más se adapta a ti.",
-    "storyCta": "Leer Mi Historia Completa",
-    "servicesLabel": "Cómo Puedo Ayudarte",
+    "storyCta": "Leer mi historia completa",
+    "servicesLabel": "Cómo puedo ayudarte",
     "servicesH2a": "Mis",
     "servicesH2b": "Servicios",
     "servicesSubtitle": "Sesiones 1:1 personalizadas y programas estructurados diseñados para restaurar el equilibrio desde adentro.",
-    "servicesLearnMore": "Saber Más",
-    "servicesViewAll": "Ver Todos los Servicios",
+    "servicesLearnMore": "Más información",
+    "servicesViewAll": "Ver todos los servicios",
     "servicesPreview": [
       {
         "tag": "60 min · 90€–110€",
@@ -103,34 +104,34 @@
         "text": "Estrategias para mejorar la energía, la digestión y la salud metabólica usando hongos funcionales, adaptógenos y suplementos."
       }
     ],
-    "quoteText": "Tu salud es tu poder. Juntas crearemos un plan que realmente funcione para ti — cuerpo, mente y alma.",
+    "quoteText": "Tu salud es tu poder. Juntas crearemos un plan que funcione de verdad para ti: cuerpo, mente y alma.",
     "quoteAttr": "— Anett, QiNutritionist",
-    "parallaxLabel": "Próximos",
+    "parallaxLabel": "Próximamente",
     "parallaxH2a": "Retiros y",
     "parallaxH2b": "Eventos",
     "parallaxText": "Retiro de Bienestar de Lujo de 3 Días · Barcelona · Taller de Repostería Saludable · Tallin",
     "parallaxCta": "Explorar Eventos",
-    "guideLabel": "Recurso Gratuito",
-    "guideH2": "¡Obtén Mi Guía Gratuita sobre Fertilidad y Salud Intestinal!",
+    "guideLabel": "Recurso gratuito",
+    "guideH2": "¡Consigue mi guía gratuita sobre fertilidad y salud intestinal!",
     "guideText": "Estrategias prácticas y respaldadas por la ciencia que puedes empezar hoy — completamente gratis.",
-    "guideCta": "Descargar Guía Gratuita"
+    "guideCta": "Descargar guía gratuita"
   },
 
   "about": {
-    "metaTitle": "Sobre Mí – QiNutritionist",
+    "metaTitle": "Sobre mí – QiNutritionist",
     "metaDescription": "Conoce el viaje de Anett desde sus propias dificultades de salud hasta convertirse en nutricionista holística y experta en bienestar femenino.",
     "bannerLabel": "Mi Historia",
     "bannerHeading": "Sobre",
     "bannerHeadingItalic": "Mí",
-    "bioLabel": "Mi Filosofía",
+    "bioLabel": "Mi filosofía",
     "bioH2a": "Del Sufrimiento a la",
     "bioH2b": "Transformación",
     "bioP1": "Mi camino hacia la salud femenina, las hormonas y la fertilidad comenzó con mis propias dificultades. Siempre soñé con ser madre, pero cuando me dijeron que mi fertilidad estaba irreparablemente dañada, me negué a aceptar eso como mi realidad. En cambio, me sumergí en la nutrición, el biohacking y la Medicina Tradicional China (MTC) para sanar mi cuerpo desde adentro. A través de un enfoque holístico pero respaldado por la ciencia, restauré mi ciclo, sané mi intestino y recuperé mi bienestar.",
     "bioP2": "Esta experiencia encendió mi pasión por tender un puente entre la medicina oriental y occidental para ayudar a otras mujeres. Estudié Ciencias de la Nutrición en Stanford y exploré el Ayurveda, la fitoterapia y la medicina funcional, aprendiendo que el verdadero bienestar no se trata de soluciones rápidas, sino de entender el cuerpo como un todo.",
     "bioP3": "Hoy ayudo a las mujeres a superar desequilibrios hormonales, problemas intestinales y desafíos de fertilidad con un enfoque de causa raíz que combina la ciencia moderna con la sanación holística probada a lo largo del tiempo.",
-    "bioCta": "Trabajar Conmigo",
+    "bioCta": "Trabajar conmigo",
     "bioTag": "Anett, QiNutritionist",
-    "pillarsLabel": "Lo Que Defiendo",
+    "pillarsLabel": "Lo que defiendo",
     "pillarsH2a": "Mis Tres",
     "pillarsH2b": "Pilares",
     "pillars": [
@@ -153,33 +154,33 @@
         "text": "Al integrar la Medicina Tradicional China, el biohacking y la nutrición basada en evidencias, ayudo a las mujeres a sanar su intestino, regular su ciclo y optimizar su fertilidad. Mi objetivo es empoderarte con el conocimiento y las herramientas para sentirte llena de energía, segura y en armonía hormonal."
       }
     ],
-    "workLabel": "Trabajemos Juntas",
+    "workLabel": "Trabajemos juntas",
     "workH2a": "De Vuelta al",
     "workH2b": "Equilibrio",
     "workP1": "Ya sea que estés lidiando con problemas intestinales, desequilibrios hormonales, desafíos de fertilidad, o simplemente quieras sentirte más vibrante y llena de energía, estoy aquí para caminar a tu lado.",
     "workP2": "Ofrezco sesiones 1:1 y programas estructurados adaptados a tus necesidades únicas, así como retiros de bienestar y talleres inmersivos donde puedes sanar en comunidad con otras mujeres.",
     "workP3": "Cada plan que creo es profundamente personalizado — porque tu historia, tu cuerpo y tus objetivos son completamente propios.",
-    "workCta1": "Ver Servicios",
-    "workCta2": "Próximos Eventos",
+    "workCta1": "Ver servicios",
+    "workCta2": "Próximos eventos",
     "quoteText": "El verdadero bienestar no se trata de soluciones rápidas — sino de entender tu cuerpo como un todo y darle exactamente lo que necesita para prosperar.",
     "quoteAttr": "— Anett",
     "parallaxLabel": "¿Lista?",
     "parallaxH2a": "Comienza tu",
     "parallaxH2b": "Transformación",
     "parallaxText": "Reserva tu consulta gratuita y creemos juntas un plan que realmente funcione para ti.",
-    "parallaxCta": "Reservar Consulta Gratuita"
+    "parallaxCta": "Reservar consulta gratuita"
   },
 
   "services": {
     "metaTitle": "Servicios – QiNutritionist",
     "metaDescription": "Sesiones de nutrición 1:1 personalizadas y programas de transformación de 3 meses para la salud intestinal, el equilibrio hormonal y la fertilidad.",
-    "bannerLabel": "Cuidándote de Vuelta a la Salud",
+    "bannerLabel": "Cuidándote de vuelta a la salud",
     "bannerHeadingItalic": "Servicios",
-    "introLabel": "Sesiones Individuales 1:1",
+    "introLabel": "Sesiones individuales 1:1",
     "introH2a": "Sanación",
     "introH2b": "Personalizada",
     "introText": "¿Estás lista para llevar tu salud y felicidad al siguiente nivel? Juntas elevaremos tu estado de ánimo, energía, equilibrio hormonal y te haremos aún más radiante.",
-    "signUp": "Inscribirse",
+    "signUp": "Inscribirme",
     "services": [
       {
         "tag": "Sesión de 60 min",
@@ -212,11 +213,11 @@
         ]
       }
     ],
-    "programsLabel": "Programas Estructurados",
+    "programsLabel": "Programas estructurados",
     "programsH2a": "Transformación Profunda de",
     "programsH2b": "3 Meses",
     "programsSubtitle": "Programas integrales que te guían a través de un reseteo completo hormonal e intestinal a lo largo de 12 semanas.",
-    "bookDiscovery": "Reservar una Llamada de Descubrimiento Gratuita",
+    "bookDiscovery": "Reservar una llamada gratuita de descubrimiento",
     "programs": [
       {
         "tag": "Programa de 12 Semanas",
@@ -249,7 +250,7 @@
     "parallaxH2a": "¿No sabes por dónde",
     "parallaxH2b": "empezar?",
     "parallaxText": "Reserva una llamada de descubrimiento gratuita de 20 minutos y encontraremos juntas el camino correcto.",
-    "parallaxCta": "Reservar Consulta Gratuita"
+    "parallaxCta": "Reservar consulta gratuita"
   },
 
   "events": {
@@ -258,7 +259,7 @@
     "bannerLabel": "Optimizando la Salud, el Bienestar y el Rendimiento Femenino",
     "bannerH2a": "Eventos y",
     "bannerH2b": "Retiros",
-    "introLabel": "Experiencias Inmersivas",
+    "introLabel": "Experiencias inmersivas",
     "introH2a": "Desacelera y",
     "introH2b": "Reconéctate",
     "introText": "Aléjate del ruido de la vida cotidiana y sumérgete en experiencias transformadoras diseñadas para nutrir tu cuerpo, calmar tu mente y reconectarte con tu esencia femenina.",
@@ -276,7 +277,7 @@
       "Prácticas de Manifestación y Mindfulness – Alinéate con tus deseos y conviértete en tu versión más radiante.",
       "Tiempo de Spa y Sauna – Indúlgete en una relajación profunda y libera el estrés en un ambiente tranquilo."
     ],
-    "barcelonaCta": "Reservar Tu Lugar",
+    "barcelonaCta": "Reservar tu plaza",
     "barcelonaMediaTag": "Barcelona, Cataluña",
     "quoteText": "Este retiro es tu invitación a desacelerar, reconectarte contigo misma y abrirte a una sanación profunda en un espacio de hermandad y naturaleza.",
     "quoteAttr": "— Anett",
@@ -298,17 +299,17 @@
     "parallaxH2a": "Conectemos",
     "parallaxH2b": "",
     "parallaxText": "Contáctame directamente o reserva una llamada gratuita para hablar sobre qué experiencia es la adecuada para ti.",
-    "parallaxCta1": "Reservar Llamada Gratuita",
+    "parallaxCta1": "Reservar llamada gratuita",
     "parallaxCta2": "Enviar Email"
   },
 
   "consultation": {
-    "metaTitle": "Consulta Gratuita – QiNutritionist",
+    "metaTitle": "Consulta gratuita – QiNutritionist",
     "metaDescription": "Reserva tu llamada de descubrimiento gratuita de 20 minutos con Anett y da el primer paso hacia la sanación de tu intestino, el equilibrio de tus hormonas y la reconexión con tu cuerpo.",
     "bannerLabel": "Sin Compromiso",
     "bannerHeading": "Consulta",
     "bannerHeadingItalic": "Gratuita",
-    "bannerSubtitle": "Comencemos tu transformación juntas",
+    "bannerSubtitle": "Empecemos juntas tu transformación",
     "contactLabel": "Contacto",
     "contactH2a": "Hablemos",
     "contactH2b": "",
@@ -319,22 +320,22 @@
       { "icon": "📍", "label": "Ubicaciones", "type": "text", "lines": ["Tallin, Estonia y Barcelona, España"], "note": "Sesiones también disponibles online en todo el mundo" },
       { "icon": "📸", "label": "Instagram", "type": "link", "href": "https://www.instagram.com/qinutritionist/", "text": "@qinutritionist", "external": true }
     ],
-    "formHeading": "Reserva Tu<br /><span class=\"serif-italic\">Llamada de Descubrimiento Gratuita</span>",
+    "formHeading": "Reserva tu<br /><span class=\"serif-italic\">llamada gratuita de descubrimiento</span>",
     "formLabel": "Enviar Mensaje",
     "formPrivacy": "Tu información es privada y nunca se comparte con terceros.",
-    "processLabel": "El Proceso",
+    "processLabel": "El proceso",
     "processH2a": "Qué",
     "processH2b": "Esperar",
-    "processSubtitle": "Una conversación gratuita y sin presión para explorar qué te detiene y cómo puedo ayudarte.",
+    "processSubtitle": "Una conversación gratuita y sin presión para entender qué te frena y cómo puedo ayudarte.",
     "steps": [
-      { "num": "01", "title": "Tú Te Comunicas", "text": "Completa el breve formulario o envíame un mensaje directo. Cuéntame un poco sobre lo que estás experimentando y lo que esperas cambiar." },
-      { "num": "02", "title": "Llamada de Descubrimiento de 20 Min", "text": "Tenemos una relajada llamada gratuita de 20 minutos donde nos conocemos, discutimos tus objetivos de salud y respondo cualquier pregunta que tengas sobre mi enfoque." },
-      { "num": "03", "title": "Tu Plan Personalizado", "text": "Juntas elegimos el programa o el tipo de sesión que más te convenga, y te vas con un primer paso claro hacia sentirte lo mejor posible." }
+      { "num": "01", "title": "Tú das el primer paso", "text": "Completa el formulario o envíame un mensaje directo. Cuéntame brevemente qué estás viviendo y qué te gustaría cambiar." },
+      { "num": "02", "title": "Llamada de 20 minutos", "text": "Tenemos una llamada gratuita y cercana para conocernos, hablar de tus objetivos de salud y resolver tus dudas sobre mi enfoque." },
+      { "num": "03", "title": "Tu plan personalizado", "text": "Juntas elegimos el programa o tipo de sesión más adecuado para ti y te llevas un primer paso claro para empezar." }
     ],
     "commitmentLabel": "El Compromiso de Anett",
     "commitmentH2a": "No Estás",
     "commitmentH2b": "Sola",
-    "commitmentText": "El camino de cada mujer es único — y también lo es el camino hacia la sanación. Estoy comprometida a encontrarme contigo exactamente donde estás, con compasión, expertise y un plan personalizado que verdaderamente honre tu cuerpo y tu vida.",
+    "commitmentText": "El camino de cada mujer es único — y también lo es el de la sanación. Estoy comprometida a acompañarte justo donde estás, con compasión, experiencia y un plan personalizado que honre tu cuerpo y tu vida.",
     "formInterests": [
       "Salud Intestinal y Fertilidad",
       "Coaching Nutricional Holístico",
@@ -343,21 +344,21 @@
       "Programa de Fertilidad de 3 Meses",
       "Retiro en Barcelona",
       "Taller de Repostería en Tallin",
-      "Otro / Todavía No Estoy Segura"
+      "Otro / Aún no estoy segura"
     ]
   },
 
   "form": {
     "namePlaceholder": "María García",
-    "nameLabel": "Nombre Completo",
+    "nameLabel": "Nombre completo",
     "emailPlaceholder": "maria@ejemplo.com",
-    "emailLabel": "Dirección de Email",
+    "emailLabel": "Correo electrónico",
     "phonePlaceholder": "+34 …",
     "phoneLabel": "Teléfono",
     "phoneOptional": "(opcional)",
     "interestLabel": "Me interesa…",
     "interestPlaceholder": "Elegir un tema",
-    "messageLabel": "Tu Mensaje",
+    "messageLabel": "Tu mensaje",
     "messagePlaceholder": "¿Qué esperas lograr? ¿Qué desafíos estás enfrentando?",
     "messageHint": "Opcional, pero cuanto más compartas, mejor preparadas estaremos.",
     "submitBtn": "Enviar Mensaje",
