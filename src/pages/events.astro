@@ -1,0 +1,242 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import Marquee from "../components/Marquee.astro";
+import { Image } from 'astro:assets';
+import heroCrystalweed from '../assets/images/hero-crystalweed.avif';
+import eventsBarcelona from '../assets/images/events-barcelona.avif';
+---
+
+<BaseLayout
+  title="Events & Retreats – QiNutritionist"
+  description="Immersive wellness retreats and workshops with Anett — from luxury retreats in Barcelona to healthy baking workshops in Tallinn."
+  ogImage="/images/hero-crystalweed.avif"
+>
+  <PageBanner
+    label="Optimizing Female Health, Wellness & Performance"
+    heading='Events & <span class="serif-italic">Retreats</span>'
+    bgImage="/images/hero-crystalweed.avif"
+  />
+
+  <Marquee bgColor="white" />
+
+  <!-- ══ INTRO ══ -->
+  <section class="section section--linen">
+    <div class="container">
+      <div class="container--narrow text-center reveal">
+        <span class="label">Immersive Experiences</span>
+        <h2 style="margin-top:12px;">
+          Slow Down &amp; <span class="serif-italic">Reconnect</span>
+        </h2>
+        <p>
+          Step away from the noise of daily life and immerse yourself in
+          transformational experiences designed to nourish your body, calm your
+          mind, and reconnect you to your feminine essence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BARCELONA RETREAT ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="split split--reverse">
+        <div class="split__content reveal-right">
+          <span class="badge badge-green" style="margin-bottom:16px;"
+            >Retreat · Barcelona</span
+          >
+          <span class="label second_label" style="display:inline-block;margin-left:8px;"
+            >3-Day Weekend</span
+          >
+          <h2>
+            Luxury Wellness Retreat <span class="serif-italic"
+              >near Barcelona, Spain</span>
+          </h2>
+          <p style="margin-top:16px;color:var(--taupe);">
+            Escape the noise of daily life and immerse yourself in a 3-day
+            transformational retreat designed to nourish your body, balance your
+            hormones, and awaken your feminine energy.
+          </p>
+          <p style="margin-top:12px;color:var(--taupe);">
+            Just 45 minutes from Barcelona, in a breathtaking luxury villa
+            surrounded by the serene nature of Catalonia, this retreat is your
+            invitation to slow down, reconnect with yourself, and embrace deep
+            healing.
+          </p>
+          <ul class="event-feature-list">
+            <li>
+              <strong>Daily Yoga &amp; Pilates</strong> – Move with intention, awaken
+              your body, and release stored tension.
+            </li>
+            <li>
+              <strong>Cacao Ceremony &amp; Feminine Healing</strong> – Tap into your
+              intuition and embrace the power of sisterhood.
+            </li>
+            <li>
+              <strong>Holistic Nutrition for Hormonal Balance</strong> – Enjoy nourishing,
+              hormone-supporting meals crafted to fuel your vitality and enhance your
+              well-being.
+            </li>
+            <li>
+              <strong>Wellness &amp; Biohacking Workshops</strong> – Learn how to
+              optimize your health with practical tools for longevity, energy, and
+              balance.
+            </li>
+            <li>
+              <strong>Manifestation &amp; Mindfulness Practices</strong> – Align with
+              your desires, create space for abundance, and step into your most radiant
+              self.
+            </li>
+            <li>
+              <strong>Spa &amp; Sauna Time</strong> – Indulge in deep relaxation and
+              let go of stress in a tranquil setting.
+            </li>
+          </ul>
+          <a href="/consultation" class="btn btn-primary">Book Your Spot</a>
+        </div>
+        <div class="split__media reveal-left">
+          <Image
+            src={heroCrystalweed}
+            alt="Luxury Wellness Retreat Barcelona"
+            loading="lazy"
+          />
+          <div class="split__tag">Barcelona, Catalonia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUOTE BAND ══ -->
+  <section class="section section--terra">
+    <div class="container">
+      <div class="quote-block reveal">
+        <div class="quote-block__mark" style="color:rgba(253,250,246,.3);">
+          "
+        </div>
+        <p class="quote-block__text" style="color:var(--cream);">
+          This retreat is your invitation to slow down, reconnect with yourself,
+          and embrace deep healing in a space of sisterhood and nature.
+        </p>
+        <p class="quote-block__attr" style="color:rgba(253,250,246,.75);">
+          — Anett
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TALLINN WORKSHOP ══ -->
+  <section class="section section--sand">
+    <div class="container">
+      <div class="split">
+        <div class="split__media reveal-left">
+          <Image
+            src={eventsBarcelona}
+            alt="Healthy Baking Workshop Tallinn"
+            loading="lazy"
+          />
+          <div class="split__tag">Tallinn, Estonia</div>
+        </div>
+        <div class="split__content reveal-right">
+          <span class="badge badge-terra" style="margin-bottom:16px;"
+            >Workshop · Tallinn</span
+          >
+          <span class="label" style="display:block;margin-bottom:8px;"
+            >Hands-On Experience</span
+          >
+          <h2>
+            Healthy Baking<br /><span class="serif-italic">Workshop</span>
+          </h2>
+          <p style="margin-top:16px;color:var(--taupe);">
+            Join Anett for a hands-on baking experience where delicious meets
+            nutritious. Learn to create gut-friendly, hormone-supporting treats
+            that taste as good as they make you feel.
+          </p>
+          <ul class="event-feature-list">
+            <li>Simple, healthy recipes with hormone-supportive ingredients</li>
+            <li>Gut-friendly swaps for traditional baking staples</li>
+            <li>Hands-on baking and tasting in a cozy setting</li>
+          </ul>
+          <p>
+            Perfect for wellness lovers and foodies who want to bake without the
+            bloat.
+          </p>
+          <p
+            style="color:var(--terracotta);font-family:var(--font-display);font-style:italic;margin-bottom:24px;"
+          >
+            Limited spots available — details coming soon!
+          </p>
+          <a href="/consultation" class="btn btn-outline">Get Notified</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PARALLAX CTA ══ -->
+  <div class="parallax-band">
+    <div
+      class="parallax-band__bg"
+      style="background-image:url('/images/hero-heather.avif');"
+    >
+    </div>
+    <div class="parallax-band__overlay"></div>
+    <div class="parallax-band__content reveal">
+      <span class="label" style="color:rgba(253,250,246,.7);">Questions?</span>
+      <h2>Let's <span class="serif-italic">Connect</span></h2>
+      <p style="margin-bottom:28px;opacity:.85;">
+        Reach out directly or book a free call to talk about which experience is
+        right for you.
+      </p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/consultation" class="btn btn-white">Book Free Call</a>
+        <a
+          href="mailto:randveeyoga@gmail.com"
+          class="btn btn-outline"
+          style="border-color:rgba(253,250,246,.6);color:var(--cream);"
+          >Send Email</a
+        >
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .badge-green {
+    background: var(--sage-l);
+    color: #2d4d30;
+  }
+  .badge-terra {
+    background: var(--sand);
+    color: var(--terracotta-d);
+  }
+  .event-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .event-feature-list li {
+    padding-left: 22px;
+    position: relative;
+    color: var(--taupe);
+    font-size: 0.95rem;
+  }
+  .event-feature-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-size: 0.7rem;
+    top: 3px;
+  }
+</style>

@@ -1,0 +1,124 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Marquee from "../components/Marquee.astro";
+import InstaStrip from "../components/InstaStrip.astro";
+import "../styles/global.scss";
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Path to the OG share image (relative to domain root). Defaults to hero-crystalweed. */
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "QiNutritionist – Holistic wellness rooted in ancient wisdom and modern science. Nutritional therapy, gut health, hormone balance & more.",
+  ogImage = "/images/hero-crystalweed.avif",
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL("https://qinutritionist.com");
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageAbsolute = new URL(ogImage, siteUrl).href;
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      "url": String(siteUrl),
+      "name": "QiNutritionist",
+      "description": "Holistic fertility, gut health, and hormonal balance — where science meets tradition.",
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}#person`,
+      "name": "Anett Randvee",
+      "jobTitle": "Holistic Nutritionist",
+      "description": "Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking.",
+      "url": String(siteUrl),
+      "sameAs": [
+        "https://www.instagram.com/qinutritionist/",
+        "https://www.facebook.com/randveeyoga/"
+      ],
+      "knowsAbout": [
+        "Holistic Nutrition", "Gut Health", "Hormone Balance",
+        "Fertility Support", "Traditional Chinese Medicine", "Biohacking"
+      ]
+    }
+  ]
+});
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/png" href="/qinutritionist_favicon.png" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QiNutritionist" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbsolute} />
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={jsonLd} />
+    <!-- Google Fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <InstaStrip />
+    <Marquee variant="footer" />
+    <Footer />
+
+    <!-- Shared scroll-reveal observer -->
+    <script>
+      const revealEls = document.querySelectorAll(
+        ".reveal, .reveal-scale, .reveal-left, .reveal-right",
+      );
+
+      if (revealEls.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+---
+interface Props {
+  variant?: 'footer';
+  /** CSS color value to override the strip background, e.g. "white" or "#EDE0D4" or "var(--sand)" */
+  bgColor?: string;
+}
+const { variant, bgColor } = Astro.props;
+
+const items = [
+  'Holistic Healing', 'Gut Health', 'Hormone Balance',
+  'Traditional Chinese Medicine', 'Biohacking', 'Women\'s Wellness',
+  'Fertility Support', 'Root Cause Healing', 'Science Meets Tradition',
+  'Ayurveda', 'Functional Medicine', 'Radiant Health',
+];
+---
+<div class:list={['marquee-strip', variant]} style={bgColor ? `--marquee-bg:${bgColor}` : undefined}>
+  <div class="marquee-track" aria-hidden="true">
+    {[...items, ...items].map((item, i) => (
+      <>
+        <span class="marquee-item">{item}</span>
+        <span class="marquee-sep"></span>
+      </>
+    ))}
+  </div>
+</div>

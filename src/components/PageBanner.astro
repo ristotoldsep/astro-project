@@ -1,0 +1,24 @@
+---
+interface Props {
+  label: string;
+  heading: string;
+  bgImage: string;
+  paddingStyle?: string;
+  /** CSS background value for the overlay. Defaults to a light-to-transparent gradient. */
+  overlay?: string;
+}
+const { label, heading, bgImage, paddingStyle, overlay } = Astro.props;
+
+const overlayStyle = overlay
+  ? `background:${overlay}`
+  : 'background:linear-gradient(to bottom,rgba(74,55,40,.45),rgba(253,250,246,0) 80%)';
+---
+<section class="page-banner" style={paddingStyle}>
+  <div class="page-banner__bg" style={`background-image:url('${bgImage}');`}></div>
+  <div class="page-banner__overlay" style={overlayStyle}></div>
+  <div class="container page-banner__content reveal">
+    <span class="label white">{label}</span>
+    <h1 set:html={heading} />
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,245 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import Marquee from "../components/Marquee.astro";
+import { Image } from 'astro:assets';
+import serviceGut from '../assets/images/service-gut.avif';
+import serviceNutrition from '../assets/images/service-nutrition.avif';
+import serviceBiohacking from '../assets/images/service-biohacking.avif';
+---
+
+<BaseLayout
+  title="Services – QiNutritionist"
+  description="Personalized 1:1 nutrition sessions and 3-month transformation programs for gut health, hormone balance, and fertility."
+  ogImage="/images/service-biohacking.avif"
+>
+  <PageBanner
+    label="Nursing You Back to Health"
+    heading='<span class="serif-italic" style="color: white;">Services</span>'
+    bgImage="/images/service-biohacking.avif"
+  />
+
+  <Marquee bgColor="white" />
+
+  <!-- ══ INTRO ══ -->
+  <section class="section section--linen">
+    <div class="container">
+      <div class="container--narrow text-center reveal">
+        <span class="label">1:1 Individual Sessions</span>
+        <h2 style="margin-top:12px;">Personalized <span class="serif-italic">Healing</span></h2>
+        <p style="margin-top:16px;color:var(--taupe);font-size:1.05rem;">Are you ready to lift your health and
+          happiness to the next level? Together we will skyrocket your mood, energy, hormonal balance and make
+          you even more radiant!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICE CARDS ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="cards cards--3">
+        <!-- Card 1 -->
+        <div class="card reveal delay-1">
+          <div class="card__img">
+            <Image src={serviceGut} alt="Gut &amp; Fertility session" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <p class="card__tag">60 min session</p>
+            <h3 class="card__title">Holistic Gut &amp; Fertility</h3>
+            <p class="card__price">90€ – 110€</p>
+            <ul class="card__features">
+              <li>Deep dive into your gut health, hormone balance &amp; fertility concerns</li>
+              <li>Personalized nutrition, herbal &amp; lifestyle recommendations</li>
+              <li>Functional testing guidance</li>
+            </ul>
+            <a href="/consultation" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card reveal delay-2">
+          <div class="card__img">
+            <Image src={serviceNutrition} alt="Nutrition Coaching" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <p class="card__tag">60 min session</p>
+            <h3 class="card__title">Holistic Nutrition Coaching</h3>
+            <p class="card__price">70€ – 90€</p>
+            <ul class="card__features">
+              <li>1:1 personalized nutritional guidance</li>
+              <li>Diet plan for gut healing &amp; hormone balance</li>
+              <li>Food &amp; supplement strategies for fertility and overall health</li>
+            </ul>
+            <a href="/consultation" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card reveal delay-3">
+          <div class="card__img">
+            <Image src={serviceBiohacking} alt="Biohacking &amp; Longevity" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <p class="card__tag">60 min session</p>
+            <h3 class="card__title">Biohacking &amp; Longevity</h3>
+            <p class="card__price">70€ – 90€</p>
+            <ul class="card__features">
+              <li>Strategies to improve energy, digestion &amp; metabolic health</li>
+              <li>Functional mushrooms, adaptogens &amp; supplements for longevity</li>
+              <li>Personalized biohacking tools for optimal well-being</li>
+            </ul>
+            <a href="/consultation" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3-MONTH PROGRAMS ══ -->
+  <section class="section section--sand">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">Structured Programs</span>
+        <h2>3-Month Deep <span class="serif-italic">Transformation</span></h2>
+        <p>Comprehensive programs that guide you through a complete hormonal and gut reset over 12 weeks.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px;">
+        <!-- Program 1 -->
+        <div class="pkg-card reveal">
+          <div class="pkg-card__img">
+            <Image src={serviceNutrition} alt="Gut Health Optimization" loading="lazy" />
+          </div>
+          <div class="pkg-card__body">
+            <p class="label" style="margin-bottom:10px;">12-Week Program</p>
+            <h3>Gut Health <span class="serif-italic">Optimization</span></h3>
+            <p>A holistic 3-month journey to heal your gut, reduce inflammation, and restore your body's
+              natural balance through nutrition, TCM, and lifestyle practices.</p>
+            <p>Designed for women who want to:</p>
+            <ul class="card__features">
+              <li>Heal bloating, constipation &amp; gut inflammation</li>
+              <li>Reduce stress &amp; calm the nervous system for hormonal balance</li>
+              <li>Support liver detox &amp; improve digestion with herbs &amp; TCM nutrition</li>
+              <li>Feel energized, focused &amp; hormonally aligned</li>
+            </ul>
+            <a href="/consultation" class="btn btn-primary">Book a Free Discovery Call</a>
+          </div>
+        </div>
+        <!-- Program 2 -->
+        <div class="pkg-card reveal">
+          <div class="pkg-card__img">
+            <Image src={serviceGut} alt="Fertility &amp; Hormone Balance" loading="lazy" />
+          </div>
+          <div class="pkg-card__body">
+            <p class="label" style="margin-bottom:10px;">12-Week Program</p>
+            <h3>Fertility &amp; Hormone <span class="serif-italic">Balance</span></h3>
+            <p>Restore harmony in your body through ancient, natural healing methods combined with modern
+              functional nutrition to support your unique fertility journey.</p>
+            <p>
+              Designed for women who want to:
+            </p>
+            <ul class="card__features">
+              <li>Restore harmony in their body through ancient, natural healing methods</li>
+              <li>Regulate periods &amp; balance hormones naturally</li>
+              <li>Deepen their connection to their cycle and body’s natural rhythms</li>
+              <li>Use holistic, non-invasive methods to enhance fertility & vitality</li>
+            </ul>
+            <a href="/consultation" class="btn btn-primary">Book a Free Discovery Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PARALLAX CTA ══ -->
+  <div class="parallax-band">
+    <div class="parallax-band__bg" style="background-image:url('/images/hero-heather.avif');"></div>
+    <div class="parallax-band__overlay"></div>
+    <div class="parallax-band__content reveal">
+      <span class="label" style="color:rgba(253,250,246,.7);">Get Started</span>
+      <h2>Not sure where to <span class="serif-italic">begin?</span></h2>
+      <p style="margin-bottom:28px;opacity:.85;">Book a free 20-minute discovery call and we'll find the
+        right path together.</p>
+      <a href="/consultation" class="btn btn-white">Book Free Consultation</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .pkg-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .pkg-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .pkg-card__img {
+    overflow: hidden;
+    min-height: 280px;
+  }
+
+  .pkg-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+  }
+
+  .pkg-card:hover .pkg-card__img img {
+    transform: scale(1.06);
+  }
+
+  .pkg-card__body {
+    padding: 44px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .pkg-card__body h3 {
+    font-size: 1.5rem;
+    margin: 0 0 16px;
+    color: var(--brown);
+  }
+
+  .pkg-card__body p {
+    color: var(--brown);
+    opacity: .8;
+    font-size: .97rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .pkg-card__body .card__features {
+    margin-bottom: 24px;
+  }
+
+  .pkg-card__body .btn {
+    align-self: flex-start;
+  }
+
+  @media (max-width: 720px) {
+    .pkg-card {
+      grid-template-columns: 1fr;
+    }
+
+    .pkg-card__img {
+      min-height: 220px;
+      height: 270px;
+    }
+
+    .pkg-card__body {
+      padding: 32px 28px;
+    }
+
+    .card__img {
+      height: 270px;
+      aspect-ratio: auto;
+    }
+  }
+</style>

@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import Marquee from "../components/Marquee.astro";
+import { Image } from 'astro:assets';
+import portraitAnett from '../assets/images/portrait-anett.avif';
+import serviceBiohacking from '../assets/images/service-biohacking.avif';
+---
+
+<BaseLayout
+  title="About Me – QiNutritionist"
+  description="Learn about Anett's journey from personal health struggles to becoming a holistic nutritionist and women's wellness expert."
+  ogImage="/images/portrait-anett.avif"
+>
+  <PageBanner
+    label="My Story"
+    heading='About <span class="serif-italic">Me</span>'
+    bgImage="/images/hero-alina.avif"
+  />
+
+  <Marquee />
+
+  <!-- ══ BIO SPLIT ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="split__media reveal-left" style="aspect-ratio:3/4;">
+          <Image
+            src={portraitAnett}
+            alt="Anett — QiNutritionist portrait"
+            loading="eager"
+            style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);"
+          />
+          <div class="split__tag">Anett, QiNutritionist</div>
+        </div>
+        <div class="split__content reveal-right">
+          <span class="label">My Philosophy</span>
+          <h2 style="margin-top:12px;">From Struggle to <span class="serif-italic">Transformation</span></h2>
+          <p>My journey into women’s health, hormones, and fertility began with my own struggles. I always dreamed of becoming a mother, but when I was told my fertility was beyond repair, I refused to accept that as my reality. Instead, I immersed myself in nutrition, biohacking, and Traditional Chinese Medicine (TCM) to heal my body from the inside out. Through a holistic yet science-backed approach, I restored my cycle, healed my gut, and regained my well-being. Proving that the body knows how to heal when given the right tools.</p>
+          <p>This experience ignited my passion for bridging Eastern and Western medicine to help other women. I studied Nutritional Science at Stanford and explored Ayurveda, herbal healing, and functional medicine, learning that true wellness isn’t about quick fixes but understanding the body as a whole: physical, emotional, and hormonal.</p>
+          <p>Today, I help women overcome hormonal imbalances, gut issues, and fertility challenges with a root-cause approach that blends modern science with time-tested holistic healing.</p>
+          <a href="/consultation" class="btn btn-primary" style="margin-top:8px;">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ THREE PILLARS ══ -->
+  <section class="section section--linen">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="label">What I Stand For</span>
+        <h2>My Three <span class="serif-italic">Pillars</span></h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal delay-1">
+          <span class="pillar__icon">🔬</span>
+          <p class="label" style="margin-bottom:8px;">Pillar I</p>
+          <h4 class="pillar__title">Science Meets Holistic Healing</h4>
+          <p class="pillar__text">With a background in Nutritional Science from Stanford Medicine, I bridge the gap between modern science and ancient wisdom. My approach is rooted in both Western medical research and Eastern healing traditions, ensuring that every client gets a well-rounded, effective strategy for long-term health.</p>
+        </div>
+        <div class="pillar reveal delay-2">
+          <span class="pillar__icon">🌺</span>
+          <p class="label" style="margin-bottom:8px;">Pillar II</p>
+          <h4 class="pillar__title">A Whole-Body Approach</h4>
+          <p class="pillar__text">I believe true healing happens when we address the body as a whole—physical, mental, emotional, and spiritual health are all connected. Whether you’re struggling with hormonal imbalances, gut issues, or fertility concerns, I help uncover the root causes and create sustainable solutions tailored to you.</p>
+        </div>
+        <div class="pillar reveal delay-3">
+          <span class="pillar__icon">💫</span>
+          <p class="label" style="margin-bottom:8px;">Pillar III</p>
+          <h4 class="pillar__title">Transformative Results</h4>
+          <p class="pillar__text">By integrating Traditional Chinese Medicine, biohacking, and evidence-based nutrition, I help women heal their gut, regulate their cycle, and optimize their fertility. My goal is to empower you with the knowledge and tools to feel energized, confident, and hormonally aligned—so you can step into the most radiant version of yourself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WORK WITH ME SPLIT ══ -->
+  <section class="section section--sand">
+    <div class="container">
+      <div class="split split--reverse">
+        <div class="split__content reveal-right">
+          <span class="label">Let's Work Together</span>
+          <h2>Back to <span class="serif-italic">Balance</span></h2>
+          <p>Whether you're dealing with gut issues, hormonal imbalances, fertility challenges, or simply
+            want to feel more vibrant and energized, I'm here to walk beside you.</p>
+          <p>I offer 1:1 sessions and structured programs tailored to your unique needs, as well as
+            immersive wellness retreats and workshops where you can heal in community with other women.</p>
+          <p>Every plan I create is deeply personalized—because your story, your body, and your goals are
+            completely your own.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+            <a href="/services" class="btn btn-primary">View Services</a>
+            <a href="/events" class="btn btn-outline">Upcoming Events</a>
+          </div>
+        </div>
+        <div class="split__media reveal-left">
+          <Image src={serviceBiohacking} alt="Holistic wellness practice" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUOTE ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="quote-block reveal">
+        <div class="quote-block__mark">"</div>
+        <p class="quote-block__text">True wellness isn't about quick fixes — it's about understanding your
+          body as a whole and giving it exactly what it needs to thrive.</p>
+        <p class="quote-block__attr">— Anett</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PARALLAX CTA ══ -->
+  <div class="parallax-band">
+    <div class="parallax-band__bg" style="background-image:url('/images/hero-heather.avif');"></div>
+    <div class="parallax-band__overlay"></div>
+    <div class="parallax-band__content reveal">
+      <span class="label" style="color:rgba(253,250,246,.7);">Ready?</span>
+      <h2>Start Your <span class="serif-italic">Transformation</span></h2>
+      <p style="margin-bottom:28px;opacity:.85;">Book your free consultation and let's create a plan that
+        truly works for you.</p>
+      <a href="/consultation" class="btn btn-white">Book Free Consultation</a>
+    </div>
+  </div>
+</BaseLayout>

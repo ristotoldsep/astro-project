@@ -1,0 +1,379 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import Marquee from "../components/Marquee.astro";
+---
+
+<BaseLayout
+  title="Free Consultation – QiNutritionist"
+  description="Book your free 20-minute discovery call with Anett and take the first step toward healing."
+  ogImage="/images/hero-heather.avif"
+>
+  <PageBanner
+    label="No Commitment Needed"
+    heading='Free <span class="serif-italic">Consultation</span>'
+    bgImage="/images/hero-heather.avif"
+    paddingStyle="padding-block:clamp(72px,12vw,130px) clamp(48px,7vw,90px);"
+    overlay="linear-gradient(to bottom,rgba(74,55,40,.72) 0%,rgba(74,55,40,.45) 60%,rgba(253,250,246,0) 100%)"
+  >
+    <p
+      style="font-family:var(--font-display);font-style:italic;font-size:1.2rem;color:rgba(253,250,246,.85);margin-top:12px;"
+    >
+      Let's start your transformation together
+    </p>
+  </PageBanner>
+
+  <Marquee bgColor="white" />
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <section class="consult-hero">
+    <div class="container">
+      <div class="consult-hero__inner">
+        <!-- Left: Contact info -->
+        <div class="reveal-left">
+          <span class="label">Contact</span>
+          <h2 style="margin-top:12px;">
+            Let's <span class="serif-italic">Talk</span>
+          </h2>
+          <p
+            style="color:var(--taupe);margin-block:16px 32px;font-size:1.05rem;"
+          >
+            Whether you're curious about my services, have questions, or are
+            ready to start — I'd love to hear from you. Fill out the form and
+            I'll be back in touch within 24 hours.
+          </p>
+
+          <div class="contact-detail">
+            <span class="contact-detail__icon">📞</span>
+            <div>
+              <p class="contact-detail__label">Phone</p>
+              <a href="tel:+37256505371">+372 56505371</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__icon">✉️</span>
+            <div>
+              <p class="contact-detail__label">Email</p>
+              <a href="mailto:randveeyoga@gmail.com">randveeyoga@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__icon">📍</span>
+            <div>
+              <p class="contact-detail__label">Locations</p>
+              <p>Tallinn, Estonia &amp; Barcelona, Spain</p>
+              <p style="font-size:.88rem;color:var(--taupe);margin-top:4px;">
+                Sessions also available online worldwide
+              </p>
+            </div>
+          </div>
+          <div class="contact-detail" style="margin-top:8px;">
+            <span class="contact-detail__icon">📸</span>
+            <div>
+              <p class="contact-detail__label">Instagram</p>
+              <a
+                href="https://www.instagram.com/qinutritionist/"
+                target="_blank"
+                rel="noopener">@qinutritionist</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form card -->
+        <div class="form-card reveal-right">
+          <span class="label">Send a Message</span>
+          <h3 style="margin-top:10px;margin-bottom:28px;">
+            Book Your<br /><span class="serif-italic">Free Discovery Call</span>
+          </h3>
+
+          <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Jane Doe"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="jane@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+372 ..."
+              />
+            </div>
+            <div class="form-group">
+              <label for="interest">I'm interested in…</label>
+              <select id="interest" name="interest" required>
+                <option value="" disabled selected>Choose a topic</option>
+                <option>Gut Health &amp; Fertility</option>
+                <option>Holistic Nutrition Coaching</option>
+                <option>Biohacking &amp; Longevity</option>
+                <option>3-Month Gut Program</option>
+                <option>3-Month Fertility Program</option>
+                <option>Barcelona Retreat</option>
+                <option>Tallinn Baking Workshop</option>
+                <option>Other / Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="What are you hoping to achieve? What challenges are you facing?"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width:100%;padding:18px;">Send Message</button
+            >
+          </form>
+
+          <div
+            id="successMsg"
+            style="display:none;text-align:center;padding:32px 16px;"
+          >
+            <p
+              style="font-size:1.5rem;color:var(--terracotta);margin-bottom:12px;"
+            >
+              Thank you! 🌿
+            </p>
+            <p>I'll be in touch within 24 hours to schedule our call.</p>
+          </div>
+
+          <p
+            style="font-size:.78rem;color:var(--taupe);margin-top:20px;text-align:center;"
+          >
+            Your information is kept private and never shared.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT TO EXPECT ══ -->
+  <section class="section section--sand">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="label">The Process</span>
+        <h2>What to <span class="serif-italic">Expect</span></h2>
+        <p class="mx-auto">
+          A free, no-pressure conversation to explore what's holding you back
+          and how I can help.
+        </p>
+      </div>
+      <div class="what-to-expect">
+        <div class="expect-item reveal delay-1">
+          <div class="expect-item__num">01</div>
+          <h4 class="expect-item__title">You Reach Out</h4>
+          <p class="expect-item__text">
+            Fill out the short form above or send me a direct message. Tell me a
+            little about what you're experiencing and what you're hoping to
+            change.
+          </p>
+        </div>
+        <div class="expect-item reveal delay-2">
+          <div class="expect-item__num">02</div>
+          <h4 class="expect-item__title">20-Min Discovery Call</h4>
+          <p class="expect-item__text">
+            We have a relaxed, free 20-minute call where we get to know each
+            other, discuss your health goals, and I answer any questions you
+            have about my approach.
+          </p>
+        </div>
+        <div class="expect-item reveal delay-3">
+          <div class="expect-item__num">03</div>
+          <h4 class="expect-item__title">Your Custom Plan</h4>
+          <p class="expect-item__text">
+            Together we choose the program or session type that suits you best,
+            and you walk away with a clear first step toward feeling your best.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ REASSURANCE ══ -->
+  <section class="section">
+    <div class="container--narrow text-center">
+      <div class="reveal">
+        <span class="label">Anett's Commitment</span>
+        <h2 style="margin-top:12px;">
+          You Are <span class="serif-italic">Not Alone</span>
+        </h2>
+        <p
+          style="margin-top:16px;color:var(--taupe);font-size:1.05rem;max-width:580px;margin-inline:auto;"
+        >
+          Every woman's journey is unique — and so is the path to healing. I'm
+          committed to meeting you exactly where you are, with compassion,
+          expertise, and a personalized plan that truly honors your body and
+          your life.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .consult-hero {
+    background: var(--linen);
+    padding-block: clamp(64px, 10vw, 120px);
+  }
+  .consult-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .consult-hero__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .contact-detail {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .contact-detail__icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+  .contact-detail__label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--taupe);
+    margin-bottom: 2px;
+  }
+  .contact-detail a {
+    color: var(--bark);
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .contact-detail a:hover {
+    color: var(--terracotta);
+  }
+
+  .form-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: clamp(28px, 4vw, 48px);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.07);
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--taupe);
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e0d9d0;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    background: var(--cream);
+    color: var(--bark);
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--terracotta);
+  }
+
+  .what-to-expect {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+  @media (max-width: 640px) {
+    .what-to-expect {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .expect-item {
+    text-align: center;
+    padding: 32px 20px;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .expect-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(158, 107, 90, 0.15);
+  }
+
+  .expect-item__num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--terracotta);
+    opacity: 0.3;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .expect-item__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--brown);
+    margin-bottom: 8px;
+  }
+
+  .expect-item__text {
+    font-size: 0.88rem;
+    color: var(--taupe);
+    line-height: 1.75;
+  }
+</style>
+
+<script is:inline>
+  function handleSubmit(e) {
+    e.preventDefault();
+    var form = document.getElementById("contactForm");
+    var success = document.getElementById("successMsg");
+    if (form) form.style.display = "none";
+    if (success) success.style.display = "block";
+  }
+</script>

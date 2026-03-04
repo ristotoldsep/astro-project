@@ -1,0 +1,147 @@
+---
+import LotusIcon from './LotusIcon.astro';
+
+const p = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? p === '/' || p === '' : p.startsWith(href);
+
+const navLinks = [
+  { href: '/',             label: 'Home' },
+  { href: '/about',        label: 'About Me' },
+  { href: '/events',       label: 'Events & Retreats' },
+  { href: '/services',     label: 'Services' },
+  { href: '/consultation', label: 'Free Consultation' },
+];
+---
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  ✦ EMPOWERING WOMEN THROUGH HOLISTIC HEALING ✦
+</div>
+
+<!-- Navigation -->
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav__logo">
+    <span class="nav__logo-icon">
+      <LotusIcon size={30} />
+    </span>
+    QiNutritionist
+  </a>
+
+  <ul class="nav__links" id="navLinks">
+    <div class="nav-highlight" id="navHighlight"></div>
+    {navLinks.map(link => (
+      <li>
+        <a href={link.href} class={isActive(link.href) ? 'active' : ''}>
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:8px;margin-left:auto;">
+    <!-- Language Switcher -->
+    <div class="lang-switch" id="langSwitch">
+      <button class="lang-switch__btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+        <span id="currentLang">ENG</span>
+        <svg class="lang-switch__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <ul class="lang-switch__menu" role="listbox" id="langMenu">
+        <li class="lang-switch__opt active" data-lang="ENG" role="option">ENG</li>
+        <li class="lang-switch__opt" data-lang="EST" role="option">EST</li>
+        <li class="lang-switch__opt" data-lang="ESP" role="option">ESP</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <a href="/consultation" class="btn btn-primary nav__cta">
+      Book Free Call
+    </a>
+
+    <!-- Burger -->
+    <button class="nav__burger" id="navBurger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav__mobile" id="navMobile">
+  {navLinks.map(link => (
+    <a href={link.href}>{link.label}</a>
+  ))}
+  <a href="/consultation" class="btn btn-primary" style="margin-top:16px;">Book Free Call</a>
+</div>
+
+<script>
+  // Scroll shadow
+  const nav = document.getElementById('mainNav')!;
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Burger toggle
+  const burger = document.getElementById('navBurger')!;
+  const mobile = document.getElementById('navMobile')!;
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    mobile.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // Close mobile menu on link click
+  mobile.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobile.classList.remove('open');
+      document.body.style.overflow = '';
+    })
+  );
+
+  // Nav highlight pill
+  const links = document.getElementById('navLinks')!;
+  const highlight = document.getElementById('navHighlight')!;
+  const linksRect = () => links.getBoundingClientRect();
+
+  const moveHighlight = (el: HTMLElement) => {
+    const r = el.getBoundingClientRect();
+    const lr = linksRect();
+    highlight.style.left = `${r.left - lr.left}px`;
+    highlight.style.width = `${r.width}px`;
+    highlight.style.opacity = '1';
+  };
+
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('mouseenter', () => moveHighlight(a as HTMLElement));
+  });
+  links.addEventListener('mouseleave', () => {
+    highlight.style.opacity = '0';
+  });
+
+  // Language switcher
+  const langSwitch = document.getElementById('langSwitch')!;
+  const langBtn    = document.getElementById('langBtn')!;
+  const langMenu   = document.getElementById('langMenu')!;
+  const currentLangEl = document.getElementById('currentLang')!;
+
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langSwitch.classList.toggle('open');
+    langBtn.setAttribute('aria-expanded', String(langSwitch.classList.contains('open')));
+  });
+
+  langMenu.querySelectorAll('.lang-switch__opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      langMenu.querySelectorAll('.lang-switch__opt').forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+      currentLangEl.textContent = opt.getAttribute('data-lang') ?? 'ENG';
+      langSwitch.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', () => langSwitch.classList.remove('open'));
+</script>

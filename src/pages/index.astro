@@ -1,0 +1,422 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Marquee from "../components/Marquee.astro";
+import { Image } from 'astro:assets';
+import heroAlina from '../assets/images/hero-alina.avif';
+import serviceGut from '../assets/images/service-gut.avif';
+import serviceNutrition from '../assets/images/service-nutrition.avif';
+import serviceBiohacking from '../assets/images/service-biohacking.avif';
+---
+
+<BaseLayout
+  title="QiNutritionist – Holistic Wellness"
+  description="Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking."
+  ogImage="/images/hero-alina.avif"
+>
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <!-- Crossfading slide layers -->
+    <div
+      class="hero__slide hero__slide--1"
+      style="background-image:url('/images/hero-crystalweed.avif'); background-position:center 50%;"
+    ></div>
+    <div
+      class="hero__slide hero__slide--3"
+      style="background-image:url('/images/hero-heather.avif'); background-position:center 30%;"
+    ></div>
+    <div
+      class="hero__slide hero__slide--2"
+      style="background-image:url('/images/hero-alina.avif'); background-position:center 20%;"
+    ></div>
+
+    <div class="hero__overlay"></div>
+
+    <!-- Botanical leaf decoration -->
+    <div class="hero__leaf">
+      <svg width="220" height="320" viewBox="0 0 220 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M110 300 C110 300 60 240 40 180 C20 120 50 60 110 20 C170 60 200 120 180 180 C160 240 110 300 110 300Z"
+          fill="white" opacity=".9"
+        />
+        <path d="M110 300 L110 20" stroke="white" stroke-width="1" opacity=".5" />
+        <path d="M110 200 C90 175 60 165 40 160" stroke="white" stroke-width=".8" opacity=".4" />
+        <path d="M110 200 C130 175 160 165 180 160" stroke="white" stroke-width=".8" opacity=".4" />
+        <path d="M110 150 C95 128 70 118 50 115" stroke="white" stroke-width=".8" opacity=".35" />
+        <path d="M110 150 C125 128 150 118 170 115" stroke="white" stroke-width=".8" opacity=".35" />
+        <path d="M110 100 C100 82 80 72 65 70" stroke="white" stroke-width=".8" opacity=".3" />
+        <path d="M110 100 C120 82 140 72 155 70" stroke="white" stroke-width=".8" opacity=".3" />
+      </svg>
+    </div>
+
+    <!-- Second smaller leaf top-left -->
+    <div
+      style="position:absolute;top:8%;left:3%;opacity:.07;pointer-events:none;animation:leafFloat 11s ease-in-out 2s infinite alternate;z-index:2;"
+    >
+      <svg width="120" height="180" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M60 170 C60 170 20 130 10 90 C0 50 25 15 60 5 C95 15 120 50 110 90 C100 130 60 170 60 170Z"
+          fill="white"
+        />
+        <path d="M60 170 L60 5" stroke="white" stroke-width=".8" />
+      </svg>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__pre-line">
+        <p class="hero__eyebrow">Holistic Fertility &amp; Gut Health</p>
+      </div>
+      <h1 class="hero__title">Qi<span class="serif-italic">Nutritionist</span></h1>
+      <p class="hero__subtitle">Where Science Meets Tradition</p>
+      <div class="hero__actions">
+        <a href="/consultation" class="btn btn-glass-terra">Book Free Consultation</a>
+        <a href="/about" class="btn btn-glass">Meet Anett</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ══ MARQUEE ══ -->
+  <Marquee />
+
+  <!-- ══ WELCOME SPLIT ══ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <!-- Petal accent top-right -->
+    <div class="leaf-deco leaf-deco--tr reveal" style="opacity:0;" data-leaf>
+      <svg width="160" height="220" viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M80 210 C80 210 30 165 15 115 C0 65 30 20 80 5 C130 20 160 65 145 115 C130 165 80 210 80 210Z"
+          fill="#9E6B5A" opacity=".08"
+        />
+        <path d="M80 210 L80 5" stroke="#9E6B5A" stroke-width=".8" opacity=".08" />
+        <path d="M80 140 C65 120 40 112 22 108" stroke="#9E6B5A" stroke-width=".7" opacity=".07" />
+        <path d="M80 140 C95 120 120 112 138 108" stroke="#9E6B5A" stroke-width=".7" opacity=".07" />
+        <path d="M80 90 C68 72 48 65 32 62" stroke="#9E6B5A" stroke-width=".7" opacity=".06" />
+        <path d="M80 90 C92 72 112 65 128 62" stroke="#9E6B5A" stroke-width=".7" opacity=".06" />
+      </svg>
+    </div>
+    <div class="container">
+      <div class="split">
+        <div class="split__content reveal-left">
+          <span class="label">Welcome, love</span>
+          <h2 style="margin-top:12px;">Reclaim Your<br /><span class="serif-italic">Radiance</span></h2>
+          <p>I'm Anett, and I'm here to help you reclaim your health, balance your hormones, and step into
+            your most radiant, energized self.</p>
+          <p>I'm passionate about guiding women toward lasting wellness and fertility through a personalized
+            approach that blends modern science with time-tested holistic healing.</p>
+          <p>If you're feeling lost in your health journey, know that you're not alone—and there is a way
+            forward. Every woman's journey is unique, and together, we'll create a plan that truly works for
+            you.</p>
+          <p style="margin-bottom:32px;">Your health is your power. Ready to glow from the inside out?</p>
+          <a href="/consultation" class="btn btn-primary">Book a Free Consultation</a>
+        </div>
+        <div class="split__media reveal-right">
+          <Image src={heroAlina} alt="Women practicing wellness outdoors" loading="lazy" />
+          <div class="split__tag">Holistic Healing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ THREE PILLARS ══ -->
+  <section class="section section--linen section--card">
+    <div class="container">
+      <div class="section__header text-center reveal">
+        <span class="label">My Approach</span>
+        <h2>Rooted in <span class="serif-italic">Balance</span></h2>
+        <p style="margin-inline:auto;">Three pillars that guide every client's transformation journey.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal delay-1">
+          <span class="pillar__icon">🌿</span>
+          <p class="label" style="margin-bottom:8px;">Science</p>
+          <h4 class="pillar__title">Science Meets Holistic Healing</h4>
+          <p class="pillar__text">With a background in Nutritional Science from Stanford Medicine, I bridge
+            the gap between modern science and ancient wisdom—ensuring an effective, well-rounded strategy
+            for long-term health.</p>
+        </div>
+        <div class="pillar reveal delay-2">
+          <span class="pillar__icon">🌸</span>
+          <p class="label" style="margin-bottom:8px;">Wholeness</p>
+          <h4 class="pillar__title">A Whole-Body Approach</h4>
+          <p class="pillar__text">True healing happens when we address the body as a whole—physical, mental,
+            emotional, and spiritual health are all connected. I help uncover root causes and create
+            sustainable solutions tailored to you.</p>
+        </div>
+        <div class="pillar reveal delay-3">
+          <span class="pillar__icon">✨</span>
+          <p class="label" style="margin-bottom:8px;">Results</p>
+          <h4 class="pillar__title">Transformative Results</h4>
+          <p class="pillar__text">By integrating Traditional Chinese Medicine, biohacking, and evidence-based nutrition, I help women
+            heal their gut, regulate their cycle, and optimize their fertility—so you can step into the most
+            radiant version of yourself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STORY / VIDEO SECTION ══ -->
+  <section class="section" style="position:relative;">
+    <!-- Bottom-left leaf -->
+    <div class="leaf-deco leaf-deco--br reveal" data-leaf style="right:10px;bottom:-50px;left:auto;">
+      <svg width="140" height="200" viewBox="0 0 140 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M70 190 C70 190 25 148 10 100 C-5 52 22 12 70 2 C118 12 145 52 130 100 C115 148 70 190 70 190Z"
+          fill="#7B9D7E" opacity=".09"
+        />
+        <path d="M70 190 L70 2" stroke="#7B9D7E" stroke-width=".8" opacity=".08" />
+        <path d="M70 125 C55 108 35 100 18 97" stroke="#7B9D7E" stroke-width=".7" opacity=".07" />
+        <path d="M70 80 C58 65 40 58 26 55" stroke="#7B9D7E" stroke-width=".7" opacity=".07" />
+      </svg>
+    </div>
+    <div class="container">
+      <div class="split split--reverse split_video_wrapper">
+        <div class="split__content reveal-right">
+          <span class="label">My Story</span>
+          <h2 style="margin-top:12px;">Healing Is <span class="serif-italic">Possible</span></h2>
+          <p>I know firsthand how frustrating it can be to deal with hormonal imbalances, gut issues, or fertility struggles—and I also know that true healing is possible. My approach blends nutrition, biohacking, and Eastern medicine to help you feel amazing, inside and out.</p>
+          <p>Whether you’re looking for personalized coaching, a deep reset, or a retreat to recharge, I’ve got you. Let’s get you back to balance!</p>
+          <p>Explore my personalized coaching, structured programs, and wellness retreats to find the right fit for you.</p>
+          <a href="/about" class="btn btn-outline" style="margin-top:8px;">Read My Full Story</a>
+        </div>
+        <div class="split__media video_wrapper reveal-left" style="aspect-ratio:9/16;">
+          <video
+            id="storyVideo"
+            autoplay
+            muted
+            loop
+            playsinline
+            style="width:100%;height:100%;border-radius:var(--radius-lg);object-fit:cover;display:block;"
+          >
+            <source src="/videos/video2.mp4" type="video/mp4" />
+            <source src="/videos/video1.mp4" type="video/mp4" />
+          </video>
+          <!-- Rotating badge -->
+          <div class="video-spinner" aria-hidden="true">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="48" />
+              <defs>
+                <path id="spinnerPath" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" />
+              </defs>
+              <text font-size="9" font-family="Jost,sans-serif" font-weight="300" letter-spacing="3" text-anchor="start">
+                <textPath href="#spinnerPath"> HOLISTIC · WELLNESS · HEALING ·</textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES PREVIEW ══ -->
+  <section class="section section--sand section--card">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">How I Can Help</span>
+        <h2>My <span class="serif-italic">Services</span></h2>
+        <p>Personalized 1:1 sessions and structured programs designed to restore balance from the inside out.</p>
+      </div>
+      <div class="cards cards--3">
+        <div class="card reveal delay-1">
+          <div class="card__img">
+            <Image src={serviceGut} alt="Gut &amp; Fertility" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <p class="card__tag">60 min · 90€–110€</p>
+            <h3 class="card__title">Holistic Gut &amp; Fertility</h3>
+            <p class="card__text">Deep dive into gut health, hormone balance &amp; fertility concerns with
+              personalized nutrition and herbal recommendations.</p>
+            <a href="/services" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+        <div class="card reveal delay-2">
+          <div class="card__img">
+            <Image src={serviceNutrition} alt="Nutrition Coaching" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <p class="card__tag">60 min · 70€–90€</p>
+            <h3 class="card__title">Holistic Nutrition Coaching</h3>
+            <p class="card__text">1:1 personalized nutritional guidance with a diet plan tailored to support
+              gut healing &amp; hormone balance.</p>
+            <a href="/services" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+        <div class="card reveal delay-3">
+          <div class="card__img">
+            <Image src={serviceBiohacking} alt="Biohacking" loading="lazy" />
+          </div>
+          <div class="card__body">
+            <p class="card__tag">60 min · 70€–90€</p>
+            <h3 class="card__title">Biohacking &amp; Longevity</h3>
+            <p class="card__text">Strategies to improve energy, digestion &amp; metabolic health using
+              functional mushrooms, adaptogens &amp; supplements.</p>
+            <a href="/services" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;" class="reveal">
+        <a href="/services" class="btn btn-primary">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUOTE BAND + PARALLAX (shared stacking context) ══ -->
+  <div style="position:relative;">
+
+  <!-- ══ QUOTE BAND ══ -->
+  <section class="section section--linen quote_band">
+    <div class="container">
+      <div class="quote-block reveal">
+        <div class="quote-block__mark">"</div>
+        <p class="quote-block__text">Your health is your power. Together we'll create a plan that truly works
+          for you—body, mind, and soul.</p>
+        <p class="quote-block__attr">— Anett, QiNutritionist</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LOTUS MANDALA (centered over quote/parallax boundary) ══ -->
+  <div class="lotus-mandala" aria-hidden="true">
+    <svg class="lotus-mandala__svg" width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer dashed circuit ring -->
+      <circle cx="160" cy="160" r="148" stroke="white" stroke-width="0.7" stroke-dasharray="3 8" opacity=".45"/>
+      <!-- 8 outer petals (large, pointed, with vein) -->
+      <g opacity=".36">
+        <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white"/>
+        <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5"/>
+        <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white" transform="rotate(45 160 160)"/>
+        <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5" transform="rotate(45 160 160)"/>
+        <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white" transform="rotate(90 160 160)"/>
+        <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5" transform="rotate(90 160 160)"/>
+        <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white" transform="rotate(135 160 160)"/>
+        <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5" transform="rotate(135 160 160)"/>
+        <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white" transform="rotate(180 160 160)"/>
+        <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5" transform="rotate(180 160 160)"/>
+        <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white" transform="rotate(225 160 160)"/>
+        <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5" transform="rotate(225 160 160)"/>
+        <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white" transform="rotate(270 160 160)"/>
+        <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5" transform="rotate(270 160 160)"/>
+        <path d="M160 52 C178 88 178 126 160 154 C142 126 142 88 160 52Z" fill="white" transform="rotate(315 160 160)"/>
+        <path d="M160 52 L160 154" stroke="white" stroke-width="0.6" opacity=".5" transform="rotate(315 160 160)"/>
+      </g>
+      <!-- Mid accent ring -->
+      <circle cx="160" cy="160" r="90" stroke="white" stroke-width="0.5" opacity=".22"/>
+      <!-- 8 inner petals (shorter, offset 22.5°) -->
+      <g opacity=".24">
+        <path d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z" fill="white" transform="rotate(22.5 160 160)"/>
+        <path d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z" fill="white" transform="rotate(67.5 160 160)"/>
+        <path d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z" fill="white" transform="rotate(112.5 160 160)"/>
+        <path d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z" fill="white" transform="rotate(157.5 160 160)"/>
+        <path d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z" fill="white" transform="rotate(202.5 160 160)"/>
+        <path d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z" fill="white" transform="rotate(247.5 160 160)"/>
+        <path d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z" fill="white" transform="rotate(292.5 160 160)"/>
+        <path d="M160 96 C172 118 172 148 160 160 C148 148 148 118 160 96Z" fill="white" transform="rotate(337.5 160 160)"/>
+      </g>
+      <!-- Dot ring at r≈104 (outer petal tips) -->
+      <g fill="white" opacity=".55">
+        <circle cx="160" cy="56" r="2.8"/>
+        <circle cx="160" cy="56" r="2.8" transform="rotate(45 160 160)"/>
+        <circle cx="160" cy="56" r="2.8" transform="rotate(90 160 160)"/>
+        <circle cx="160" cy="56" r="2.8" transform="rotate(135 160 160)"/>
+        <circle cx="160" cy="56" r="2.8" transform="rotate(180 160 160)"/>
+        <circle cx="160" cy="56" r="2.8" transform="rotate(225 160 160)"/>
+        <circle cx="160" cy="56" r="2.8" transform="rotate(270 160 160)"/>
+        <circle cx="160" cy="56" r="2.8" transform="rotate(315 160 160)"/>
+      </g>
+      <!-- Center motif -->
+      <circle cx="160" cy="160" r="26" stroke="white" stroke-width="0.8" opacity=".5"/>
+      <circle cx="160" cy="160" r="17" fill="white" opacity=".45"/>
+      <circle cx="160" cy="160" r="8" fill="white" opacity=".75"/>
+    </svg>
+  </div>
+
+  <!-- ══ PARALLAX EVENTS TEASER ══ -->
+  <div class="parallax-band">
+    <div class="parallax-band__bg" style="background-image:url('/images/hero-crystalweed.avif');"></div>
+    <div class="parallax-band__overlay"></div>
+    <div class="parallax-band__content reveal">
+      <span class="label" style="color:rgba(253,250,246,.7);">Upcoming</span>
+      <h2>Retreats &amp; <span class="serif-italic">Events</span></h2>
+      <p style="margin-bottom:28px;opacity:.85;">3-Day Luxury Wellness Retreat · Barcelona · Healthy Baking
+        Workshop · Tallinn</p>
+      <a href="/events" class="btn btn-white">Explore Events</a>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- ══ FREE GUIDE BANNER ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="guide-banner reveal-scale" style="position:relative;">
+        <div class="section-corner section-corner--tl"></div>
+        <div class="section-corner section-corner--br"></div>
+        <span class="label white" style="color:rgba(253,250,246,.75); margin-bottom: 15px;">Free Resource</span>
+        <h2>Get My Free Guide on<br />Fertility &amp; Gut Health!</h2>
+        <p>Practical, science-backed strategies you can start today — completely free.</p>
+        <a
+          href="https://drive.google.com/file/d/1u4HkJE_qpRXUgZITjpKtE3siaKUZtGhI/view?usp=sharing"
+          class="btn btn-white"
+          target="_blank"
+          rel="noopener"
+        >Download Free Guide</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lotus-mandala {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+  }
+  .lotus-mandala__svg {
+    animation: mandalaSpin 80s linear infinite;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 18px rgba(255,255,255,0.25));
+  }
+  @keyframes mandalaSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lotus-mandala__svg { animation: none; }
+  }
+</style>
+
+<script>
+  /* Video play/pause when in viewport */
+  const storyVideo = document.getElementById("storyVideo") as HTMLVideoElement | null;
+  if (storyVideo) {
+    const vidObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { storyVideo.play(); }
+          else { storyVideo.pause(); }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    vidObs.observe(storyVideo);
+  }
+
+  /* Scroll-driven card border-radius animation */
+  const cardEls = document.querySelectorAll<HTMLElement>(".section--card");
+  function updateCardRadius() {
+    const vh = window.innerHeight;
+    cardEls.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const progress = Math.min(Math.max((vh - rect.top) / (vh * 0.45), 0), 1);
+      card.style.borderRadius = (progress * 20).toFixed(1) + "px";
+    });
+  }
+  window.addEventListener("scroll", updateCardRadius, { passive: true });
+  updateCardRadius();
+</script>
