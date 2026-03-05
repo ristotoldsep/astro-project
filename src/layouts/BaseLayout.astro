@@ -137,20 +137,45 @@ const jsonLd = JSON.stringify({
           ".reveal, .reveal-scale, .reveal-left, .reveal-right",
         );
 
-        if (revealEls.length) {
-          const io = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((e) => {
-                if (e.isIntersecting) {
-                  e.target.classList.add("visible");
-                  io.unobserve(e.target);
-                }
-              });
-            },
-            { threshold: 0.12 },
-          );
-          revealEls.forEach((el) => io.observe(el));
+        if (window.__qiRevealObserver) {
+          window.__qiRevealObserver.disconnect();
+          window.__qiRevealObserver = null;
         }
+
+        if (!revealEls.length) return;
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.14,
+            rootMargin: "0px 0px -6% 0px",
+          },
+        );
+
+        revealEls.forEach((el) => {
+          if (!el.classList.contains("visible")) {
+            io.observe(el);
+          }
+        });
+
+        window.__qiRevealObserver = io;
+      };
+
+      const scheduleRevealInit = () => {
+        if (window.__qiRevealRAF) {
+          cancelAnimationFrame(window.__qiRevealRAF);
+        }
+        window.__qiRevealRAF = requestAnimationFrame(() => {
+          initRevealObserver();
+          window.__qiRevealRAF = null;
+        });
       };
 
       if (!window.__qiAnimationBootstrapDone) {
@@ -184,12 +209,12 @@ const jsonLd = JSON.stringify({
         });
 
         document.addEventListener("astro:page-load", () => {
-          initRevealObserver();
+          scheduleRevealInit();
           ScrollTrigger.refresh();
         });
-      }
 
-      initRevealObserver();
+        scheduleRevealInit();
+      }
     </script>
   </body>
 </html>
