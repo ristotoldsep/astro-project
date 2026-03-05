@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import Marquee from "../components/Marquee.astro";
 import InstaStrip from "../components/InstaStrip.astro";
 import "../styles/global.scss";
+import { ClientRouter } from "astro:transitions";
 import { detectLocale, getLocalePath, useTranslations } from '../i18n/utils';
 import type { Locale } from '../i18n/utils';
 
@@ -113,6 +114,7 @@ const jsonLd = JSON.stringify({
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
+    <ClientRouter />
     <slot name="head" />
   </head>
   <body>
@@ -124,26 +126,70 @@ const jsonLd = JSON.stringify({
     <Marquee variant="footer" />
     <Footer lang={effectiveLang} />
 
-    <!-- Shared scroll-reveal observer -->
+    <!-- Shared animation bootstrap (GSAP + smooth scrolling + reveal observer) -->
     <script>
-      const revealEls = document.querySelectorAll(
-        ".reveal, .reveal-scale, .reveal-left, .reveal-right",
-      );
+      import gsap from "gsap";
+      import ScrollTrigger from "gsap/ScrollTrigger";
+      import Lenis from "lenis";
 
-      if (revealEls.length) {
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add("visible");
-                io.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.12 },
+      const initRevealObserver = () => {
+        const revealEls = document.querySelectorAll(
+          ".reveal, .reveal-scale, .reveal-left, .reveal-right",
         );
-        revealEls.forEach((el) => io.observe(el));
+
+        if (revealEls.length) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) {
+                  e.target.classList.add("visible");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.12 },
+          );
+          revealEls.forEach((el) => io.observe(el));
+        }
+      };
+
+      if (!window.__qiAnimationBootstrapDone) {
+        window.__qiAnimationBootstrapDone = true;
+
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        if (!prefersReducedMotion) {
+          const lenis = new Lenis({
+            duration: 1.05,
+            wheelMultiplier: 0.95,
+            touchMultiplier: 0.9,
+            smoothWheel: true,
+            smoothTouch: false,
+          });
+
+          lenis.on("scroll", ScrollTrigger.update);
+          gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+          });
+          gsap.ticker.lagSmoothing(0);
+          window.__qiLenis = lenis;
+        }
+
+        document.addEventListener("astro:after-swap", () => {
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        });
+
+        document.addEventListener("astro:page-load", () => {
+          initRevealObserver();
+          ScrollTrigger.refresh();
+        });
       }
+
+      initRevealObserver();
     </script>
   </body>
 </html>

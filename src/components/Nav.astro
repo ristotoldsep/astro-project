@@ -145,100 +145,117 @@ const langOptions = [
 </nav>
 
 <script>
-  // ── Header height CSS variable (keeps mobile panel below header) ────
-  const header = document.getElementById('siteHeader')!;
-  const setHeaderH = () =>
-    document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
-  setHeaderH();
-  const ro = new ResizeObserver(setHeaderH);
-  ro.observe(header);
+  const initNav = () => {
+    const header = document.getElementById('siteHeader');
+    const nav = document.getElementById('mainNav');
+    const burger = document.getElementById('navBurger');
+    const mobile = document.getElementById('navMobile');
+    const backdrop = document.getElementById('navBackdrop');
+    const links = document.getElementById('navLinks');
+    const highlight = document.getElementById('navHighlight');
+    const langSwitch = document.getElementById('langSwitch');
+    const langBtn = document.getElementById('langBtn');
+    const langMenu = document.getElementById('langMenu');
 
-  // ── Scroll shadow on nav ────────────────────────────────────────────
-  const nav = document.getElementById('mainNav')!;
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+    if (!header || !nav || !burger || !mobile || !backdrop || !links || !highlight || !langSwitch || !langBtn || !langMenu) {
+      return;
+    }
 
-  // ── Mobile menu helpers ─────────────────────────────────────────────
-  const burger  = document.getElementById('navBurger')!;
-  const mobile  = document.getElementById('navMobile')!;
-  const backdrop = document.getElementById('navBackdrop')!;
+    const setHeaderH = () => {
+      document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+    };
+    setHeaderH();
 
-  function openMenu() {
-    burger.classList.add('open');
-    burger.setAttribute('aria-expanded', 'true');
-    mobile.classList.add('open');
-    mobile.setAttribute('aria-hidden', 'false');
-    backdrop.classList.add('open');
-    // Prevent body scroll but allow the panel to scroll
-    document.body.style.overflow = 'hidden';
-    document.body.style.touchAction = 'none';
-  }
+    if (window.__qiHeaderRO) {
+      window.__qiHeaderRO.disconnect();
+    }
+    const ro = new ResizeObserver(setHeaderH);
+    ro.observe(header);
+    window.__qiHeaderRO = ro;
 
-  function closeMenu() {
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    mobile.classList.remove('open');
-    mobile.setAttribute('aria-hidden', 'true');
-    backdrop.classList.remove('open');
-    document.body.style.overflow = '';
-    document.body.style.touchAction = '';
-  }
+    if (window.__qiNavOnScroll) {
+      window.removeEventListener('scroll', window.__qiNavOnScroll);
+    }
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+    window.__qiNavOnScroll = onScroll;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-  burger.addEventListener('click', () => {
-    if (burger.classList.contains('open')) closeMenu();
-    else openMenu();
-  });
+    const openMenu = () => {
+      burger.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+      mobile.classList.add('open');
+      mobile.setAttribute('aria-hidden', 'false');
+      backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    };
 
-  // Close on backdrop click
-  backdrop.addEventListener('click', closeMenu);
+    const closeMenu = () => {
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      mobile.classList.remove('open');
+      mobile.setAttribute('aria-hidden', 'true');
+      backdrop.classList.remove('open');
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
 
-  // Close on link click
-  mobile.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', closeMenu)
-  );
+    burger.onclick = () => {
+      if (burger.classList.contains('open')) closeMenu();
+      else openMenu();
+    };
+    backdrop.onclick = closeMenu;
 
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
+    mobile.querySelectorAll('a').forEach((anchor) => {
+      anchor.addEventListener('click', closeMenu, { once: true });
+    });
 
-  // ── Desktop nav highlight pill ──────────────────────────────────────
-  const links    = document.getElementById('navLinks')!;
-  const highlight = document.getElementById('navHighlight')!;
+    if (window.__qiNavOnKeydown) {
+      document.removeEventListener('keydown', window.__qiNavOnKeydown);
+    }
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') closeMenu();
+    };
+    window.__qiNavOnKeydown = onKeyDown;
+    document.addEventListener('keydown', onKeyDown);
 
-  const moveHighlight = (el: HTMLElement) => {
-    const r  = el.getBoundingClientRect();
-    const lr = links.getBoundingClientRect();
-    highlight.style.left  = `${r.left - lr.left}px`;
-    highlight.style.width = `${r.width}px`;
-    highlight.style.opacity = '1';
+    const moveHighlight = (el) => {
+      const r = el.getBoundingClientRect();
+      const lr = links.getBoundingClientRect();
+      highlight.style.left = `${r.left - lr.left}px`;
+      highlight.style.width = `${r.width}px`;
+      highlight.style.opacity = '1';
+    };
+
+    links.querySelectorAll('a').forEach((anchor) => {
+      anchor.onmouseenter = () => moveHighlight(anchor);
+    });
+    links.onmouseleave = () => {
+      highlight.style.opacity = '0';
+    };
+
+    langBtn.onclick = (e) => {
+      e.stopPropagation();
+      langSwitch.classList.toggle('open');
+      langBtn.setAttribute('aria-expanded', String(langSwitch.classList.contains('open')));
+    };
+
+    langMenu.querySelectorAll('.lang-switch__opt').forEach((opt) => {
+      opt.onclick = () => {
+        const href = opt.getAttribute('data-href');
+        if (href) window.location.href = href;
+      };
+    });
+
+    if (window.__qiNavOnDocClick) {
+      document.removeEventListener('click', window.__qiNavOnDocClick);
+    }
+    const onDocClick = () => langSwitch.classList.remove('open');
+    window.__qiNavOnDocClick = onDocClick;
+    document.addEventListener('click', onDocClick);
   };
 
-  links.querySelectorAll('a').forEach(a =>
-    a.addEventListener('mouseenter', () => moveHighlight(a as HTMLElement))
-  );
-  links.addEventListener('mouseleave', () => {
-    highlight.style.opacity = '0';
-  });
-
-  // ── Language switcher ───────────────────────────────────────────────
-  const langSwitch = document.getElementById('langSwitch')!;
-  const langBtn    = document.getElementById('langBtn')!;
-  const langMenu   = document.getElementById('langMenu')!;
-
-  langBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    langSwitch.classList.toggle('open');
-    langBtn.setAttribute('aria-expanded', String(langSwitch.classList.contains('open')));
-  });
-
-  langMenu.querySelectorAll('.lang-switch__opt').forEach(opt => {
-    opt.addEventListener('click', () => {
-      const href = opt.getAttribute('data-href');
-      if (href) window.location.href = href;
-    });
-  });
-
-  document.addEventListener('click', () => langSwitch.classList.remove('open'));
+  initNav();
+  document.addEventListener('astro:page-load', initNav);
 </script>
