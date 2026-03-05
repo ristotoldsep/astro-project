@@ -178,6 +178,62 @@ const jsonLd = JSON.stringify({
         });
       };
 
+      const initPageEnhancements = () => {
+        if (window.__qiVideoObserver) {
+          window.__qiVideoObserver.disconnect();
+          window.__qiVideoObserver = null;
+        }
+
+        if (window.__qiCardRadiusOnScroll) {
+          window.removeEventListener("scroll", window.__qiCardRadiusOnScroll);
+          window.__qiCardRadiusOnScroll = null;
+        }
+
+        const storyVideo = document.getElementById("storyVideo");
+        if (storyVideo) {
+          const vidObs = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) storyVideo.play();
+                else storyVideo.pause();
+              });
+            },
+            { threshold: 0.2 },
+          );
+          vidObs.observe(storyVideo);
+          window.__qiVideoObserver = vidObs;
+        }
+
+        const cardEls = document.querySelectorAll(".section--card");
+        if (cardEls.length) {
+          const updateCardRadius = () => {
+            const vh = window.innerHeight;
+            cardEls.forEach((card) => {
+              const rect = card.getBoundingClientRect();
+              const progress = Math.min(
+                Math.max((vh - rect.top) / (vh * 0.45), 0),
+                1,
+              );
+              card.style.borderRadius = `${(progress * 30).toFixed(1)}px`;
+            });
+          };
+
+          window.__qiCardRadiusOnScroll = updateCardRadius;
+          window.addEventListener("scroll", updateCardRadius, { passive: true });
+          updateCardRadius();
+        }
+      };
+
+      const schedulePageEnhancements = () => {
+        if (window.__qiPageEnhanceRAF) {
+          cancelAnimationFrame(window.__qiPageEnhanceRAF);
+        }
+        window.__qiPageEnhanceRAF = requestAnimationFrame(() => {
+          initPageEnhancements();
+          window.__qiPageEnhanceRAF = null;
+        });
+      };
+
       if (!window.__qiAnimationBootstrapDone) {
         window.__qiAnimationBootstrapDone = true;
 
@@ -210,10 +266,12 @@ const jsonLd = JSON.stringify({
 
         document.addEventListener("astro:page-load", () => {
           scheduleRevealInit();
+          schedulePageEnhancements();
           ScrollTrigger.refresh();
         });
 
         scheduleRevealInit();
+        schedulePageEnhancements();
       }
     </script>
   </body>

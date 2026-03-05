@@ -732,37 +732,3 @@ const heroSlides = [
   }
 </style>
 
-<script>
-  /* Video play/pause when in viewport */
-  const storyVideo = document.getElementById(
-    "storyVideo",
-  ) as HTMLVideoElement | null;
-  if (storyVideo) {
-    const vidObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            storyVideo.play();
-          } else {
-            storyVideo.pause();
-          }
-        });
-      },
-      { threshold: 0.2 },
-    );
-    vidObs.observe(storyVideo);
-  }
-
-  /* Scroll-driven card border-radius animation */
-  const cardEls = document.querySelectorAll<HTMLElement>(".section--card");
-  function updateCardRadius() {
-    const vh = window.innerHeight;
-    cardEls.forEach((card) => {
-      const rect = card.getBoundingClientRect();
-      const progress = Math.min(Math.max((vh - rect.top) / (vh * 0.45), 0), 1);
-      card.style.borderRadius = (progress * 30).toFixed(1) + "px";
-    });
-  }
-  window.addEventListener("scroll", updateCardRadius, { passive: true });
-  updateCardRadius();
-</script>
