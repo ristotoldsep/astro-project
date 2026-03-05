@@ -31,127 +31,201 @@ const langOptions = [
 ];
 ---
 
-<!-- Announcement Bar -->
-<div class="announcement-bar">
-  {t('nav.announcement')}
-</div>
+<header class="site-header" id="siteHeader">
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    {t('nav.announcement')}
+  </div>
 
-<!-- Navigation -->
-<nav class="nav" id="mainNav">
-  <a href={lp('/')} class="nav__logo">
-    <span class="nav__logo-icon">
-      <LotusIcon size={30} />
-    </span>
-    QiNutritionist
-  </a>
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav" aria-label="Main navigation">
+    <a href={lp('/')} class="nav__logo" aria-label="QiNutritionist — home">
+      <span class="nav__logo-icon">
+        <LotusIcon size={30} />
+      </span>
+      QiNutritionist
+    </a>
 
-  <div class="nav__links-wrap">
-    <div class="nav-highlight" id="navHighlight"></div>
-    <ul class="nav__links" id="navLinks">
-      {navLinks.map(link => (
-        <li>
-          <a href={lp(link.href)} class={isActive(link.href) ? 'active' : ''}>
+    <div class="nav__links-wrap" role="none">
+      <div class="nav-highlight" id="navHighlight" aria-hidden="true"></div>
+      <ul class="nav__links" id="navLinks">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={lp(link.href)}
+              class={isActive(link.href) ? 'active' : ''}
+              aria-current={isActive(link.href) ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:8px;margin-left:auto;">
+      <!-- Language Switcher -->
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-switch__btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+          <span id="currentLang">{localeLabels[lang]}</span>
+          <svg class="lang-switch__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <ul class="lang-switch__menu" role="listbox" id="langMenu">
+          {langOptions.map(opt => (
+            <li
+              class={`lang-switch__opt${opt.code === lang ? ' active' : ''}`}
+              data-lang={opt.label}
+              data-href={opt.href}
+              role="option"
+              aria-selected={opt.code === lang ? 'true' : 'false'}
+            >{opt.label}</li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <a href={lp('/consultation')} class="btn btn-primary nav__cta">
+        {t('nav.bookFreeCall')}
+      </a>
+
+      <!-- Burger -->
+      <button
+        class="nav__burger"
+        id="navBurger"
+        aria-label={t('nav.toggleMenu') as string}
+        aria-expanded="false"
+        aria-controls="navMobile"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Menu Backdrop -->
+<div class="nav__backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<!-- Mobile Menu -->
+<nav class="nav__mobile" id="navMobile" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="nav__mobile-scroll" id="navMobileScroll">
+    <ul class="nav__mobile-links">
+      {navLinks.map((link, i) => (
+        <li style={`--i:${i}`}>
+          <a
+            href={lp(link.href)}
+            class={isActive(link.href) ? 'active' : ''}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
             {link.label}
           </a>
         </li>
       ))}
     </ul>
-  </div>
 
-  <div style="display:flex;align-items:center;gap:8px;margin-left:auto;">
-    <!-- Language Switcher -->
-    <div class="lang-switch" id="langSwitch">
-      <button class="lang-switch__btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
-        <span id="currentLang">{localeLabels[lang]}</span>
-        <svg class="lang-switch__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </button>
-      <ul class="lang-switch__menu" role="listbox" id="langMenu">
-        {langOptions.map(opt => (
-          <li
-            class={`lang-switch__opt${opt.code === lang ? ' active' : ''}`}
-            data-lang={opt.label}
-            data-href={opt.href}
-            role="option"
-            aria-selected={opt.code === lang ? 'true' : 'false'}
-          >{opt.label}</li>
-        ))}
-      </ul>
+    <div class="nav__mobile-lang" aria-label="Language selection">
+      {langOptions.map(opt => (
+        <a
+          href={opt.href}
+          class={`nav__mobile-lang-opt${opt.code === lang ? ' active' : ''}`}
+          aria-label={`Switch to ${opt.label}`}
+        >
+          {opt.label}
+        </a>
+      ))}
     </div>
 
-    <!-- CTA -->
-    <a href={lp('/consultation')} class="btn btn-primary nav__cta">
+    <a href={lp('/consultation')} class="btn btn-primary nav__mobile-cta">
       {t('nav.bookFreeCall')}
     </a>
-
-    <!-- Burger -->
-    <button class="nav__burger" id="navBurger" aria-label={t('nav.toggleMenu') as string}>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
 </nav>
 
-<!-- Mobile Menu -->
-<div class="nav__mobile" id="navMobile">
-  {navLinks.map(link => (
-    <a href={lp(link.href)}>{link.label}</a>
-  ))}
-  <a href={lp('/consultation')} class="btn btn-primary" style="margin-top:16px;">{t('nav.bookFreeCall')}</a>
-</div>
-
 <script>
-  // Scroll shadow
+  // ── Header height CSS variable (keeps mobile panel below header) ────
+  const header = document.getElementById('siteHeader')!;
+  const setHeaderH = () =>
+    document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+  setHeaderH();
+  const ro = new ResizeObserver(setHeaderH);
+  ro.observe(header);
+
+  // ── Scroll shadow on nav ────────────────────────────────────────────
   const nav = document.getElementById('mainNav')!;
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Burger toggle
-  const burger = document.getElementById('navBurger')!;
-  const mobile = document.getElementById('navMobile')!;
+  // ── Mobile menu helpers ─────────────────────────────────────────────
+  const burger  = document.getElementById('navBurger')!;
+  const mobile  = document.getElementById('navMobile')!;
+  const backdrop = document.getElementById('navBackdrop')!;
+
+  function openMenu() {
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    mobile.classList.add('open');
+    mobile.setAttribute('aria-hidden', 'false');
+    backdrop.classList.add('open');
+    // Prevent body scroll but allow the panel to scroll
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+  }
+
+  function closeMenu() {
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    mobile.classList.remove('open');
+    mobile.setAttribute('aria-hidden', 'true');
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    document.body.style.touchAction = '';
+  }
+
   burger.addEventListener('click', () => {
-    const open = burger.classList.toggle('open');
-    mobile.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
+    if (burger.classList.contains('open')) closeMenu();
+    else openMenu();
   });
 
-  // Close mobile menu on link click
+  // Close on backdrop click
+  backdrop.addEventListener('click', closeMenu);
+
+  // Close on link click
   mobile.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => {
-      burger.classList.remove('open');
-      mobile.classList.remove('open');
-      document.body.style.overflow = '';
-    })
+    a.addEventListener('click', closeMenu)
   );
 
-  // Nav highlight pill
-  const links = document.getElementById('navLinks')!;
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // ── Desktop nav highlight pill ──────────────────────────────────────
+  const links    = document.getElementById('navLinks')!;
   const highlight = document.getElementById('navHighlight')!;
-  const linksRect = () => links.getBoundingClientRect();
 
   const moveHighlight = (el: HTMLElement) => {
-    const r = el.getBoundingClientRect();
-    const lr = linksRect();
-    highlight.style.left = `${r.left - lr.left}px`;
+    const r  = el.getBoundingClientRect();
+    const lr = links.getBoundingClientRect();
+    highlight.style.left  = `${r.left - lr.left}px`;
     highlight.style.width = `${r.width}px`;
     highlight.style.opacity = '1';
   };
 
-  links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('mouseenter', () => moveHighlight(a as HTMLElement));
-  });
+  links.querySelectorAll('a').forEach(a =>
+    a.addEventListener('mouseenter', () => moveHighlight(a as HTMLElement))
+  );
   links.addEventListener('mouseleave', () => {
     highlight.style.opacity = '0';
   });
 
-  // Language switcher
+  // ── Language switcher ───────────────────────────────────────────────
   const langSwitch = document.getElementById('langSwitch')!;
   const langBtn    = document.getElementById('langBtn')!;
   const langMenu   = document.getElementById('langMenu')!;
-  const currentLangEl = document.getElementById('currentLang')!;
 
   langBtn.addEventListener('click', (e) => {
     e.stopPropagation();
