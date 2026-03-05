@@ -162,12 +162,12 @@ const jsonLd = JSON.stringify({
         );
 
         revealEls.forEach((el) => {
-          if (el.classList.contains("visible")) return;
+          if (el.classList.contains("visible") || el.classList.contains("reveal-onload")) return;
 
           const rect = el.getBoundingClientRect();
           const isAboveFold = rect.top < viewportH * 0.92;
           if (isAboveFold) {
-            el.classList.add("visible");
+            el.classList.add("reveal-onload");
             return;
           }
 

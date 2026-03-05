@@ -954,6 +954,91 @@ p {
     transition-delay: .5s;
 }
 
+/* Above-the-fold one-shot reveal (no observer transition) */
+.reveal.reveal-onload,
+.reveal-scale.reveal-onload,
+.reveal-left.reveal-onload,
+.reveal-right.reveal-onload {
+    transition: none;
+    will-change: opacity, transform;
+}
+
+.reveal.reveal-onload {
+    animation: revealUp .8s ease both;
+}
+
+.reveal-scale.reveal-onload {
+    animation: revealScaleIn .8s ease both;
+}
+
+.reveal-left.reveal-onload {
+    animation: revealLeftIn .9s ease both;
+}
+
+.reveal-right.reveal-onload {
+    animation: revealRightIn .9s ease both;
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(36px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes revealLeftIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes revealRightIn {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal.reveal-onload,
+    .reveal-scale.reveal-onload,
+    .reveal-left.reveal-onload,
+    .reveal-right.reveal-onload {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
 /* ── Section Base ──────────────────────────────────── */
 .section {
     padding-block: clamp(64px, 9vw, 120px);
