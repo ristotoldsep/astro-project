@@ -140,11 +140,16 @@ p {
     -webkit-backdrop-filter: blur(6px);
     width: max-content;
     transition: all .2s ease;
+    max-width: 100%;
 
     &.white {
         color: var(--white);
         background: rgba(254, 254, 254, .15);
         border-color: rgba(254, 254, 254, .3);
+    }
+
+    &.second_label {
+        margin-bottom: 14px;
     }
 
     &:hover {
@@ -155,6 +160,12 @@ p {
             background: rgba(254, 254, 254, .25);
             border-color: rgba(254, 254, 254, .45);
         }
+    }
+}
+
+.badge {
+    &.badge-green {
+        margin-right: 8px;
     }
 }
 
@@ -398,7 +409,7 @@ p {
         span {
             display: block;
             width: 22px;
-            height: 1.5px;
+            height: 2px;
             background: var(--terracotta);
             border-radius: 2px;
             transition: transform .38s cubic-bezier(.4, 0, .2, 1), opacity .22s ease, width .3s ease;
@@ -701,6 +712,10 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 767px) {
+        height: 560px;
+    }
 
     &__slide {
         position: absolute;
@@ -1484,7 +1499,7 @@ p {
 /* ── Parallax Band ─────────────────────────────────── */
 .parallax-band {
     position: relative;
-    height: clamp(320px, 50vw, 560px);
+    height: clamp(450px, 50vw, 560px);
     overflow: hidden;
     display: flex;
     align-items: center;

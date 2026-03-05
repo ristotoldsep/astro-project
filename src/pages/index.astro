@@ -208,7 +208,7 @@ const heroSlides = [
     </div>
     <div class="container">
       <div class="split">
-        <div class="split__content reveal-left">
+        <div class="split__content reveal-left text-center md:text-left">
           <span class="label">{t("home.welcomeLabel")}</span>
           <h2 style="margin-top:12px;">
             {t("home.welcomeH2a")}<br /><span class="serif-italic"
@@ -301,7 +301,7 @@ const heroSlides = [
     </div>
     <div class="container">
       <div class="split split--reverse split_video_wrapper">
-        <div class="split__content reveal-right">
+        <div class="split__content reveal-right text-center md:text-left">
           <span class="label">{t("home.storyLabel")}</span>
           <h2 style="margin-top:12px;">
             {t("home.storyH2a")}
@@ -718,10 +718,16 @@ const heroSlides = [
     }
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 767px) {
     .services-header-row {
       flex-direction: column;
       align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    .lotus-mandala {
+      display: none;
     }
   }
 </style>

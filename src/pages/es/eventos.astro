@@ -47,13 +47,13 @@ const tallinnFeatures = t("events.tallinnFeatures") as string[];
   <section class="section" aria-labelledby="barcelona-heading">
     <div class="container">
       <div class="split split--reverse">
-        <div class="split__content reveal-right">
+        <div class="split__content reveal-right text-center md:text-left">
           <span class="badge badge-green" style="margin-bottom:16px;"
             >{t("events.barcelonaBadge")}</span
           >
           <span
             class="label second_label"
-            style="display:inline-block;margin-left:8px;"
+            style="display:inline-block;"
             >{t("events.barcelonaTag")}</span
           >
           <h2 id="barcelona-heading">
@@ -84,7 +84,7 @@ const tallinnFeatures = t("events.tallinnFeatures") as string[];
               })
             }
           </ul>
-          <a href={lp("/consultation")} class="btn btn-primary"
+          <a href={lp("/consultation")} class="btn btn-primary w-full md:w-auto"
             >{t("events.barcelonaCta")}</a
           >
         </div>
@@ -143,11 +143,11 @@ const tallinnFeatures = t("events.tallinnFeatures") as string[];
           />
           <div class="split__tag">{t("events.tallinnMediaTag")}</div>
         </div>
-        <div class="split__content reveal-right">
-          <span class="badge badge-terra" style="margin-bottom:16px;"
+        <div class="split__content reveal-right text-center md:text-left">
+          <span class="badge badge-terra mb-4"
             >{t("events.tallinnBadge")}</span
           >
-          <span class="label" style="display:block;margin-bottom:8px;"
+          <span class="label block mb-4"
             >{t("events.tallinnTag")}</span
           >
           <h2 id="tallinn-heading">
@@ -167,7 +167,7 @@ const tallinnFeatures = t("events.tallinnFeatures") as string[];
           >
             {t("events.tallinnComingSoon")}
           </p>
-          <a href={lp("/consultation")} class="btn btn-outline"
+          <a href={lp("/consultation")} class="btn btn-outline w-full md:w-auto"
             >{t("events.tallinnCta")}</a
           >
         </div>

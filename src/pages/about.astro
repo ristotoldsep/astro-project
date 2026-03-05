@@ -64,7 +64,7 @@ const _pillarsFallback = [
           />
           <div class="split__tag" aria-hidden="true">{t('about.bioTag')}</div>
         </div>
-        <div class="split__content reveal-right">
+        <div class="split__content reveal-right text-center md:text-left">
           <span class="label">{t('about.bioLabel')}</span>
           <h2 style="margin-top:12px;">{t('about.bioH2a')} <span class="serif-italic">{t('about.bioH2b')}</span></h2>
           <p>{t('about.bioP1')}</p>
@@ -100,18 +100,18 @@ const _pillarsFallback = [
   <section class="section section--sand">
     <div class="container">
       <div class="split split--reverse">
-        <div class="split__content reveal-right">
-          <span class="label">{t('about.workLabel')}</span>
+        <div class="split__content reveal-right text-center md:text-left">
+          <span class="label mb-4">{t('about.workLabel')}</span>
           <h2>{t('about.workH2a')} <span class="serif-italic">{t('about.workH2b')}</span></h2>
           <p>{t('about.workP1')}</p>
           <p>{t('about.workP2')}</p>
           <p>{t('about.workP3')}</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+          <div class="flex flex-wrap gap-3 mt-2 justify-center md:justify-start">
             <a href={lp('/services')} class="btn btn-primary">{t('about.workCta1')}</a>
             <a href={lp('/events')} class="btn btn-outline">{t('about.workCta2')}</a>
           </div>
         </div>
-        <div class="split__media reveal-left">
+        <div class="split__media reveal-left text-center md:text-left">
           <Picture
             src={serviceBiohacking}
             alt="Holistic wellness practice — herbs and natural supplements"
