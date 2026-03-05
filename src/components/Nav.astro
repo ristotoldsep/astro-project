@@ -12,8 +12,11 @@ const lang: Locale = langProp ?? urlLang;
 const t = useTranslations(lang);
 
 const lp = (s: string) => getLocalePath(lang, s);
-const isActive = (slug: string) =>
-  slug === '/' ? Astro.url.pathname === lp('/') || Astro.url.pathname === `/${lang === 'en' ? '' : lang}` : Astro.url.pathname.startsWith(lp(slug));
+const currentSlug = slug;
+const isActive = (targetSlug: string) =>
+  targetSlug === '/'
+    ? currentSlug === '/'
+    : currentSlug === targetSlug || currentSlug.startsWith(`${targetSlug}/`);
 
 const navLinks = [
   { href: '/',             label: t('nav.home') as string },

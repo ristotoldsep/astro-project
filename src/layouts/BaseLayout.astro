@@ -144,6 +144,8 @@ const jsonLd = JSON.stringify({
 
         if (!revealEls.length) return;
 
+        const viewportH = window.innerHeight || document.documentElement.clientHeight;
+
         const io = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -160,9 +162,16 @@ const jsonLd = JSON.stringify({
         );
 
         revealEls.forEach((el) => {
-          if (!el.classList.contains("visible")) {
-            io.observe(el);
+          if (el.classList.contains("visible")) return;
+
+          const rect = el.getBoundingClientRect();
+          const isAboveFold = rect.top < viewportH * 0.92;
+          if (isAboveFold) {
+            el.classList.add("visible");
+            return;
           }
+
+          io.observe(el);
         });
 
         window.__qiRevealObserver = io;
@@ -261,17 +270,22 @@ const jsonLd = JSON.stringify({
         }
 
         document.addEventListener("astro:after-swap", () => {
+          window.__qiLastLifecyclePath = "";
           window.scrollTo({ top: 0, left: 0, behavior: "auto" });
         });
 
-        document.addEventListener("astro:page-load", () => {
+        const runPageLifecycle = () => {
+          const key = `${window.location.pathname}${window.location.search}`;
+          if (window.__qiLastLifecyclePath === key) return;
+          window.__qiLastLifecyclePath = key;
+
           scheduleRevealInit();
           schedulePageEnhancements();
           ScrollTrigger.refresh();
-        });
+        };
 
-        scheduleRevealInit();
-        schedulePageEnhancements();
+        window.addEventListener("load", runPageLifecycle, { once: true });
+        document.addEventListener("astro:page-load", runPageLifecycle);
       }
     </script>
   </body>
