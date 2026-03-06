@@ -25,6 +25,7 @@ const SUBJECT_PREFIX  = 'QiNutritionist Enquiry';
 const ALLOWED_ORIGINS = [
     'https://qinutritionist.com',
     'https://www.qinutritionist.com',
+    'https://qinutritionist.paavli.ee',
 ];
 
 /* ── Bootstrap ──────────────────────────────────────────────────────── */
