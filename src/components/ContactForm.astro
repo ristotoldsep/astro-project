@@ -390,6 +390,9 @@ const js = {
         return;
       }
 
+      // Blur before disabling — prevents mobile Chrome from scrolling the page
+      // when the focused submit button loses focusability due to being disabled.
+      if (document.activeElement) document.activeElement.blur();
       submitBtn.disabled = true;
       showStatus(d.sending || "Sending your message…", "loading");
 
@@ -402,6 +405,9 @@ const js = {
           if (json.success) {
             form.style.display = "none";
             showStatus(d.success || "✓ Thank you! I'll be in touch within 24 hours. 🌿", "success");
+            // Move focus to the status message without scrolling
+            statusEl.setAttribute("tabindex", "-1");
+            statusEl.focus({ preventScroll: true });
           } else {
             showStatus(json.error || d.errGeneral || "Something went wrong. Please try again or email directly.", "error");
           }
