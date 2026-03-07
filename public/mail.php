@@ -17,6 +17,7 @@ declare(strict_types=1);
 const RECIPIENT_EMAIL = 'ristotoldsep@gmail.com';
 const RECIPIENT_NAME  = 'Anett — QiNutritionist';
 const SUBJECT_PREFIX  = 'QiNutritionist Enquiry';
+const SENDER_EMAIL    = 'noreply@paavli.ee';  // must match the server's sending domain
 
 /**
  * Allowed origins — add your production domain here.
@@ -116,7 +117,9 @@ $body .= "Sent from: " . ($_SERVER['HTTP_HOST'] ?? 'qinutritionist.com') . "\n";
 $body .= "Date:      " . date('Y-m-d H:i:s T') . "\n";
 
 // RFC 2822 headers
-$headers  = "From: {$name} <{$email}>\r\n";
+// From must be an address on THIS server's domain — using the visitor's address
+// causes SPF failures and lands mail in spam.
+$headers  = "From: " . RECIPIENT_NAME . " <" . SENDER_EMAIL . ">\r\n";
 $headers .= "Reply-To: {$name} <{$email}>\r\n";
 $headers .= "X-Mailer: PHP/" . PHP_VERSION . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
