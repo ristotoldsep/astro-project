@@ -243,9 +243,10 @@ const js = {
     color: var(--taupe);
   }
 
-  button[disabled] {
+  button[data-loading] {
     opacity: 0.6;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   .form-card {
@@ -390,10 +391,9 @@ const js = {
         return;
       }
 
-      // Blur before disabling — prevents mobile Chrome from scrolling the page
-      // when the focused submit button loses focusability due to being disabled.
-      if (document.activeElement) document.activeElement.blur();
-      submitBtn.disabled = true;
+      // Use data-loading + pointer-events instead of disabled so the browser
+      // never needs to move focus away (which causes mobile Chrome to scroll).
+      submitBtn.setAttribute("data-loading", "");
       showStatus(d.sending || "Sending your message…", "loading");
 
       var data = new FormData(form);
@@ -401,19 +401,16 @@ const js = {
       fetch("/mail.php", { method: "POST", body: data })
         .then(function (res) { return res.json(); })
         .then(function (json) {
-          submitBtn.disabled = false;
+          submitBtn.removeAttribute("data-loading");
           if (json.success) {
             form.style.display = "none";
             showStatus(d.success || "✓ Thank you! I'll be in touch within 24 hours. 🌿", "success");
-            // Move focus to the status message without scrolling
-            statusEl.setAttribute("tabindex", "-1");
-            statusEl.focus({ preventScroll: true });
           } else {
             showStatus(json.error || d.errGeneral || "Something went wrong. Please try again or email directly.", "error");
           }
         })
         .catch(function () {
-          submitBtn.disabled = false;
+          submitBtn.removeAttribute("data-loading");
           showStatus(d.errSend || "Could not send — please email randveeyoga@gmail.com directly.", "error");
         });
     });
