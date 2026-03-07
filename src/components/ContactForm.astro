@@ -72,7 +72,7 @@ const js = {
   >
   </div>
 
-  <form id="contactForm" novalidate aria-label={js.formAriaLabel}
+  <form id="contactForm" method="post" novalidate aria-label={js.formAriaLabel}
     data-sending={js.sendingMsg}
     data-success={js.successMsg}
     data-err-general={js.errorGeneral}
@@ -297,8 +297,8 @@ const js = {
   }
 </style>
 
-<script is:inline>
-  (function () {
+<script>
+  function initContactForm() {
     const form = document.getElementById("contactForm");
     const statusEl = document.getElementById("formStatus");
     const submitBtn = document.getElementById("submitBtn");
@@ -414,5 +414,8 @@ const js = {
           showStatus(d.errSend || "Could not send — please email randveeyoga@gmail.com directly.", "error");
         });
     });
-  })();
+  }
+
+  // Re-run on every View Transition navigation (and initial page load)
+  document.addEventListener("astro:page-load", initContactForm);
 </script>

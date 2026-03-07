@@ -23,7 +23,7 @@
     "defaultDescription": "QiNutritionist – holistiline heaolu, mis ühendab iidse tarkuse ja tänapäevase teaduse. Toitumisnõustamine, soolestiku tervis, hormoonide tasakaal ja palju muud.",
     "websiteDescription": "Holistiline viljakus, soolestiku tervis ja hormoonide tasakaal — kus teadus kohtub traditsiooniga.",
     "personJobTitle": "Holistiline toitumisnõustaja",
-    "personDescription": "Anett aitab naistel taastada tervist, tasakaalustada hormoone ja toetada viljakust holistilise toitumise, THM-i ja biohäkkimise abil.",
+    "personDescription": "Anett aitab naistel taastada tervist, tasakaalustada hormoone ja toetada viljakust holistilise toitumise, TCM-i ja biohäkkimise abil.",
     "personKnowsAbout": [
       "Holistiline toitumine",
       "Soolestiku tervis",
@@ -39,7 +39,7 @@
     "navHeading": "Navigatsioon",
     "servicesHeading": "Teenused",
     "contactHeading": "Kontakt",
-    "bottomRight": "Holistiline heaolu · Tallinn & Barcelona",
+    "bottomRight": "Holistiline heaolu · Tallinn, Eesti",
     "socialLabel": "Sotsiaalmeedia lingid",
     "instaStripLabel": "Igapäevaste nippide jaoks jälgi",
     "footerLabel": "Lehe jalus",
@@ -50,10 +50,10 @@
 
   "home": {
     "metaTitle": "QiNutritionist – holistiline heaolu",
-    "metaDescription": "Anett aitab naistel taastada tervise, tasakaalustada hormoone ja toetada viljakust holistilise toitumise, THM-i ja biohäkkimisega.",
+    "metaDescription": "Anett aitab naistel taastada tervise, tasakaalustada hormoone ja toetada viljakust holistilise toitumise, TCM-i ja biohäkkimisega.",
     "heroEyebrow": "Holistiline viljakus ja soolestiku tervis",
     "heroSubtitle": "Kus teadus kohtub traditsiooniga",
-    "heroCta1": "Broneeri tasuta nõustamine",
+    "heroCta1": "Broneeri nõustamine",
     "heroCta2": "Tutvu Anettiga",
     "heroScroll": "Keri",
     "welcomeLabel": "Tere tulemast, armas",
@@ -63,7 +63,7 @@
     "welcomeP2": "Mind inspireerib naiste toetamine püsiva heaolu ja viljakuse suunas personaalse lähenemisega, mis ühendab kaasaegse teaduse ja ajaproovitud holistilise tervenduse.",
     "welcomeP3": "Kui tunned end oma terviseteekonnal eksinuna, siis sa ei ole üksi — alati on tee edasi. Iga naise teekond on ainulaadne ja koos loome plaani, mis päriselt toimib.",
     "welcomeP4": "Sinu tervis on sinu jõud. Kas oled valmis särama seestpoolt väljapoole?",
-    "welcomeCta": "Broneeri tasuta nõustamine",
+    "welcomeCta": "Broneeri nõustamine",
     "welcomeTag": "Holistiline tervenemine",
     "pillarsLabel": "Minu lähenemine",
     "pillarsH2a": "Tasakaalu",
@@ -86,7 +86,7 @@
         "icon": "✨",
         "label": "Tulemused",
         "title": "Muutust loovad tulemused",
-        "text": "Ühendades traditsioonilise Hiina meditsiini, biohäkkimise ja tõenduspõhise toitumise, aitan naistel taastada soolestiku tervise, reguleerida tsüklit ja toetada viljakust."
+        "text": "Ühendades traditsioonilise Hiina meditsiini (TCM), biohäkkimise ja tõenduspõhise toitumise, aitan naistel taastada soolestiku tervise, reguleerida tsüklit ja toetada viljakust."
       }
     ],
     "storyLabel": "Minu lugu",
@@ -141,32 +141,32 @@
     "bioLabel": "Minu filosoofia",
     "bioH2a": "Raskusest",
     "bioH2b": "muutuseni",
-    "bioP1": "Minu teekond naiste tervise, hormoonide ja viljakuse juurde algas isiklikust kogemusest. Unistasin alati emaks saamisest, kuid kui mulle öeldi, et minu viljakus on lootusetult kahjustatud, ei leppinud ma sellega. Sukeldusin toitumisse, biohäkkimisse ja traditsioonilisse hiina meditsiini, et tervendada oma keha seestpoolt.",
+    "bioP1": "Minu teekond naiste tervise, hormoonide ja viljakuse juurde algas isiklikust kogemusest. Unistasin alati emaks saamisest, kuid kui mulle öeldi, et minu viljakusega võivad olla tõsised raskused, ei leppinud ma sellega. Sukeldusin toitumisse, biohäkkimisse ja traditsioonilisse hiina meditsiini, et tervendada oma keha seestpoolt.",
     "bioP2": "See kogemus süütas minus soovi siduda ida- ja lääne meditsiini teadmised, et aidata ka teisi naisi. Õppisin Stanfordis toitumisteadust ning süvenesin ajurvedasse, taimeravisse ja funktsionaalsesse meditsiini.",
     "bioP3": "Täna aitan naistel ületada hormoonide tasakaalutust, soolestiku muresid ja viljakuse väljakutseid juurpõhjusele keskenduva lähenemisega.",
     "bioCta": "Tee minuga koostööd",
     "bioTag": "Anett, QiNutritionist",
     "pillarsLabel": "Mille eest seisan",
     "pillarsH2a": "Minu kolm",
-    "pillarsH2b": "sammast",
+    "pillarsH2b": "paketti",
     "pillars": [
       {
         "icon": "🔬",
-        "label": "Sammas I",
+        "label": "Pakett I",
         "title": "Teadus kohtub holistilise tervendusega",
         "text": "Stanfordi toitumisteaduse taust aitab mul siduda kaasaegse teaduse ja iidse tarkuse, et pakkuda tasakaalustatud ja tõhusat lähenemist pikaajalisele tervisele."
       },
       {
         "icon": "🌺",
-        "label": "Sammas II",
+        "label": "Pakett II",
         "title": "Terviklik lähenemine",
         "text": "Usun, et tõeline paranemine sünnib siis, kui käsitleme keha tervikuna. Füüsiline, vaimne, emotsionaalne ja hingeline tervis on omavahel seotud."
       },
       {
         "icon": "💫",
-        "label": "Sammas III",
+        "label": "Pakett III",
         "title": "Muutust loovad tulemused",
-        "text": "Ühendades THM-i, biohäkkimise ja tõenduspõhise toitumise, aitan naistel taastada soolestiku tervise, reguleerida tsüklit ja toetada viljakust."
+        "text": "Ühendades TCM-i, biohäkkimise ja tõenduspõhise toitumise, aitan naistel taastada soolestiku tervise, reguleerida tsüklit ja toetada viljakust."
       }
     ],
     "workLabel": "Teeme koostööd",
@@ -177,13 +177,13 @@
     "workP3": "Iga plaan on personaalne — sest sinu lugu, keha ja eesmärgid on ainulaadsed.",
     "workCta1": "Vaata teenuseid",
     "workCta2": "Tulevased üritused",
-    "quoteText": "Tõeline heaolu ei sünni kiirparandustest — see sünnib siis, kui mõistad oma keha tervikuna ja annad talle täpselt seda, mida ta vajab.",
+    "quoteText": "Tõeline heaolu ei tule kiiretest lahendustest – see sünnib siis, kui mõistad oma keha tervikuna ja annad talle seda, mida ta tegelikult vajab.",
     "quoteAttr": "— Anett",
     "parallaxLabel": "Valmis?",
     "parallaxH2a": "Alusta oma",
     "parallaxH2b": "muutust",
-    "parallaxText": "Broneeri tasuta nõustamine ja loome koos plaani, mis päriselt toimib.",
-    "parallaxCta": "Broneeri tasuta nõustamine"
+    "parallaxText": "Broneeri nõustamine ja loome koos plaani, mis päriselt toimib.",
+    "parallaxCta": "Broneeri nõustamine"
   },
 
   "services": {
@@ -232,18 +232,18 @@
     "programsH2a": "3-kuuline sügav",
     "programsH2b": "muutus",
     "programsSubtitle": "Terviklikud programmid, mis viivad sind 12 nädalaga läbi põhjaliku hormoonide ja soolestiku reseti.",
-    "bookDiscovery": "Broneeri tasuta kõne & uuri lisa",
+    "bookDiscovery": "Broneeri kõne & uuri lisa",
     "programs": [
       {
         "tag": "12-nädalane programm",
         "title": "Soolestiku tervise",
         "titleItalic": "optimeerimine",
-        "description": "Holistiline 3-kuuline teekond soolestiku tervendamiseks, põletiku vähendamiseks ja keha loomuliku tasakaalu taastamiseks toitumise, THM-i ja elustiili abil.",
+        "description": "Holistiline 3-kuuline teekond soolestiku tervendamiseks, põletiku vähendamiseks ja keha loomuliku tasakaalu taastamiseks toitumise, TCM-i ja elustiili abil.",
         "forLabel": "Mõeldud naistele, kes soovivad:",
         "features": [
           "vähendada puhitust, kõhukinnisust ja soolepõletikku",
           "alandada stressi ja rahustada närvisüsteemi hormoonide tasakaalu toetuseks",
-          "toetada maksa detoksi ja parandada seedimist taimede ning THM-toitumisega",
+          "toetada maksa detoksi ja parandada seedimist taimede ning TCM-toitumisega",
           "tunda end energilise, keskendunu ja tasakaalus"
         ]
       },
@@ -264,8 +264,8 @@
     "parallaxLabel": "Alusta",
     "parallaxH2a": "Pole kindel, kust",
     "parallaxH2b": "alustada?",
-    "parallaxText": "Broneeri tasuta 20-minutiline avastuskõne ja leiame koos õige suuna.",
-    "parallaxCta": "Broneeri tasuta nõustamine"
+    "parallaxText": "Broneeri 20-minutiline avastuskõne ja leiame koos õige suuna.",
+    "parallaxCta": "Broneeri nõustamine"
   },
 
   "events": {
@@ -313,17 +313,17 @@
     "parallaxLabel": "Küsimusi?",
     "parallaxH2a": "Võta minuga",
     "parallaxH2b": "ühendust",
-    "parallaxText": "Kirjuta mulle otse või broneeri tasuta kõne, et leida just sulle sobiv kogemus.",
-    "parallaxCta1": "Broneeri tasuta kõne",
+    "parallaxText": "Kirjuta mulle otse või broneeri kõne, et leida just sulle sobiv kogemus.",
+    "parallaxCta1": "Broneeri kõne",
     "parallaxCta2": "Saada e-kiri"
   },
 
   "consultation": {
-    "metaTitle": "Tasuta nõustamine – QiNutritionist",
-    "metaDescription": "Broneeri tasuta 20-minutiline avastuskõne Anettiga ja tee esimene samm soolestiku tervenemise, hormoonide tasakaalu ja kehaga taasühendumise suunas.",
+    "metaTitle": "Konsultatsioon – QiNutritionist",
+    "metaDescription": "Broneeri 20-minutiline avastuskõne Anettiga ja tee esimene samm soolestiku tervenemise, hormoonide tasakaalu ja kehaga taasühendumise suunas.",
     "bannerLabel": "Ilma kohustuseta",
-    "bannerHeading": "Tasuta",
-    "bannerHeadingItalic": "nõustamine",
+    "bannerHeading": "Konsultatsioon",
+    "bannerHeadingItalic": "",
     "bannerSubtitle": "Alustame sinu muutuste teekonda koos",
     "contactLabel": "Kontakt",
     "contactH2a": "Võta minuga",
@@ -332,19 +332,19 @@
     "contactDetails": [
       { "icon": "📞", "label": "Telefon", "type": "link", "href": "tel:+37256505371", "text": "+372 56505371" },
       { "icon": "✉️", "label": "E-post", "type": "link", "href": "mailto:randveeyoga@gmail.com", "text": "randveeyoga@gmail.com" },
-      { "icon": "📍", "label": "Asukohad", "type": "text", "lines": ["Tallinn, Eesti ja Barcelona, Hispaania"], "note": "Sessioonid on saadaval ka veebis üle maailma" },
+      { "icon": "📍", "label": "Asukohad", "type": "text", "lines": ["Tallinn, Eesti"], "note": "Sessioonid on saadaval ka veebis üle maailma" },
       { "icon": "📸", "label": "Instagram", "type": "link", "href": "https://www.instagram.com/qinutritionist/", "text": "@qinutritionist", "external": true }
     ],
-    "formHeading": "Broneeri minuga<br /><span class=\"serif-italic\">tasuta avastuskõne</span>",
+    "formHeading": "Broneeri minuga<br /><span class=\"serif-italic\"> avastuskõne</span>",
     "formLabel": "Saada sõnum",
     "formPrivacy": "Sinu info on privaatne ja seda ei jagata kolmandatele osapooltele.",
     "processLabel": "Protsess",
     "processH2a": "Mida",
     "processH2b": "oodata",
-    "processSubtitle": "Tasuta ja pingevaba vestlus, et mõista, mis sind tagasi hoiab, ning leida sobiv lahendus.",
+    "processSubtitle": "Pingevaba vestlus, et mõista, mis sind tagasi hoiab, ning leida sobiv lahendus.",
     "steps": [
       { "num": "01", "title": "Võtad ühendust", "text": "Täida lühike vorm või saada mulle otse sõnum. Jaga lühidalt, mida koged ja mida soovid muuta." },
-      { "num": "02", "title": "20-minutiline avastuskõne", "text": "Peame rahuliku tasuta kõne, kus tutvume, räägime sinu terviseeesmärkidest ja vastan küsimustele oma lähenemise kohta." },
+      { "num": "02", "title": "20-minutiline avastuskõne", "text": "Peame rahuliku kõne, kus tutvume, räägime sinu terviseeesmärkidest ja vastan küsimustele oma lähenemise kohta." },
       { "num": "03", "title": "Sinu personaalne plaan", "text": "Valime koos sobiva programmi või sessiooni ning saad selge esimese sammu parema enesetunde suunas." }
     ],
     "commitmentLabel": "Anetti lubadus",

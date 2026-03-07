@@ -13,7 +13,7 @@ const slugMap: Record<Locale, Record<string, string>> = {
     '/about':        '/minust',
     '/services':     '/teenused',
     '/events':       '/uritused',
-    '/consultation': '/noustamine',
+    '/consultation': '/konsultatsioon',
   },
   es: {
     '/about':        '/sobre-mi',
@@ -30,7 +30,7 @@ const reverseSlugMap: Record<Locale, Record<string, string>> = {
     '/minust':      '/about',
     '/teenused':    '/services',
     '/uritused':    '/events',
-    '/noustamine':  '/consultation',
+    '/konsultatsioon':  '/consultation',
   },
   es: {
     '/sobre-mi':  '/about',

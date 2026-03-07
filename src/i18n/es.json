@@ -39,7 +39,7 @@
     "navHeading": "Navegación",
     "servicesHeading": "Servicios",
     "contactHeading": "Contacto",
-    "bottomRight": "Bienestar Holístico · Tallin y Barcelona",
+    "bottomRight": "Bienestar Holístico · Tallin, ",
     "socialLabel": "Redes sociales",
     "instaStripLabel": "Para consejos diarios, sigue",
     "footerLabel": "Pie de página",
@@ -53,7 +53,7 @@
     "metaDescription": "Anett ayuda a las mujeres a recuperar su salud, equilibrar sus hormonas y optimizar su fertilidad mediante nutrición holística, MTC y biohacking.",
     "heroEyebrow": "Fertilidad holística y salud intestinal",
     "heroSubtitle": "Donde la ciencia se encuentra con la tradición",
-    "heroCta1": "Reservar consulta gratuita",
+    "heroCta1": "Reservar consulta",
     "heroCta2": "Conocer a Anett",
     "heroScroll": "Desplazarse",
     "welcomeLabel": "Bienvenida, querida",
@@ -63,7 +63,7 @@
     "welcomeP2": "Me apasiona guiar a las mujeres hacia un bienestar duradero y la fertilidad a través de un enfoque personalizado que combina la ciencia moderna con la sanación holística probada a lo largo del tiempo.",
     "welcomeP3": "Si te sientes perdida en tu proceso de salud, sabes que no estás sola — y sí hay un camino. Cada mujer tiene una historia única, y juntas crearemos un plan que sí funcione para ti.",
     "welcomeP4": "Tu salud es tu poder. ¿Lista para brillar desde adentro hacia afuera?",
-    "welcomeCta": "Reservar consulta gratuita",
+    "welcomeCta": "Reservar consulta",
     "welcomeTag": "Sanación Holística",
     "pillarsLabel": "Mi enfoque",
     "pillarsH2a": "Arraigada en el",
@@ -127,9 +127,9 @@
     "parallaxText": "Retiro de Bienestar de Lujo de 3 Días · Barcelona · Taller de Repostería Saludable · Tallin",
     "parallaxCta": "Explorar Eventos",
     "guideLabel": "Recurso gratuito",
-    "guideH2": "¡Consigue mi guía gratuita sobre fertilidad y salud intestinal!",
+    "guideH2": "¡Consigue mi guía sobre fertilidad y salud intestinal!",
     "guideText": "Estrategias prácticas y respaldadas por la ciencia que puedes empezar hoy — completamente gratis.",
-    "guideCta": "Descargar guía gratuita"
+    "guideCta": "Descargar guía"
   },
 
   "about": {
@@ -182,8 +182,8 @@
     "parallaxLabel": "¿Lista?",
     "parallaxH2a": "Comienza tu",
     "parallaxH2b": "Transformación",
-    "parallaxText": "Reserva tu consulta gratuita y creemos juntas un plan que realmente funcione para ti.",
-    "parallaxCta": "Reservar consulta gratuita"
+    "parallaxText": "Reserva tu consulta y creemos juntas un plan que realmente funcione para ti.",
+    "parallaxCta": "Reservar consulta"
   },
 
   "services": {
@@ -232,7 +232,7 @@
     "programsH2a": "Transformación Profunda de",
     "programsH2b": "3 Meses",
     "programsSubtitle": "Programas integrales que te guían a través de un reseteo completo hormonal e intestinal a lo largo de 12 semanas.",
-    "bookDiscovery": "Reservar una llamada gratuita de descubrimiento",
+    "bookDiscovery": "Reservar una llamada de descubrimiento",
     "programs": [
       {
         "tag": "Programa de 12 Semanas",
@@ -264,8 +264,8 @@
     "parallaxLabel": "Comenzar",
     "parallaxH2a": "¿No sabes por dónde",
     "parallaxH2b": "empezar?",
-    "parallaxText": "Reserva una llamada de descubrimiento gratuita de 20 minutos y encontraremos juntas el camino correcto.",
-    "parallaxCta": "Reservar consulta gratuita"
+    "parallaxText": "Reserva una llamada de descubrimiento de 20 minutos y encontraremos juntas el camino correcto.",
+    "parallaxCta": "Reservar consulta"
   },
 
   "events": {
@@ -313,17 +313,17 @@
     "parallaxLabel": "¿Preguntas?",
     "parallaxH2a": "Conectemos",
     "parallaxH2b": "",
-    "parallaxText": "Contáctame directamente o reserva una llamada gratuita para hablar sobre qué experiencia es la adecuada para ti.",
-    "parallaxCta1": "Reservar llamada gratuita",
+    "parallaxText": "Contáctame directamente o reserva una llamada para hablar sobre qué experiencia es la adecuada para ti.",
+    "parallaxCta1": "Reservar llamada",
     "parallaxCta2": "Enviar Email"
   },
 
   "consultation": {
-    "metaTitle": "Consulta gratuita – QiNutritionist",
-    "metaDescription": "Reserva tu llamada de descubrimiento gratuita de 20 minutos con Anett y da el primer paso hacia la sanación de tu intestino, el equilibrio de tus hormonas y la reconexión con tu cuerpo.",
+    "metaTitle": "Consulta – QiNutritionist",
+    "metaDescription": "Reserva tu llamada de descubrimiento de 20 minutos con Anett y da el primer paso hacia la sanación de tu intestino, el equilibrio de tus hormonas y la reconexión con tu cuerpo.",
     "bannerLabel": "Sin Compromiso",
     "bannerHeading": "Consulta",
-    "bannerHeadingItalic": "Gratuita",
+    "bannerHeadingItalic": "",
     "bannerSubtitle": "Empecemos juntas tu transformación",
     "contactLabel": "Contacto",
     "contactH2a": "Hablemos",
@@ -332,19 +332,19 @@
     "contactDetails": [
       { "icon": "📞", "label": "Teléfono", "type": "link", "href": "tel:+37256505371", "text": "+372 56505371" },
       { "icon": "✉️", "label": "Email", "type": "link", "href": "mailto:randveeyoga@gmail.com", "text": "randveeyoga@gmail.com" },
-      { "icon": "📍", "label": "Ubicaciones", "type": "text", "lines": ["Tallin, Estonia y Barcelona, España"], "note": "Sesiones también disponibles online en todo el mundo" },
+      { "icon": "📍", "label": "Ubicaciones", "type": "text", "lines": ["Tallin, Estonia"], "note": "Sesiones también disponibles online en todo el mundo" },
       { "icon": "📸", "label": "Instagram", "type": "link", "href": "https://www.instagram.com/qinutritionist/", "text": "@qinutritionist", "external": true }
     ],
-    "formHeading": "Reserva tu<br /><span class=\"serif-italic\">llamada gratuita de descubrimiento</span>",
+    "formHeading": "Reserva tu<br /><span class=\"serif-italic\">llamada de descubrimiento</span>",
     "formLabel": "Enviar Mensaje",
     "formPrivacy": "Tu información es privada y nunca se comparte con terceros.",
     "processLabel": "El proceso",
     "processH2a": "Qué",
     "processH2b": "Esperar",
-    "processSubtitle": "Una conversación gratuita y sin presión para entender qué te frena y cómo puedo ayudarte.",
+    "processSubtitle": "Una conversación y sin presión para entender qué te frena y cómo puedo ayudarte.",
     "steps": [
       { "num": "01", "title": "Tú das el primer paso", "text": "Completa el formulario o envíame un mensaje directo. Cuéntame brevemente qué estás viviendo y qué te gustaría cambiar." },
-      { "num": "02", "title": "Llamada de 20 minutos", "text": "Tenemos una llamada gratuita y cercana para conocernos, hablar de tus objetivos de salud y resolver tus dudas sobre mi enfoque." },
+      { "num": "02", "title": "Llamada de 20 minutos", "text": "Tenemos una llamada cercana para conocernos, hablar de tus objetivos de salud y resolver tus dudas sobre mi enfoque." },
       { "num": "03", "title": "Tu plan personalizado", "text": "Juntas elegimos el programa o tipo de sesión más adecuado para ti y te llevas un primer paso claro para empezar." }
     ],
     "commitmentLabel": "El Compromiso de Anett",

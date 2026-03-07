@@ -6,8 +6,8 @@
     "about": "About Me",
     "events": "Events & Retreats",
     "services": "Services",
-    "consultation": "Free Consultation",
-    "bookFreeCall": "Book Free Call",
+    "consultation": "Consultation",
+    "bookFreeCall": "Book a Call",
     "announcement": "✦ EMPOWERING WOMEN THROUGH HOLISTIC HEALING ✦",
     "toggleMenu": "Toggle menu"
   },
@@ -39,7 +39,7 @@
     "navHeading": "Navigation",
     "servicesHeading": "Services",
     "contactHeading": "Contact",
-    "bottomRight": "Holistic Wellness · Tallinn & Barcelona",
+    "bottomRight": "Holistic Wellness · Tallinn, Estonia",
     "socialLabel": "Social media links",
     "instaStripLabel": "For daily tips follow",
     "footerLabel": "Site footer",
@@ -53,7 +53,7 @@
     "metaDescription": "Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking.",
     "heroEyebrow": "Holistic Fertility & Gut Health",
     "heroSubtitle": "Where Science Meets Tradition",
-    "heroCta1": "Book Free Consultation",
+    "heroCta1": "Book a Consultation",
     "heroCta2": "Meet Anett",
     "heroScroll": "Scroll",
     "welcomeLabel": "Welcome, love",
@@ -63,7 +63,7 @@
     "welcomeP2": "I'm passionate about guiding women toward lasting wellness and fertility through a personalized approach that blends modern science with time-tested holistic healing.",
     "welcomeP3": "If you're feeling lost in your health journey, know that you're not alone—and there is a way forward. Every woman's journey is unique, and together, we'll create a plan that truly works for you.",
     "welcomeP4": "Your health is your power. Ready to glow from the inside out?",
-    "welcomeCta": "Book a Free Consultation",
+    "welcomeCta": "Book a Consultation",
     "welcomeTag": "Holistic Healing",
     "pillarsLabel": "My Approach",
     "pillarsH2a": "Rooted in",
@@ -182,8 +182,8 @@
     "parallaxLabel": "Ready?",
     "parallaxH2a": "Start Your",
     "parallaxH2b": "Transformation",
-    "parallaxText": "Book your free consultation and let's create a plan that truly works for you.",
-    "parallaxCta": "Book Free Consultation"
+    "parallaxText": "Book your consultation and let's create a plan that truly works for you.",
+    "parallaxCta": "Book a Consultation"
   },
 
   "services": {
@@ -232,7 +232,7 @@
     "programsH2a": "3-Month Deep",
     "programsH2b": "Transformation",
     "programsSubtitle": "Comprehensive programs that guide you through a complete hormonal and gut reset over 12 weeks.",
-    "bookDiscovery": "Book a Free Discovery Call",
+    "bookDiscovery": "Book a Discovery Call",
     "programs": [
       {
         "tag": "12-Week Program",
@@ -264,8 +264,8 @@
     "parallaxLabel": "Get Started",
     "parallaxH2a": "Not sure where to",
     "parallaxH2b": "begin?",
-    "parallaxText": "Book a free 20-minute discovery call and we'll find the right path together.",
-    "parallaxCta": "Book Free Consultation"
+    "parallaxText": "Book a 20-minute discovery call and we'll find the right path together.",
+    "parallaxCta": "Book a Consultation"
   },
 
   "events": {
@@ -313,17 +313,17 @@
     "parallaxLabel": "Questions?",
     "parallaxH2a": "Let's",
     "parallaxH2b": "Connect",
-    "parallaxText": "Reach out directly or book a free call to talk about which experience is right for you.",
-    "parallaxCta1": "Book Free Call",
+    "parallaxText": "Reach out directly or book a call to talk about which experience is right for you.",
+    "parallaxCta1": "Book a Call",
     "parallaxCta2": "Send Email"
   },
 
   "consultation": {
-    "metaTitle": "Free Consultation – QiNutritionist",
-    "metaDescription": "Book your free 20-minute discovery call with Anett and take the first step toward healing your gut, balancing your hormones, and reconnecting with your body.",
+    "metaTitle": "Consultation – QiNutritionist",
+    "metaDescription": "Book your 20-minute discovery call with Anett and take the first step toward healing your gut, balancing your hormones, and reconnecting with your body.",
     "bannerLabel": "No Commitment Needed",
-    "bannerHeading": "Free",
-    "bannerHeadingItalic": "Consultation",
+    "bannerHeading": "Consultation",
+    "bannerHeadingItalic": "",
     "bannerSubtitle": "Let's start your transformation together",
     "contactLabel": "Contact",
     "contactH2a": "Let's",
@@ -332,19 +332,19 @@
     "contactDetails": [
       { "icon": "📞", "label": "Phone", "type": "link", "href": "tel:+37256505371", "text": "+372 56505371" },
       { "icon": "✉️", "label": "Email", "type": "link", "href": "mailto:randveeyoga@gmail.com", "text": "randveeyoga@gmail.com" },
-      { "icon": "📍", "label": "Locations", "type": "text", "lines": ["Tallinn, Estonia & Barcelona, Spain"], "note": "Sessions also available online worldwide" },
+      { "icon": "📍", "label": "Locations", "type": "text", "lines": ["Tallinn, Estonia"], "note": "Sessions also available online worldwide" },
       { "icon": "📸", "label": "Instagram", "type": "link", "href": "https://www.instagram.com/qinutritionist/", "text": "@qinutritionist", "external": true }
     ],
-    "formHeading": "Book Your<br /><span class=\"serif-italic\">Free Discovery Call</span>",
+    "formHeading": "Book Your<br /><span class=\"serif-italic\"> Discovery Call</span>",
     "formLabel": "Send a Message",
     "formPrivacy": "Your information is kept private and never shared.",
     "processLabel": "The Process",
     "processH2a": "What to",
     "processH2b": "Expect",
-    "processSubtitle": "A free, no-pressure conversation to explore what's holding you back and how I can help.",
+    "processSubtitle": "A no-pressure conversation to explore what's holding you back and how I can help.",
     "steps": [
       { "num": "01", "title": "You Reach Out", "text": "Fill out the short form or send me a direct message. Tell me a little about what you're experiencing and what you're hoping to change." },
-      { "num": "02", "title": "20-Min Discovery Call", "text": "We have a relaxed, free 20-minute call where we get to know each other, discuss your health goals, and I answer any questions you have about my approach." },
+      { "num": "02", "title": "20-Min Discovery Call", "text": "We have a relaxed, 20-minute call where we get to know each other, discuss your health goals, and I answer any questions you have about my approach." },
       { "num": "03", "title": "Your Custom Plan", "text": "Together we choose the program or session type that suits you best, and you walk away with a clear first step toward feeling your best." }
     ],
     "commitmentLabel": "Anett's Commitment",
