@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 /* ── Configuration ─────────────────────────────────────────────────── */
 
-// const RECIPIENT_EMAIL = 'randveeyoga@gmail.com';
-const RECIPIENT_EMAIL = 'ristotoldsep@gmail.com';
+const RECIPIENT_EMAIL = 'randveeyoga@gmail.com';
+// const RECIPIENT_EMAIL = 'ristotoldsep@gmail.com';
 const RECIPIENT_NAME  = 'Anett — QiNutritionist';
 const SUBJECT_PREFIX  = 'QiNutritionist Enquiry';
 const SENDER_EMAIL    = 'noreply@paavli.ee';  // must match the server's sending domain
