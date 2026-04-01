@@ -245,7 +245,17 @@ collections:
             label: Events
             widget: object
             fields:
+              - { name: bannerLabel,       label: "Banner Label",            widget: string }
+              - { name: bannerH2a,         label: "Banner Heading A",        widget: string }
+              - { name: bannerH2b,         label: "Banner Heading B",        widget: string }
+              - { name: introLabel,        label: "Intro Label",             widget: string }
+              - { name: introH2a,          label: "Intro Heading A",         widget: string }
+              - { name: introH2b,          label: "Intro Heading B",         widget: string }
               - { name: introText,         label: "Intro Text",              widget: text }
+              - { name: barcelonaBadge,    label: "Barcelona Badge",         widget: string }
+              - { name: barcelonaTag,      label: "Barcelona Tag",           widget: string }
+              - { name: barcelonaH2a,      label: "Barcelona Heading A",     widget: string }
+              - { name: barcelonaH2b,      label: "Barcelona Heading B",     widget: string }
               - { name: barcelonaP1,       label: "Barcelona Paragraph 1",   widget: text }
               - { name: barcelonaP2,       label: "Barcelona Paragraph 2",   widget: text }
               - name: barcelonaFeatures
@@ -253,7 +263,13 @@ collections:
                 widget: list
                 field: { name: feature, label: Feature, widget: string }
               - { name: barcelonaCta,      label: "Barcelona CTA Button",    widget: string }
+              - { name: barcelonaMediaTag, label: "Barcelona Media Tag",     widget: string }
               - { name: quoteText,         label: "Quote Text",              widget: text }
+              - { name: quoteAttr,         label: "Quote Attribution",       widget: string }
+              - { name: tallinnBadge,      label: "Tallinn Badge",           widget: string }
+              - { name: tallinnTag,        label: "Tallinn Tag",             widget: string }
+              - { name: tallinnH2a,        label: "Tallinn Heading A",       widget: string }
+              - { name: tallinnH2b,        label: "Tallinn Heading B",       widget: string }
               - { name: tallinnP1,         label: "Tallinn Paragraph 1",     widget: text }
               - name: tallinnFeatures
                 label: "Tallinn Workshop Features"
@@ -262,6 +278,13 @@ collections:
               - { name: tallinnP2,         label: "Tallinn Paragraph 2",     widget: text }
               - { name: tallinnComingSoon, label: "Tallinn Coming-Soon Text", widget: string }
               - { name: tallinnCta,        label: "Tallinn CTA Button",      widget: string }
+              - { name: tallinnMediaTag,   label: "Tallinn Media Tag",       widget: string }
+              - { name: parallaxLabel,     label: "Parallax Label",          widget: string }
+              - { name: parallaxH2a,       label: "Parallax Heading A",      widget: string }
+              - { name: parallaxH2b,       label: "Parallax Heading B",      widget: string }
+              - { name: parallaxText,      label: "Parallax Text",           widget: text }
+              - { name: parallaxCta1,      label: "Parallax Button 1",       widget: string }
+              - { name: parallaxCta2,      label: "Parallax Button 2",       widget: string }
 
       - name: events_et
         label: "Events – Estonian"
@@ -271,7 +294,17 @@ collections:
             label: Üritused
             widget: object
             fields:
+              - { name: bannerLabel,       label: "Bänneri silt",            widget: string }
+              - { name: bannerH2a,         label: "Bänneri pealkiri A",      widget: string }
+              - { name: bannerH2b,         label: "Bänneri pealkiri B",      widget: string }
+              - { name: introLabel,        label: "Sissejuhatuse silt",      widget: string }
+              - { name: introH2a,          label: "Sissejuhatuse pealkiri A", widget: string }
+              - { name: introH2b,          label: "Sissejuhatuse pealkiri B", widget: string }
               - { name: introText,         label: "Sissejuhatav tekst",      widget: text }
+              - { name: barcelonaBadge,    label: "Barcelona märk",          widget: string }
+              - { name: barcelonaTag,      label: "Barcelona silt",          widget: string }
+              - { name: barcelonaH2a,      label: "Barcelona pealkiri A",    widget: string }
+              - { name: barcelonaH2b,      label: "Barcelona pealkiri B",    widget: string }
               - { name: barcelonaP1,       label: "Barcelona lõik 1",        widget: text }
               - { name: barcelonaP2,       label: "Barcelona lõik 2",        widget: text }
               - name: barcelonaFeatures
@@ -279,7 +312,13 @@ collections:
                 widget: list
                 field: { name: feature, label: Omadus, widget: string }
               - { name: barcelonaCta,      label: "Barcelona nupp",          widget: string }
+              - { name: barcelonaMediaTag, label: "Barcelona meedia silt",   widget: string }
               - { name: quoteText,         label: "Tsitaat",                 widget: text }
+              - { name: quoteAttr,         label: "Tsitaadi autor",          widget: string }
+              - { name: tallinnBadge,      label: "Tallinna märk",           widget: string }
+              - { name: tallinnTag,        label: "Tallinna silt",           widget: string }
+              - { name: tallinnH2a,        label: "Tallinna pealkiri A",     widget: string }
+              - { name: tallinnH2b,        label: "Tallinna pealkiri B",     widget: string }
               - { name: tallinnP1,         label: "Tallinna lõik 1",         widget: text }
               - name: tallinnFeatures
                 label: "Tallinna omadused"
@@ -288,6 +327,13 @@ collections:
               - { name: tallinnP2,         label: "Tallinna lõik 2",         widget: text }
               - { name: tallinnComingSoon, label: "Tallinn tulemas tekst",    widget: string }
               - { name: tallinnCta,        label: "Tallinna nupp",           widget: string }
+              - { name: tallinnMediaTag,   label: "Tallinna meedia silt",    widget: string }
+              - { name: parallaxLabel,     label: "Parallaxi silt",          widget: string }
+              - { name: parallaxH2a,       label: "Parallaxi pealkiri A",    widget: string }
+              - { name: parallaxH2b,       label: "Parallaxi pealkiri B",    widget: string }
+              - { name: parallaxText,      label: "Parallaxi tekst",         widget: text }
+              - { name: parallaxCta1,      label: "Parallaxi nupp 1",        widget: string }
+              - { name: parallaxCta2,      label: "Parallaxi nupp 2",        widget: string }
 
       - name: events_es
         label: "Events – Spanish"
@@ -297,7 +343,17 @@ collections:
             label: Eventos
             widget: object
             fields:
+              - { name: bannerLabel,       label: "Etiqueta banner",         widget: string }
+              - { name: bannerH2a,         label: "Título banner A",         widget: string }
+              - { name: bannerH2b,         label: "Título banner B",         widget: string }
+              - { name: introLabel,        label: "Etiqueta intro",          widget: string }
+              - { name: introH2a,          label: "Título intro A",          widget: string }
+              - { name: introH2b,          label: "Título intro B",          widget: string }
               - { name: introText,         label: "Texto introductorio",     widget: text }
+              - { name: barcelonaBadge,    label: "Barcelona insignia",      widget: string }
+              - { name: barcelonaTag,      label: "Barcelona etiqueta",      widget: string }
+              - { name: barcelonaH2a,      label: "Barcelona título A",      widget: string }
+              - { name: barcelonaH2b,      label: "Barcelona título B",      widget: string }
               - { name: barcelonaP1,       label: "Barcelona párrafo 1",     widget: text }
               - { name: barcelonaP2,       label: "Barcelona párrafo 2",     widget: text }
               - name: barcelonaFeatures
@@ -305,7 +361,13 @@ collections:
                 widget: list
                 field: { name: feature, label: Característica, widget: string }
               - { name: barcelonaCta,      label: "Barcelona botón",         widget: string }
+              - { name: barcelonaMediaTag, label: "Barcelona etiqueta media", widget: string }
               - { name: quoteText,         label: "Cita",                    widget: text }
+              - { name: quoteAttr,         label: "Autor de la cita",        widget: string }
+              - { name: tallinnBadge,      label: "Tallinn insignia",        widget: string }
+              - { name: tallinnTag,        label: "Tallinn etiqueta",        widget: string }
+              - { name: tallinnH2a,        label: "Tallinn título A",        widget: string }
+              - { name: tallinnH2b,        label: "Tallinn título B",        widget: string }
               - { name: tallinnP1,         label: "Tallinn párrafo 1",       widget: text }
               - name: tallinnFeatures
                 label: "Tallinn características"
@@ -314,6 +376,13 @@ collections:
               - { name: tallinnP2,         label: "Tallinn párrafo 2",       widget: text }
               - { name: tallinnComingSoon, label: "Tallinn próximamente",    widget: string }
               - { name: tallinnCta,        label: "Tallinn botón",           widget: string }
+              - { name: tallinnMediaTag,   label: "Tallinn etiqueta media",  widget: string }
+              - { name: parallaxLabel,     label: "Etiqueta parallax",       widget: string }
+              - { name: parallaxH2a,       label: "Título parallax A",       widget: string }
+              - { name: parallaxH2b,       label: "Título parallax B",       widget: string }
+              - { name: parallaxText,      label: "Texto parallax",          widget: text }
+              - { name: parallaxCta1,      label: "Botón parallax 1",        widget: string }
+              - { name: parallaxCta2,      label: "Botón parallax 2",        widget: string }
 
   # ── ABOUT PAGE ────────────────────────────────────────────────────────────
   - name: about
