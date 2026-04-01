@@ -98,14 +98,62 @@ For production hosting, use an environment with PHP + `mail()` support (or repla
 - Locale-aware fallback descriptions and JSON-LD strings are sourced from `src/i18n/*.json`
 - Sitemap with i18n alternates is generated during `npm run build`
 
+## Content Management (CMS)
+
+Content is managed via **Decap CMS** at `https://qinutritionist.com/admin/`.
+
+### Accessing the CMS
+
+1. Go to `https://qinutritionist.com/admin/`
+2. Click **Login with GitHub**
+3. Authorize the **QiNutritionist CMS** OAuth app
+
+Only GitHub users who are **collaborators on this repository** with write access can save changes.
+
+### How it works
+
+- Edits made in the CMS are committed directly to the `main` branch on GitHub
+- Each save triggers the GitHub Actions deploy pipeline automatically
+- The site is live on `https://qinutritionist.com` within ~2 minutes of saving
+
+### CMS infrastructure
+
+| Component | Details |
+|-----------|---------|
+| CMS | [Decap CMS](https://decapcms.org) — config at `public/admin/config.yml` |
+| OAuth proxy | Cloudflare Worker (URL in project notes) |
+| Admin UI | Served as static files at `public/admin/` |
+
+### Editable content
+
+The CMS covers all three languages (English, Estonian, Spanish) for:
+
+- **Home Page** — hero, welcome text, pillars, services preview, quote, events banner, free guide
+- **Services Page** — individual session cards (title, price, features), 3-month program cards
+- **Events Page** — all headings, paragraphs, feature lists, CTA buttons for Barcelona & Tallinn
+- **About Page** — bio paragraphs, three pillars, quote
+
+### Adding new CMS fields
+
+If new translatable content is added to `src/i18n/*.json`, mirror it in `public/admin/config.yml` under the appropriate collection using the same key name as a `name:` field.
+
+---
+
 ## Deployment
 
-This project builds to static files (`output: 'static'`).
+Deployment is fully automated via **GitHub Actions** (`.github/workflows/deploy.yml`).
 
-Typical deployment flow:
+Every push to `main` triggers:
+1. `npm ci && npm run build`
+2. `rsync dist/` to the Zone.ee Apache server at `paavli.ee` via SSH
 
-1. `npm run build`
-2. Upload `dist/` contents to your host
-3. Ensure `mail.php` is served by PHP runtime on the target server
+### SSH deploy key
 
-If deploying to a pure static host (no PHP), move form handling to a serverless/API endpoint.
+The GitHub Actions pipeline authenticates with the server using a dedicated SSH key stored as the `DEPLOY_KEY` repository secret.
+
+### PHP contact form
+
+`public/mail.php` must be served by a PHP runtime on the target server. Update inside the file:
+
+- `RECIPIENT_EMAIL`
+- `ALLOWED_ORIGINS`
