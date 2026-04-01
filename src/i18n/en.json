@@ -1,6 +1,18 @@
 {
-  "lang": "en",
-
+  "marquee": [
+    "Holistic Healing",
+    "Gut Health",
+    "Hormone Balance",
+    "Traditional Chinese Medicine",
+    "Biohacking",
+    "Women's Wellness",
+    "Fertility Support",
+    "Root Cause Healing",
+    "Science Meets Tradition",
+    "Ayurveda",
+    "Functional Medicine",
+    "Radiant Health"
+  ],
   "nav": {
     "home": "Home",
     "about": "About Me",
@@ -11,144 +23,128 @@
     "announcement": "✦ EMPOWERING WOMEN THROUGH HOLISTIC HEALING ✦",
     "toggleMenu": "Toggle menu"
   },
-
-  "marquee": [
-    "Holistic Healing", "Gut Health", "Hormone Balance",
-    "Traditional Chinese Medicine", "Biohacking", "Women's Wellness",
-    "Fertility Support", "Root Cause Healing", "Science Meets Tradition",
-    "Ayurveda", "Functional Medicine", "Radiant Health"
-  ],
-
-  "seo": {
-    "defaultDescription": "QiNutritionist – Holistic wellness rooted in ancient wisdom and modern science. Nutritional therapy, gut health, hormone balance & more.",
-    "websiteDescription": "Holistic fertility, gut health, and hormonal balance — where science meets tradition.",
-    "personJobTitle": "Holistic Nutritionist",
-    "personDescription": "Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking.",
-    "personKnowsAbout": [
-      "Holistic Nutrition",
-      "Gut Health",
-      "Hormone Balance",
-      "Fertility Support",
-      "Traditional Chinese Medicine",
-      "Biohacking"
-    ]
+  "form": {
+    "errEmailInvalid": "Please enter a valid email address.",
+    "errorGeneral": "Something went wrong. Please try again or email directly.",
+    "submitBtn": "Send Message",
+    "phonePlaceholder": "+372 …",
+    "phoneLabel": "Phone",
+    "sendingMsg": "Sending your message…",
+    "formAriaLabel": "Contact and booking form",
+    "namePlaceholder": "Jane Doe",
+    "nameLabel": "Full Name",
+    "interestPlaceholder": "Choose a topic",
+    "interestLabel": "I'm interested in…",
+    "errNameShort": "Name must be at least 2 characters.",
+    "messagePlaceholder": "What are you hoping to achieve? What challenges are you facing?",
+    "errorFix": "Please fix the errors above before submitting.",
+    "messageLabel": "Your Message",
+    "phoneOptional": "(optional)",
+    "messageHint": "Optional, but the more you share the better prepared we'll be.",
+    "errInterest": "Please choose a topic.",
+    "errName": "Please enter your full name.",
+    "errorSend": "Could not send — please email randveeyoga@gmail.com directly.",
+    "emailPlaceholder": "jane@example.com",
+    "errEmail": "Please enter your email address.",
+    "emailLabel": "Email Address",
+    "successMsg": "✓ Thank you! I'll be in touch within 24 hours to schedule our call. 🌿",
+    "openNewTab": "(opens in new tab)"
   },
-
-  "footer": {
-    "tagline": "Holistic fertility, gut health, and hormonal balance — where science meets tradition.",
-    "navHeading": "Navigation",
-    "servicesHeading": "Services",
-    "contactHeading": "Contact",
-    "bottomRight": "Holistic Wellness · Tallinn, Estonia",
-    "socialLabel": "Social media links",
-    "instaStripLabel": "For daily tips follow",
-    "footerLabel": "Site footer",
-    "facebookLabel": "Follow QiNutritionist on Facebook",
-    "instagramLabel": "Follow QiNutritionist on Instagram",
-    "serviceLinks": ["Gut & Fertility", "Nutrition Coaching", "Biohacking & Longevity", "3-Month Programs"]
-  },
-
-  "home": {
-    "metaTitle": "QiNutritionist – Holistic Wellness",
-    "metaDescription": "Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking.",
-    "heroEyebrow": "Holistic Fertility & Gut Health",
-    "heroSubtitle": "Where Science Meets Tradition",
-    "heroCta1": "Book a Consultation",
-    "heroCta2": "Meet Anett",
-    "heroScroll": "Scroll",
-    "welcomeLabel": "Welcome, love",
-    "welcomeH2a": "Reclaim Your",
-    "welcomeH2b": "Radiance",
-    "welcomeP1": "I'm Anett, and I'm here to help you reclaim your health, balance your hormones, and step into your most radiant, energized self.",
-    "welcomeP2": "I'm passionate about guiding women toward lasting wellness and fertility through a personalized approach that blends modern science with time-tested holistic healing.",
-    "welcomeP3": "If you're feeling lost in your health journey, know that you're not alone—and there is a way forward. Every woman's journey is unique, and together, we'll create a plan that truly works for you.",
-    "welcomeP4": "Your health is your power. Ready to glow from the inside out?",
-    "welcomeCta": "Book a Consultation",
-    "welcomeTag": "Holistic Healing",
-    "pillarsLabel": "My Approach",
-    "pillarsH2a": "Rooted in",
-    "pillarsH2b": "Balance",
-    "pillarsSubtitle": "Three pillars that guide every client's transformation journey.",
-    "pillars": [
+  "consultation": {
+    "commitmentH2a": "You Are",
+    "commitmentText": "Every woman's journey is unique — and so is the path to healing. I'm committed to meeting you exactly where you are, with compassion, expertise, and a personalized plan that truly honors your body and your life.",
+    "contactDetails": [
       {
-        "icon": "🌿",
-        "label": "Science",
-        "title": "Science Meets Holistic Healing",
-        "text": "With a background in Nutritional Science from Stanford Medicine, I bridge the gap between modern science and ancient wisdom—ensuring an effective, well-rounded strategy for long-term health."
+        "icon": "📞",
+        "label": "Phone",
+        "type": "link",
+        "href": "tel:+37256505371",
+        "text": "+372 56505371"
       },
       {
-        "icon": "🌸",
-        "label": "Wholeness",
-        "title": "A Whole-Body Approach",
-        "text": "True healing happens when we address the body as a whole—physical, mental, emotional, and spiritual health are all connected. I help uncover root causes and create sustainable solutions tailored to you."
+        "icon": "✉️",
+        "label": "Email",
+        "type": "link",
+        "href": "mailto:randveeyoga@gmail.com",
+        "text": "randveeyoga@gmail.com"
       },
       {
-        "icon": "✨",
-        "label": "Results",
-        "title": "Transformative Results",
-        "text": "By integrating Traditional Chinese Medicine, biohacking, and evidence-based nutrition, I help women heal their gut, regulate their cycle, and optimize their fertility—so you can step into the most radiant version of yourself."
+        "icon": "📍",
+        "label": "Locations",
+        "type": "text",
+        "lines": [
+          "Tallinn, Estonia"
+        ],
+        "note": "Sessions also available online worldwide"
+      },
+      {
+        "icon": "📸",
+        "label": "Instagram",
+        "type": "link",
+        "href": "https://www.instagram.com/qinutritionist/",
+        "text": "@qinutritionist",
+        "external": true
       }
     ],
-    "storyLabel": "My Story",
-    "storyH2a": "Healing Is",
-    "storyH2b": "Possible",
-    "storyP1": "I know firsthand how frustrating it can be to deal with hormonal imbalances, gut issues, or fertility struggles—and I also know that true healing is possible. My approach blends nutrition, biohacking, and Eastern medicine to help you feel amazing, inside and out.",
-    "storyP2": "Whether you're looking for personalized coaching, a deep reset, or a retreat to recharge, I've got you. Let's get you back to balance!",
-    "storyP3": "Explore my personalized coaching, structured programs, and wellness retreats to find the right fit for you.",
-    "storyCta": "Read My Full Story",
-    "servicesLabel": "How I Can Help",
-    "servicesH2a": "My",
-    "servicesH2b": "Services",
-    "servicesSubtitle": "Personalized 1:1 sessions and structured programs designed to restore balance from the inside out.",
-    "servicesLearnMore": "Learn More",
-    "servicesViewAll": "View All Services",
-    "servicesPreview": [
+    "commitmentH2b": "Not Alone",
+    "formPrivacy": "Your information is kept private and never shared.",
+    "bannerSubtitle": "Let's start your transformation together",
+    "processLabel": "The Process",
+    "formInterests": [
+      "Gut Health & Fertility",
+      "Holistic Nutrition Coaching",
+      "Biohacking & Longevity",
+      "3-Month Gut Program",
+      "3-Month Fertility Program",
+      "Barcelona Retreat",
+      "Tallinn Baking Workshop",
+      "Other / Not Sure Yet"
+    ],
+    "bannerHeadingItalic": "",
+    "steps": [
       {
-        "tag": "60 min · 90€–110€",
-        "title": "Holistic Gut & Fertility",
-        "text": "Deep dive into gut health, hormone balance & fertility concerns with personalized nutrition and herbal recommendations."
+        "num": "01",
+        "title": "You Reach Out",
+        "text": "Fill out the short form or send me a direct message. Tell me a little about what you're experiencing and what you're hoping to change."
       },
       {
-        "tag": "60 min · 70€–90€",
-        "title": "Holistic Nutrition Coaching",
-        "text": "1:1 personalized nutritional guidance with a diet plan tailored to support gut healing & hormone balance."
+        "num": "02",
+        "title": "20-Min Discovery Call",
+        "text": "We have a relaxed, 20-minute call where we get to know each other, discuss your health goals, and I answer any questions you have about my approach."
       },
       {
-        "tag": "60 min · 70€–90€",
-        "title": "Biohacking & Longevity",
-        "text": "Strategies to improve energy, digestion & metabolic health using functional mushrooms, adaptogens & supplements."
+        "num": "03",
+        "title": "Your Custom Plan",
+        "text": "Together we choose the program or session type that suits you best, and you walk away with a clear first step toward feeling your best."
       }
     ],
-    "quoteText": "Your health is your power. Together we'll create a plan that truly works for you—body, mind, and soul.",
-    "quoteAttr": "— Anett, QiNutritionist",
-    "parallaxLabel": "Upcoming",
-    "parallaxH2a": "Retreats &",
-    "parallaxH2b": "Events",
-    "parallaxText": "3-Day Luxury Wellness Retreat · Barcelona · Healthy Baking Workshop · Tallinn",
-    "parallaxCta": "Explore Events",
-    "guideLabel": "Free Resource",
-    "guideH2": "Get My Free Guide on Fertility & Gut Health!",
-    "guideText": "Practical, science-backed strategies you can start today — completely free.",
-    "guideCta": "Download Free Guide"
+    "processSubtitle": "A no-pressure conversation to explore what's holding you back and how I can help.",
+    "bannerLabel": "No Commitment Needed",
+    "processH2a": "What to",
+    "processH2b": "Expect",
+    "contactIntro": "Whether you're curious about my services, have questions, or are ready to start — I'd love to hear from you. Fill out the form and I'll be back in touch within 24 hours.",
+    "formLabel": "Send a Message",
+    "metaTitle": "Consultation – QiNutritionist",
+    "contactLabel": "Contact",
+    "bannerHeading": "Consultation",
+    "contactH2a": "Let's",
+    "metaDescription": "Book your 20-minute discovery call with Anett and take the first step toward healing your gut, balancing your hormones, and reconnecting with your body.",
+    "contactH2b": "Talk",
+    "formHeading": "Book Your<br /><span class=\"serif-italic\"> Discovery Call</span>",
+    "commitmentLabel": "Anett's Commitment"
   },
-
   "about": {
-    "metaTitle": "About Me – QiNutritionist",
-    "metaDescription": "Learn about Anett's journey from personal health struggles to becoming a holistic nutritionist and women's wellness expert.",
-    "bannerLabel": "My Story",
-    "bannerHeading": "About",
+    "parallaxH2a": "Start Your",
+    "parallaxH2b": "Transformation",
+    "workLabel": "Let's Work Together",
+    "parallaxText": "Book your consultation and let's create a plan that truly works for you.",
+    "workH2a": "Back to",
     "bannerHeadingItalic": "Me",
-    "bioLabel": "My Philosophy",
-    "bioH2a": "From Struggle to",
-    "bioH2b": "Transformation",
-    "bioP1": "My journey into women's health, hormones, and fertility began with my own struggles. I always dreamed of becoming a mother, but when I was told my fertility was beyond repair, I refused to accept that as my reality. Instead, I immersed myself in nutrition, biohacking, and Traditional Chinese Medicine (TCM) to heal my body from the inside out. Through a holistic yet science-backed approach, I restored my cycle, healed my gut, and regained my well-being.",
-    "bioP2": "This experience ignited my passion for bridging Eastern and Western medicine to help other women. I completed advanced training in Nutritional Science through a program at Stanford Medicine and continued exploring Ayurveda, herbal medicine, and functional approaches to health.",
-    "bioP3": "Today, I help women overcome hormonal imbalances, gut issues, and fertility challenges with a root-cause approach that blends modern science with time-tested holistic healing.",
+    "workH2b": "Balance",
+    "bannerLabel": "My Story",
     "bioCta": "Work With Me",
-    "bioTag": "Anett, QiNutritionist",
-    "pillarsLabel": "What I Stand For",
-    "pillarsH2a": "My Three",
-    "pillarsH2b": "Pillars",
+    "bioP1": "My journey into women's health, hormones, and fertility began with my own struggles. I always dreamed of becoming a mother, but when I was told my fertility was beyond repair, I refused to accept that as my reality. Instead, I immersed myself in nutrition, biohacking, and Traditional Chinese Medicine (TCM) to heal my body from the inside out. Through a holistic yet science-backed approach, I restored my cycle, healed my gut, and regained my well-being.",
+    "quoteText": "True wellness isn't about quick fixes — it's about understanding your body as a whole and giving it exactly what it needs to thrive.",
     "pillars": [
       {
         "icon": "🔬",
@@ -169,33 +165,157 @@
         "text": "By integrating Traditional Chinese Medicine, biohacking, and evidence-based nutrition, I help women heal their gut, regulate their cycle, and optimize their fertility. My goal is to empower you with the knowledge and tools to feel energized, confident, and hormonally aligned."
       }
     ],
-    "workLabel": "Let's Work Together",
-    "workH2a": "Back to",
-    "workH2b": "Balance",
-    "workP1": "Whether you're dealing with gut issues, hormonal imbalances, fertility challenges, or simply want to feel more vibrant and energized, I'm here to walk beside you.",
-    "workP2": "I offer 1:1 sessions and structured programs tailored to your unique needs, as well as immersive wellness retreats and workshops where you can heal in community with other women.",
-    "workP3": "Every plan I create is deeply personalized—because your story, your body, and your goals are completely your own.",
-    "workCta1": "View Services",
-    "workCta2": "Upcoming Events",
-    "quoteText": "True wellness isn't about quick fixes — it's about understanding your body as a whole and giving it exactly what it needs to thrive.",
+    "bioP2": "This experience ignited my passion for bridging Eastern and Western medicine to help other women. I completed advanced training in Nutritional Science through a program at Stanford Medicine and continued exploring Ayurveda, herbal medicine, and functional approaches to health.",
+    "bioP3": "Today, I help women overcome hormonal imbalances, gut issues, and fertility challenges with a root-cause approach that blends modern science with time-tested holistic healing.",
+    "pillarsLabel": "What I Stand For",
+    "bioLabel": "My Philosophy",
     "quoteAttr": "— Anett",
-    "parallaxLabel": "Ready?",
-    "parallaxH2a": "Start Your",
-    "parallaxH2b": "Transformation",
-    "parallaxText": "Book your consultation and let's create a plan that truly works for you.",
-    "parallaxCta": "Book a Consultation"
+    "pillarsH2a": "My Three",
+    "pillarsH2b": "Pillars",
+    "bioH2a": "From Struggle to",
+    "bioH2b": "Transformation",
+    "workP1": "Whether you're dealing with gut issues, hormonal imbalances, fertility challenges, or simply want to feel more vibrant and energized, I'm here to walk beside you.",
+    "bioTag": "Anett, QiNutritionist",
+    "workCta1": "View Services",
+    "workP2": "I offer 1:1 sessions and structured programs tailored to your unique needs, as well as immersive wellness retreats and workshops where you can heal in community with other women.",
+    "workCta2": "Upcoming Events",
+    "metaTitle": "About Me – QiNutritionist",
+    "workP3": "Every plan I create is deeply personalized—because your story, your body, and your goals are completely your own.",
+    "bannerHeading": "About",
+    "metaDescription": "Learn about Anett's journey from personal health struggles to becoming a holistic nutritionist and women's wellness expert.",
+    "parallaxCta": "Book a Consultation",
+    "parallaxLabel": "Ready?"
   },
-
+  "lang": "en",
+  "events": {
+    "parallaxH2a": "Let's",
+    "barcelonaMediaTag": "Barcelona, Catalonia",
+    "parallaxH2b": "Connect",
+    "parallaxText": "Reach out directly or book a call to talk about which experience is right for you.",
+    "barcelonaCta": "Book Your Spot",
+    "tallinnBadge": "Workshop · Tallinn",
+    "barcelonaFeatures": [
+      "Daily Yoga & Pilates – Move with intention, awaken your body, and release stored tension.",
+      "Cacao Ceremony & Feminine Healing – Tap into your intuition and embrace the power of sisterhood.",
+      "Holistic Nutrition for Hormonal Balance – Enjoy nourishing, hormone-supporting meals crafted to fuel your vitality.",
+      "Wellness & Biohacking Workshops – Learn how to optimize your health with practical tools for longevity, energy, and balance.",
+      "Manifestation & Mindfulness Practices – Align with your desires and step into your most radiant self.",
+      "Spa & Sauna Time – Indulge in deep relaxation and let go of stress in a tranquil setting."
+    ],
+    "bannerLabel": "Optimizing Female Health, Wellness & Performance",
+    "introLabel": "Immersive Experiences",
+    "quoteText": "This retreat is your invitation to slow down, reconnect with yourself, and embrace deep healing in a space of sisterhood and nature.",
+    "bannerH2a": "Events &",
+    "introH2a": "Slow Down &",
+    "barcelonaH2a": "Luxury Wellness Retreat",
+    "bannerH2b": "Retreats",
+    "introH2b": "Reconnect",
+    "barcelonaP1": "Escape the noise of daily life and immerse yourself in a 3-day transformational retreat designed to nourish your body, balance your hormones, and awaken your feminine energy.",
+    "barcelonaH2b": "near Barcelona, Spain",
+    "quoteAttr": "— Anett",
+    "barcelonaP2": "Just 45 minutes from Barcelona, in a breathtaking luxury villa surrounded by the serene nature of Catalonia, this retreat is your invitation to slow down, reconnect with yourself, and embrace deep healing.",
+    "barcelonaTag": "3-Day Weekend",
+    "tallinnMediaTag": "Tallinn, Estonia",
+    "metaTitle": "Events & Retreats – QiNutritionist",
+    "tallinnCta": "Get Notified",
+    "metaDescription": "Immersive wellness retreats and workshops with Anett — from luxury retreats in Barcelona to healthy baking workshops in Tallinn.",
+    "tallinnComingSoon": "Limited spots available — details coming soon!",
+    "parallaxCta1": "Book a Call",
+    "barcelonaBadge": "Retreat · Barcelona",
+    "tallinnFeatures": [
+      "Simple, healthy recipes with hormone-supportive ingredients",
+      "Gut-friendly swaps for traditional baking staples",
+      "Hands-on baking and tasting in a cozy setting"
+    ],
+    "introText": "Step away from the noise of daily life and immerse yourself in transformational experiences designed to nourish your body, calm your mind, and reconnect you to your feminine essence.",
+    "parallaxCta2": "Send Email",
+    "tallinnH2a": "Healthy Baking",
+    "tallinnH2b": "Workshop",
+    "tallinnP1": "Join Anett for a hands-on baking experience where delicious meets nutritious. Learn to create gut-friendly, hormone-supporting treats that taste as good as they make you feel.",
+    "parallaxLabel": "Questions?",
+    "tallinnTag": "Hands-On Experience",
+    "tallinnP2": "Perfect for wellness lovers and foodies who want to bake without the bloat."
+  },
+  "footer": {
+    "contactHeading": "Contact",
+    "instagramLabel": "Follow QiNutritionist on Instagram",
+    "serviceLinks": [
+      "Gut & Fertility",
+      "Nutrition Coaching",
+      "Biohacking & Longevity",
+      "3-Month Programs"
+    ],
+    "servicesHeading": "Services",
+    "socialLabel": "Social media links",
+    "tagline": "Holistic fertility, gut health, and hormonal balance — where science meets tradition.",
+    "facebookLabel": "Follow QiNutritionist on Facebook",
+    "bottomRight": "Holistic Wellness · Tallinn, Estonia",
+    "instaStripLabel": "For daily tips follow",
+    "footerLabel": "Site footer",
+    "navHeading": "Navigation"
+  },
+  "seo": {
+    "defaultDescription": "QiNutritionist – Holistic wellness rooted in ancient wisdom and modern science. Nutritional therapy, gut health, hormone balance & more.",
+    "websiteDescription": "Holistic fertility, gut health, and hormonal balance — where science meets tradition.",
+    "personJobTitle": "Holistic Nutritionist",
+    "personDescription": "Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking.",
+    "personKnowsAbout": [
+      "Holistic Nutrition",
+      "Gut Health",
+      "Hormone Balance",
+      "Fertility Support",
+      "Traditional Chinese Medicine",
+      "Biohacking"
+    ]
+  },
   "services": {
-    "metaTitle": "Services – QiNutritionist",
-    "metaDescription": "Personalized 1:1 nutrition sessions and 3-month transformation programs for gut health, hormone balance, and fertility.",
-    "bannerLabel": "Nursing You Back to Health",
+    "parallaxH2a": "Not sure where to",
+    "parallaxH2b": "begin?",
+    "parallaxText": "Book a 20-minute discovery call and we'll find the right path together.",
+    "programsLabel": "Structured Programs",
     "bannerHeadingItalic": "Services",
+    "bookDiscovery": "Book a Discovery Call",
+    "programsSubtitle": "Comprehensive programs that guide you through a complete hormonal and gut reset over 12 weeks.",
+    "bannerLabel": "Nursing You Back to Health",
+    "programsH2a": "3-Month Deep",
     "introLabel": "1:1 Individual Sessions",
+    "programsH2b": "Transformation",
     "introH2a": "Personalized",
     "introH2b": "Healing",
-    "introText": "Are you ready to lift your health and happiness to the next level? Together we will skyrocket your mood, energy, hormonal balance and make you even more radiant!",
+    "programs": [
+      {
+        "tag": "12-Week Program",
+        "title": "Gut Health",
+        "titleItalic": "Optimization",
+        "description": "A holistic 3-month journey to heal your gut, reduce inflammation, and restore your body's natural balance through nutrition, TCM, and lifestyle practices.",
+        "forLabel": "Designed for women who want to:",
+        "features": [
+          "Heal bloating, constipation & gut inflammation",
+          "Reduce stress & calm the nervous system for hormonal balance",
+          "Support liver detox & improve digestion with herbs & TCM nutrition",
+          "Feel energized, focused & hormonally aligned"
+        ]
+      },
+      {
+        "tag": "12-Week Program",
+        "title": "Fertility & Hormone",
+        "titleItalic": "Balance",
+        "description": "Restore harmony in your body through ancient, natural healing methods combined with modern functional nutrition to support your unique fertility journey.",
+        "forLabel": "Designed for women who want to:",
+        "features": [
+          "Restore harmony in their body through ancient, natural healing methods",
+          "Regulate periods & balance hormones naturally",
+          "Deepen their connection to their cycle and body's natural rhythms",
+          "Use holistic, non-invasive methods to enhance fertility & vitality"
+        ]
+      }
+    ],
+    "metaTitle": "Services – QiNutritionist",
+    "metaDescription": "Personalized 1:1 nutrition sessions and 3-month transformation programs for gut health, hormone balance, and fertility.",
     "signUp": "Sign Up",
+    "parallaxCta": "Book a Consultation",
+    "introText": "Are you ready to lift your health and happiness to the next level? Together we will skyrocket your mood, energy, hormonal balance and make you even more radiant!",
+    "parallaxLabel": "Get Started",
     "services": [
       {
         "tag": "60 min session",
@@ -227,167 +347,89 @@
           "Personalized biohacking tools for optimal well-being"
         ]
       }
-    ],
-    "programsLabel": "Structured Programs",
-    "programsH2a": "3-Month Deep",
-    "programsH2b": "Transformation",
-    "programsSubtitle": "Comprehensive programs that guide you through a complete hormonal and gut reset over 12 weeks.",
-    "bookDiscovery": "Book a Discovery Call",
-    "programs": [
-      {
-        "tag": "12-Week Program",
-        "title": "Gut Health",
-        "titleItalic": "Optimization",
-        "description": "A holistic 3-month journey to heal your gut, reduce inflammation, and restore your body's natural balance through nutrition, TCM, and lifestyle practices.",
-        "forLabel": "Designed for women who want to:",
-        "features": [
-          "Heal bloating, constipation & gut inflammation",
-          "Reduce stress & calm the nervous system for hormonal balance",
-          "Support liver detox & improve digestion with herbs & TCM nutrition",
-          "Feel energized, focused & hormonally aligned"
-        ]
-      },
-      {
-        "tag": "12-Week Program",
-        "title": "Fertility & Hormone",
-        "titleItalic": "Balance",
-        "description": "Restore harmony in your body through ancient, natural healing methods combined with modern functional nutrition to support your unique fertility journey.",
-        "forLabel": "Designed for women who want to:",
-        "features": [
-          "Restore harmony in their body through ancient, natural healing methods",
-          "Regulate periods & balance hormones naturally",
-          "Deepen their connection to their cycle and body's natural rhythms",
-          "Use holistic, non-invasive methods to enhance fertility & vitality"
-        ]
-      }
-    ],
-    "parallaxLabel": "Get Started",
-    "parallaxH2a": "Not sure where to",
-    "parallaxH2b": "begin?",
-    "parallaxText": "Book a 20-minute discovery call and we'll find the right path together.",
-    "parallaxCta": "Book a Consultation"
-  },
-
-  "events": {
-    "metaTitle": "Events & Retreats – QiNutritionist",
-    "metaDescription": "Immersive wellness retreats and workshops with Anett — from luxury retreats in Barcelona to healthy baking workshops in Tallinn.",
-    "bannerLabel": "Optimizing Female Health, Wellness & Performance",
-    "bannerH2a": "Events &",
-    "bannerH2b": "Retreats",
-    "introLabel": "Immersive Experiences",
-    "introH2a": "Slow Down &",
-    "introH2b": "Reconnect",
-    "introText": "Step away from the noise of daily life and immerse yourself in transformational experiences designed to nourish your body, calm your mind, and reconnect you to your feminine essence.",
-    "barcelonaBadge": "Retreat · Barcelona",
-    "barcelonaTag": "3-Day Weekend",
-    "barcelonaH2a": "Luxury Wellness Retreat",
-    "barcelonaH2b": "near Barcelona, Spain",
-    "barcelonaP1": "Escape the noise of daily life and immerse yourself in a 3-day transformational retreat designed to nourish your body, balance your hormones, and awaken your feminine energy.",
-    "barcelonaP2": "Just 45 minutes from Barcelona, in a breathtaking luxury villa surrounded by the serene nature of Catalonia, this retreat is your invitation to slow down, reconnect with yourself, and embrace deep healing.",
-    "barcelonaFeatures": [
-      "Daily Yoga & Pilates – Move with intention, awaken your body, and release stored tension.",
-      "Cacao Ceremony & Feminine Healing – Tap into your intuition and embrace the power of sisterhood.",
-      "Holistic Nutrition for Hormonal Balance – Enjoy nourishing, hormone-supporting meals crafted to fuel your vitality.",
-      "Wellness & Biohacking Workshops – Learn how to optimize your health with practical tools for longevity, energy, and balance.",
-      "Manifestation & Mindfulness Practices – Align with your desires and step into your most radiant self.",
-      "Spa & Sauna Time – Indulge in deep relaxation and let go of stress in a tranquil setting."
-    ],
-    "barcelonaCta": "Book Your Spot",
-    "barcelonaMediaTag": "Barcelona, Catalonia",
-    "quoteText": "This retreat is your invitation to slow down, reconnect with yourself, and embrace deep healing in a space of sisterhood and nature.",
-    "quoteAttr": "— Anett",
-    "tallinnBadge": "Workshop · Tallinn",
-    "tallinnTag": "Hands-On Experience",
-    "tallinnH2a": "Healthy Baking",
-    "tallinnH2b": "Workshop",
-    "tallinnP1": "Join Anett for a hands-on baking experience where delicious meets nutritious. Learn to create gut-friendly, hormone-supporting treats that taste as good as they make you feel.",
-    "tallinnFeatures": [
-      "Simple, healthy recipes with hormone-supportive ingredients",
-      "Gut-friendly swaps for traditional baking staples",
-      "Hands-on baking and tasting in a cozy setting"
-    ],
-    "tallinnP2": "Perfect for wellness lovers and foodies who want to bake without the bloat.",
-    "tallinnComingSoon": "Limited spots available — details coming soon!",
-    "tallinnCta": "Get Notified",
-    "tallinnMediaTag": "Tallinn, Estonia",
-    "parallaxLabel": "Questions?",
-    "parallaxH2a": "Let's",
-    "parallaxH2b": "Connect",
-    "parallaxText": "Reach out directly or book a call to talk about which experience is right for you.",
-    "parallaxCta1": "Book a Call",
-    "parallaxCta2": "Send Email"
-  },
-
-  "consultation": {
-    "metaTitle": "Consultation – QiNutritionist",
-    "metaDescription": "Book your 20-minute discovery call with Anett and take the first step toward healing your gut, balancing your hormones, and reconnecting with your body.",
-    "bannerLabel": "No Commitment Needed",
-    "bannerHeading": "Consultation",
-    "bannerHeadingItalic": "",
-    "bannerSubtitle": "Let's start your transformation together",
-    "contactLabel": "Contact",
-    "contactH2a": "Let's",
-    "contactH2b": "Talk",
-    "contactIntro": "Whether you're curious about my services, have questions, or are ready to start — I'd love to hear from you. Fill out the form and I'll be back in touch within 24 hours.",
-    "contactDetails": [
-      { "icon": "📞", "label": "Phone", "type": "link", "href": "tel:+37256505371", "text": "+372 56505371" },
-      { "icon": "✉️", "label": "Email", "type": "link", "href": "mailto:randveeyoga@gmail.com", "text": "randveeyoga@gmail.com" },
-      { "icon": "📍", "label": "Locations", "type": "text", "lines": ["Tallinn, Estonia"], "note": "Sessions also available online worldwide" },
-      { "icon": "📸", "label": "Instagram", "type": "link", "href": "https://www.instagram.com/qinutritionist/", "text": "@qinutritionist", "external": true }
-    ],
-    "formHeading": "Book Your<br /><span class=\"serif-italic\"> Discovery Call</span>",
-    "formLabel": "Send a Message",
-    "formPrivacy": "Your information is kept private and never shared.",
-    "processLabel": "The Process",
-    "processH2a": "What to",
-    "processH2b": "Expect",
-    "processSubtitle": "A no-pressure conversation to explore what's holding you back and how I can help.",
-    "steps": [
-      { "num": "01", "title": "You Reach Out", "text": "Fill out the short form or send me a direct message. Tell me a little about what you're experiencing and what you're hoping to change." },
-      { "num": "02", "title": "20-Min Discovery Call", "text": "We have a relaxed, 20-minute call where we get to know each other, discuss your health goals, and I answer any questions you have about my approach." },
-      { "num": "03", "title": "Your Custom Plan", "text": "Together we choose the program or session type that suits you best, and you walk away with a clear first step toward feeling your best." }
-    ],
-    "commitmentLabel": "Anett's Commitment",
-    "commitmentH2a": "You Are",
-    "commitmentH2b": "Not Alone",
-    "commitmentText": "Every woman's journey is unique — and so is the path to healing. I'm committed to meeting you exactly where you are, with compassion, expertise, and a personalized plan that truly honors your body and your life.",
-    "formInterests": [
-      "Gut Health & Fertility",
-      "Holistic Nutrition Coaching",
-      "Biohacking & Longevity",
-      "3-Month Gut Program",
-      "3-Month Fertility Program",
-      "Barcelona Retreat",
-      "Tallinn Baking Workshop",
-      "Other / Not Sure Yet"
     ]
   },
-
-  "form": {
-    "namePlaceholder": "Jane Doe",
-    "nameLabel": "Full Name",
-    "emailPlaceholder": "jane@example.com",
-    "emailLabel": "Email Address",
-    "phonePlaceholder": "+372 …",
-    "phoneLabel": "Phone",
-    "phoneOptional": "(optional)",
-    "interestLabel": "I'm interested in…",
-    "interestPlaceholder": "Choose a topic",
-    "messageLabel": "Your Message",
-    "messagePlaceholder": "What are you hoping to achieve? What challenges are you facing?",
-    "messageHint": "Optional, but the more you share the better prepared we'll be.",
-    "submitBtn": "Send Message",
-    "sendingMsg": "Sending your message…",
-    "successMsg": "✓ Thank you! I'll be in touch within 24 hours to schedule our call. 🌿",
-    "errorGeneral": "Something went wrong. Please try again or email directly.",
-    "errorSend": "Could not send — please email randveeyoga@gmail.com directly.",
-    "errorFix": "Please fix the errors above before submitting.",
-    "errName": "Please enter your full name.",
-    "errNameShort": "Name must be at least 2 characters.",
-    "errEmail": "Please enter your email address.",
-    "errEmailInvalid": "Please enter a valid email address.",
-    "errInterest": "Please choose a topic.",
-    "openNewTab": "(opens in new tab)",
-    "formAriaLabel": "Contact and booking form"
+  "home": {
+    "parallaxH2a": "Retreats &",
+    "pillarsSubtitle": "Three pillars that guide every client's transformation journey.",
+    "parallaxH2b": "Events",
+    "storyH2a": "Healing Is",
+    "welcomeP1": "I'm Anett, and I'm here to help you reclaim your health, balance your hormones, and step into your most radiant, energized self.",
+    "storyH2b": "Possible",
+    "welcomeP2": "I'm passionate about guiding women toward lasting wellness and fertility through a personalized approach that blends modern science with time-tested holistic healing.",
+    "parallaxText": "3-Day Luxury Wellness Retreat · Barcelona · Healthy Baking Workshop · Tallinn",
+    "welcomeP3": "If you're feeling lost in your health journey, know that you're not alone—and there is a way forward. Every woman's journey is unique, and together, we'll create a plan that truly works for you.",
+    "welcomeP4": "Your health is your power. Ready to glow from the inside out?",
+    "guideH2": "Get My Free Guide on Fertility & Gut Health!",
+    "heroScroll": "Scroll",
+    "quoteText": "Your health is your power. Together we'll create a plan that truly works for you—body, mind, and soul.",
+    "guideText": "Practical, science-backed strategies you can start today — completely free.",
+    "pillars": [
+      {
+        "icon": "🌿",
+        "label": "Science",
+        "title": "Science Meets Holistic Healing",
+        "text": "With a background in Nutritional Science from Stanford Medicine, I bridge the gap between modern science and ancient wisdom—ensuring an effective, well-rounded strategy for long-term health."
+      },
+      {
+        "icon": "🌸",
+        "label": "Wholeness",
+        "title": "A Whole-Body Approach",
+        "text": "True healing happens when we address the body as a whole—physical, mental, emotional, and spiritual health are all connected. I help uncover root causes and create sustainable solutions tailored to you."
+      },
+      {
+        "icon": "✨",
+        "label": "Results",
+        "title": "Transformative Results",
+        "text": "By integrating Traditional Chinese Medicine, biohacking, and evidence-based nutrition, I help women heal their gut, regulate their cycle, and optimize their fertility—so you can step into the most radiant version of yourself."
+      }
+    ],
+    "servicesPreview": [
+      {
+        "tag": "60 min · 90€–110€",
+        "title": "Holistic Gut & Fertility",
+        "text": "Deep dive into gut health, hormone balance & fertility concerns with personalized nutrition and herbal recommendations."
+      },
+      {
+        "tag": "60 min · 70€–90€",
+        "title": "Holistic Nutrition Coaching",
+        "text": "1:1 personalized nutritional guidance with a diet plan tailored to support gut healing & hormone balance."
+      },
+      {
+        "tag": "60 min · 70€–90€",
+        "title": "Biohacking & Longevity",
+        "text": "Strategies to improve energy, digestion & metabolic health using functional mushrooms, adaptogens & supplements."
+      }
+    ],
+    "pillarsLabel": "My Approach",
+    "quoteAttr": "— Anett, QiNutritionist",
+    "pillarsH2a": "Rooted in",
+    "welcomeCta": "Book a Consultation",
+    "pillarsH2b": "Balance",
+    "heroEyebrow": "Holistic Fertility & Gut Health",
+    "welcomeLabel": "Welcome, love",
+    "heroSubtitle": "Where Science Meets Tradition.",
+    "metaTitle": "QiNutritionist – Holistic Wellness",
+    "guideCta": "Download Free Guide",
+    "welcomeH2a": "Reclaim Your",
+    "servicesLabel": "How I Can Help",
+    "storyP1": "I know firsthand how frustrating it can be to deal with hormonal imbalances, gut issues, or fertility struggles—and I also know that true healing is possible. My approach blends nutrition, biohacking, and Eastern medicine to help you feel amazing, inside and out.",
+    "welcomeH2b": "Radiance",
+    "servicesSubtitle": "Personalized 1:1 sessions and structured programs designed to restore balance from the inside out.",
+    "metaDescription": "Anett helps women reclaim their health, balance hormones, and optimize fertility through holistic nutrition, TCM, and biohacking.",
+    "storyP2": "Whether you're looking for personalized coaching, a deep reset, or a retreat to recharge, I've got you. Let's get you back to balance!",
+    "welcomeTag": "Holistic Healing",
+    "guideLabel": "Free Resource",
+    "storyP3": "Explore my personalized coaching, structured programs, and wellness retreats to find the right fit for you.",
+    "parallaxCta": "Explore Events",
+    "servicesH2a": "My",
+    "servicesH2b": "Services",
+    "storyCta": "Read My Full Story",
+    "servicesLearnMore": "Learn More",
+    "heroCta1": "Book a Consultation",
+    "heroCta2": "Meet Anett",
+    "parallaxLabel": "Upcoming",
+    "servicesViewAll": "View All Services",
+    "storyLabel": "My Story"
   }
 }
