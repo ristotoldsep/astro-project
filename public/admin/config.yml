@@ -1,0 +1,349 @@
+backend:
+  name: github
+  repo: ristotoldsep/astro-project
+  branch: main
+  base_url: https://voluble-pudding-638925.netlify.app
+
+media_folder: src/assets/images
+public_folder: /src/assets/images
+
+# ─── COLLECTIONS ────────────────────────────────────────────────────────────
+# Each "file" entry below maps directly to one locale JSON in src/i18n/.
+# The client picks the language from the sidebar, edits content, and saves —
+# which creates a commit on the main branch, triggering auto-deploy.
+
+collections:
+
+  # ── ENGLISH CONTENT ────────────────────────────────────────────────────────
+  - name: english
+    label: "English Content"
+    files:
+
+      - name: home_en
+        label: "Home Page"
+        file: site/src/i18n/en.json
+        fields:
+          - name: home
+            label: Home
+            widget: object
+            fields:
+              - { name: heroEyebrow,   label: "Hero Eyebrow",    widget: string }
+              - { name: heroSubtitle,  label: "Hero Subtitle",   widget: string }
+              - { name: heroCta1,      label: "Hero Button 1",   widget: string }
+              - { name: heroCta2,      label: "Hero Button 2",   widget: string }
+              - { name: welcomeLabel,  label: "Welcome Label",   widget: string }
+              - { name: welcomeH2a,    label: "Welcome Heading A", widget: string }
+              - { name: welcomeH2b,    label: "Welcome Heading B (italic)", widget: string }
+              - { name: welcomeP1,     label: "Welcome Paragraph 1", widget: text }
+              - { name: welcomeP2,     label: "Welcome Paragraph 2", widget: text }
+              - { name: welcomeP3,     label: "Welcome Paragraph 3", widget: text }
+              - { name: welcomeP4,     label: "Welcome Paragraph 4", widget: text }
+              - { name: quoteText,     label: "Quote Text",      widget: text }
+              - { name: quoteAttr,     label: "Quote Attribution", widget: string }
+              - { name: parallaxText,  label: "Events Banner Text", widget: string }
+              - { name: guideH2,       label: "Free Guide Heading", widget: string }
+              - { name: guideText,     label: "Free Guide Text",  widget: text }
+              - name: servicesPreview
+                label: "Services Preview (3 cards on homepage)"
+                widget: list
+                fields:
+                  - { name: tag,   label: "Tag / Duration & Price", widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - { name: text,  label: Description, widget: text }
+              - name: pillars
+                label: "Three Pillars"
+                widget: list
+                fields:
+                  - { name: icon,  label: Icon (emoji), widget: string }
+                  - { name: label, label: Label,  widget: string }
+                  - { name: title, label: Title,  widget: string }
+                  - { name: text,  label: Description, widget: text }
+
+      - name: services_en
+        label: "Services Page"
+        file: site/src/i18n/en.json
+        fields:
+          - name: services
+            label: Services
+            widget: object
+            fields:
+              - { name: introText, label: "Intro Text", widget: text }
+              - name: services
+                label: "Individual Sessions (3 cards)"
+                widget: list
+                fields:
+                  - { name: tag,   label: "Tag (e.g. 60 min session)", widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - { name: price, label: "Price (e.g. 90€ – 110€)", widget: string }
+                  - name: features
+                    label: Features
+                    widget: list
+                    field: { name: feature, label: Feature, widget: string }
+              - name: programs
+                label: "3-Month Programs"
+                widget: list
+                fields:
+                  - { name: tag,         label: Tag,         widget: string }
+                  - { name: title,       label: Title,       widget: string }
+                  - { name: titleItalic, label: "Title (italic part)", widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: forLabel,    label: "\"Designed for\" label", widget: string }
+                  - name: features
+                    label: "Features / Bullet Points"
+                    widget: list
+                    field: { name: feature, label: Feature, widget: string }
+
+      - name: events_en
+        label: "Events Page"
+        file: site/src/i18n/en.json
+        fields:
+          - name: events
+            label: Events
+            widget: object
+            fields:
+              - { name: introText,        label: "Intro Text",             widget: text }
+              - { name: barcelonaTag,     label: "Barcelona Tag",          widget: string }
+              - { name: barcelonaH2a,     label: "Barcelona Heading A",    widget: string }
+              - { name: barcelonaH2b,     label: "Barcelona Heading B",    widget: string }
+              - { name: barcelonaP1,      label: "Barcelona Paragraph 1",  widget: text }
+              - { name: barcelonaP2,      label: "Barcelona Paragraph 2",  widget: text }
+              - name: barcelonaFeatures
+                label: "Barcelona Retreat Features"
+                widget: list
+                field: { name: feature, label: Feature, widget: string }
+              - { name: barcelonaCta,     label: "Barcelona CTA Button",   widget: string }
+              - { name: quoteText,        label: "Quote Text",             widget: text }
+              - { name: tallinnTag,       label: "Tallinn Tag",            widget: string }
+              - { name: tallinnH2a,       label: "Tallinn Heading A",      widget: string }
+              - { name: tallinnH2b,       label: "Tallinn Heading B",      widget: string }
+              - { name: tallinnP1,        label: "Tallinn Paragraph 1",    widget: text }
+              - name: tallinnFeatures
+                label: "Tallinn Workshop Features"
+                widget: list
+                field: { name: feature, label: Feature, widget: string }
+              - { name: tallinnP2,        label: "Tallinn Paragraph 2",    widget: text }
+              - { name: tallinnComingSoon, label: "Tallinn Coming-Soon Text", widget: string }
+              - { name: tallinnCta,       label: "Tallinn CTA Button",     widget: string }
+
+      - name: about_en
+        label: "About Page"
+        file: site/src/i18n/en.json
+        fields:
+          - name: about
+            label: About
+            widget: object
+            fields:
+              - { name: bioP1, label: "Bio Paragraph 1", widget: text }
+              - { name: bioP2, label: "Bio Paragraph 2", widget: text }
+              - { name: bioP3, label: "Bio Paragraph 3", widget: text }
+              - { name: quoteText, label: "Quote Text", widget: text }
+              - name: pillars
+                label: "Three Pillars"
+                widget: list
+                fields:
+                  - { name: icon,  label: Icon (emoji), widget: string }
+                  - { name: label, label: Label,  widget: string }
+                  - { name: title, label: Title,  widget: string }
+                  - { name: text,  label: Description, widget: text }
+
+  # ── ESTONIAN CONTENT ──────────────────────────────────────────────────────
+  - name: estonian
+    label: "Estonian Content (Eesti)"
+    files:
+
+      - name: home_et
+        label: "Avaleht"
+        file: site/src/i18n/et.json
+        fields:
+          - name: home
+            label: Avaleht
+            widget: object
+            fields:
+              - { name: heroEyebrow,   label: "Hero Eyebrow",    widget: string }
+              - { name: heroSubtitle,  label: "Hero Subtitle",   widget: string }
+              - { name: heroCta1,      label: "Hero Nupp 1",     widget: string }
+              - { name: heroCta2,      label: "Hero Nupp 2",     widget: string }
+              - { name: welcomeP1,     label: "Tervituse lõik 1", widget: text }
+              - { name: welcomeP2,     label: "Tervituse lõik 2", widget: text }
+              - { name: welcomeP3,     label: "Tervituse lõik 3", widget: text }
+              - { name: welcomeP4,     label: "Tervituse lõik 4", widget: text }
+              - { name: quoteText,     label: "Tsitaat",          widget: text }
+              - { name: parallaxText,  label: "Ürituste bänner",  widget: string }
+              - { name: guideH2,       label: "Tasuta juhendi pealkiri", widget: string }
+              - { name: guideText,     label: "Tasuta juhendi tekst", widget: text }
+              - name: servicesPreview
+                label: "Teenuste eelvaade (3 kaarti)"
+                widget: list
+                fields:
+                  - { name: tag,   label: "Silt / Kestus & Hind", widget: string }
+                  - { name: title, label: Pealkiri, widget: string }
+                  - { name: text,  label: Kirjeldus, widget: text }
+              - name: pillars
+                label: "Kolm sammast"
+                widget: list
+                fields:
+                  - { name: icon,  label: Ikoon, widget: string }
+                  - { name: label, label: Silt,  widget: string }
+                  - { name: title, label: Pealkiri, widget: string }
+                  - { name: text,  label: Kirjeldus, widget: text }
+
+      - name: services_et
+        label: "Teenused"
+        file: site/src/i18n/et.json
+        fields:
+          - name: services
+            label: Teenused
+            widget: object
+            fields:
+              - { name: introText, label: "Sissejuhatav tekst", widget: text }
+              - name: services
+                label: "Individuaalsessioonid"
+                widget: list
+                fields:
+                  - { name: tag,   label: Silt, widget: string }
+                  - { name: title, label: Pealkiri, widget: string }
+                  - { name: price, label: Hind, widget: string }
+                  - name: features
+                    label: Omadused
+                    widget: list
+                    field: { name: feature, label: Omadus, widget: string }
+              - name: programs
+                label: "3-kuused programmid"
+                widget: list
+                fields:
+                  - { name: tag,         label: Silt,        widget: string }
+                  - { name: title,       label: Pealkiri,    widget: string }
+                  - { name: titleItalic, label: "Pealkiri (kursiiv)", widget: string }
+                  - { name: description, label: Kirjeldus,   widget: text }
+                  - { name: forLabel,    label: "\"Mõeldud naistele\" silt", widget: string }
+                  - name: features
+                    label: Omadused
+                    widget: list
+                    field: { name: feature, label: Omadus, widget: string }
+
+      - name: events_et
+        label: "Üritused"
+        file: site/src/i18n/et.json
+        fields:
+          - name: events
+            label: Üritused
+            widget: object
+            fields:
+              - { name: introText,        label: "Sissejuhatav tekst",   widget: text }
+              - { name: barcelonaP1,      label: "Barcelona lõik 1",     widget: text }
+              - { name: barcelonaP2,      label: "Barcelona lõik 2",     widget: text }
+              - name: barcelonaFeatures
+                label: "Barcelona taandepunkti omadused"
+                widget: list
+                field: { name: feature, label: Omadus, widget: string }
+              - { name: barcelonaCta,     label: "Barcelona nupp",       widget: string }
+              - { name: quoteText,        label: "Tsitaat",              widget: text }
+              - { name: tallinnP1,        label: "Tallinna lõik 1",      widget: text }
+              - name: tallinnFeatures
+                label: "Tallinna töötoa omadused"
+                widget: list
+                field: { name: feature, label: Omadus, widget: string }
+              - { name: tallinnP2,        label: "Tallinna lõik 2",      widget: text }
+              - { name: tallinnComingSoon, label: "Tallinn tulemas tekst", widget: string }
+              - { name: tallinnCta,       label: "Tallinna nupp",        widget: string }
+
+  # ── SPANISH CONTENT ───────────────────────────────────────────────────────
+  - name: spanish
+    label: "Spanish Content (Español)"
+    files:
+
+      - name: home_es
+        label: "Página de Inicio"
+        file: site/src/i18n/es.json
+        fields:
+          - name: home
+            label: Inicio
+            widget: object
+            fields:
+              - { name: heroEyebrow,   label: "Hero Eyebrow",    widget: string }
+              - { name: heroSubtitle,  label: "Hero Subtítulo",  widget: string }
+              - { name: heroCta1,      label: "Hero Botón 1",    widget: string }
+              - { name: heroCta2,      label: "Hero Botón 2",    widget: string }
+              - { name: welcomeP1,     label: "Párrafo bienvenida 1", widget: text }
+              - { name: welcomeP2,     label: "Párrafo bienvenida 2", widget: text }
+              - { name: welcomeP3,     label: "Párrafo bienvenida 3", widget: text }
+              - { name: welcomeP4,     label: "Párrafo bienvenida 4", widget: text }
+              - { name: quoteText,     label: "Cita",            widget: text }
+              - { name: parallaxText,  label: "Banner Eventos",  widget: string }
+              - { name: guideH2,       label: "Título guía gratuita", widget: string }
+              - { name: guideText,     label: "Texto guía gratuita", widget: text }
+              - name: servicesPreview
+                label: "Servicios (3 tarjetas inicio)"
+                widget: list
+                fields:
+                  - { name: tag,   label: "Etiqueta / Duración & Precio", widget: string }
+                  - { name: title, label: Título, widget: string }
+                  - { name: text,  label: Descripción, widget: text }
+              - name: pillars
+                label: "Tres pilares"
+                widget: list
+                fields:
+                  - { name: icon,  label: Icono, widget: string }
+                  - { name: label, label: Etiqueta, widget: string }
+                  - { name: title, label: Título, widget: string }
+                  - { name: text,  label: Descripción, widget: text }
+
+      - name: services_es
+        label: "Servicios"
+        file: site/src/i18n/es.json
+        fields:
+          - name: services
+            label: Servicios
+            widget: object
+            fields:
+              - { name: introText, label: "Texto introductorio", widget: text }
+              - name: services
+                label: "Sesiones individuales"
+                widget: list
+                fields:
+                  - { name: tag,   label: Etiqueta, widget: string }
+                  - { name: title, label: Título, widget: string }
+                  - { name: price, label: Precio, widget: string }
+                  - name: features
+                    label: Características
+                    widget: list
+                    field: { name: feature, label: Característica, widget: string }
+              - name: programs
+                label: "Programas de 3 meses"
+                widget: list
+                fields:
+                  - { name: tag,         label: Etiqueta, widget: string }
+                  - { name: title,       label: Título, widget: string }
+                  - { name: titleItalic, label: "Título (cursiva)", widget: string }
+                  - { name: description, label: Descripción, widget: text }
+                  - { name: forLabel,    label: "Etiqueta \"Diseñado para\"", widget: string }
+                  - name: features
+                    label: Características
+                    widget: list
+                    field: { name: feature, label: Característica, widget: string }
+
+      - name: events_es
+        label: "Eventos"
+        file: site/src/i18n/es.json
+        fields:
+          - name: events
+            label: Eventos
+            widget: object
+            fields:
+              - { name: introText,        label: "Texto introductorio",   widget: text }
+              - { name: barcelonaP1,      label: "Barcelona párrafo 1",   widget: text }
+              - { name: barcelonaP2,      label: "Barcelona párrafo 2",   widget: text }
+              - name: barcelonaFeatures
+                label: "Barcelona – características del retiro"
+                widget: list
+                field: { name: feature, label: Característica, widget: string }
+              - { name: barcelonaCta,     label: "Barcelona botón",       widget: string }
+              - { name: quoteText,        label: "Cita",                  widget: text }
+              - { name: tallinnP1,        label: "Tallinn párrafo 1",     widget: text }
+              - name: tallinnFeatures
+                label: "Tallinn – características del taller"
+                widget: list
+                field: { name: feature, label: Característica, widget: string }
+              - { name: tallinnP2,        label: "Tallinn párrafo 2",     widget: text }
+              - { name: tallinnComingSoon, label: "Tallinn próximamente", widget: string }
+              - { name: tallinnCta,       label: "Tallinn botón",         widget: string }
