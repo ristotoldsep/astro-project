@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ristotoldsep/astro-project
   branch: main
-  base_url: https://voluble-pudding-638925.netlify.app
+  base_url: https://qinutritionist-cms-auth.r-toldsep.workers.dev
 
 media_folder: src/assets/images
 public_folder: /src/assets/images
