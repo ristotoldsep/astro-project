@@ -5,6 +5,7 @@ import Marquee from "../../components/Marquee.astro";
 import { Picture } from "astro:assets";
 import heroCrystalweed from "../../assets/images/hero-crystalweed.avif";
 import eventsBarcelona from "../../assets/images/events-barcelona.avif";
+import workshopKoor from "../../assets/images/naiste-tsukli-rutm-workshop.webp";
 import { useTranslations, getLocalePath } from "../../i18n/utils";
 
 const lang = "es";
@@ -13,6 +14,7 @@ const lp = (s: string) => getLocalePath(lang, s);
 
 const barcelonaFeatures = t("events.barcelonaFeatures") as string[];
 const tallinnFeatures = t("events.tallinnFeatures") as string[];
+const koorFeatures = t("events.koorFeatures") as string[];
 ---
 
 <BaseLayout
@@ -39,6 +41,45 @@ const tallinnFeatures = t("events.tallinnFeatures") as string[];
           <span class="serif-italic">{t("events.introH2b")}</span>
         </h2>
         <p>{t("events.introText")}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ KOOR WORKSHOP ══ -->
+  <section class="section section--sand" aria-labelledby="koor-heading">
+    <div class="container">
+      <div class="koor-event reveal">
+        <div class="koor-event__img">
+          <Picture
+            src={workshopKoor}
+            formats={["avif", "webp"]}
+            widths={[480, 768, 1024, 1280]}
+            sizes="(max-width: 768px) 90vw, 1024px"
+            alt="Taller del Ritmo del Ciclo Femenino en KOOR Reformer Tallin"
+            loading="eager"
+            decoding="async"
+            quality={90}
+            class="koor-img"
+          />
+          <span class="koor-event__tag">{t("events.koorMediaTag")}</span>
+        </div>
+        <div class="koor-event__body">
+          <span class="badge badge-terra" style="margin-bottom:12px;">{t("events.koorBadge")}</span>
+          <span class="label m-auto" style="display:block;margin-bottom:8px;">{t("events.koorTag")}</span>
+          <h2 id="koor-heading">{t("events.koorH2a")}<br /><span class="serif-italic">{t("events.koorH2b")}</span></h2>
+          <p style="color:var(--taupe);margin-top:16px;">{t("events.koorP1")}</p>
+          <p style="color:var(--taupe);margin-top:12px;">{t("events.koorP2")}</p>
+          <ul class="event-feature-list koor-feature-list items-center">
+            {koorFeatures.map((f) => <li>{f}</li>)}
+          </ul>
+          <p style="color:var(--terracotta);font-family:var(--font-display);font-style:italic;margin-bottom:24px;">{t("events.koorSpots")}</p>
+          <a
+            href="https://fienta.com/et/anett-x-koor"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener"
+          >{t("events.koorCta")}</a>
+        </div>
       </div>
     </div>
   </section>
@@ -246,5 +287,43 @@ const tallinnFeatures = t("events.tallinnFeatures") as string[];
     color: var(--terracotta);
     font-size: 0.7rem;
     top: 3px;
+  }
+  .koor-event__img {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: clamp(28px, 4vw, 48px);
+    max-width: 1024px;
+    margin-inline: auto;
+  }
+  .koor-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .koor-event__tag {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--cream);
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--terracotta);
+    font-style: italic;
+  }
+  .koor-event__body {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .koor-feature-list {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
   }
 </style>

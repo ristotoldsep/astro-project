@@ -289,6 +289,24 @@ p {
     letter-spacing: .18em;
     text-transform: uppercase;
     font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    &__cta {
+        color: var(--cream);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        white-space: nowrap;
+        opacity: .9;
+        transition: opacity .2s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 
 /* ── Navigation ────────────────────────────────────── */

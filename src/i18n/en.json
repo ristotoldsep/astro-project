@@ -21,6 +21,7 @@
     "consultation": "Consultation",
     "bookFreeCall": "Book a Call",
     "announcement": "✦ EMPOWERING WOMEN THROUGH HOLISTIC HEALING ✦",
+    "announcementEventCta": "Workshop Apr 19 · Buy Ticket →",
     "toggleMenu": "Toggle menu"
   },
   "form": {
@@ -234,7 +235,23 @@
     "tallinnP1": "Join Anett for a hands-on baking experience where delicious meets nutritious. Learn to create gut-friendly, hormone-supporting treats that taste as good as they make you feel.",
     "parallaxLabel": "Questions?",
     "tallinnTag": "Hands-On Experience",
-    "tallinnP2": "Perfect for wellness lovers and foodies who want to bake without the bloat."
+    "tallinnP2": "Perfect for wellness lovers and foodies who want to bake without the bloat.",
+    "koorBadge": "Workshop · Tallinn",
+    "koorTag": "April 19 · KOOR Reformer",
+    "koorH2a": "Women's Cycle Rhythm",
+    "koorH2b": "Workshop @ KOOR",
+    "koorP1": "An exclusive, hands-on workshop for women who want to better understand their body's natural rhythm and learn how to support their hormones through mindful nutrition and lifestyle.",
+    "koorP2": "Led by nutritionist Anett Randvee and Pilates trainer Eliisabet Valmas. Only 8 spots available · 75€.",
+    "koorFeatures": [
+      "KOOR Reformer Pilates class",
+      "Practical hormone-friendly nutrition knowledge",
+      "Create your personal Women's Rhythm Blend",
+      "Prepare a hormone-friendly mini-snack together",
+      "Thoughtfully curated gift bag to take home"
+    ],
+    "koorSpots": "Only 8 spots — book yours today!",
+    "koorCta": "Buy Ticket",
+    "koorMediaTag": "Tallinn, Estonia"
   },
   "footer": {
     "contactHeading": "Contact",
@@ -422,6 +439,14 @@
     "guideLabel": "Free Resource",
     "storyP3": "Explore my personalized coaching, structured programs, and wellness retreats to find the right fit for you.",
     "parallaxCta": "Explore Events",
+    "featuredEventLabel": "Featured Event",
+    "featuredEventBadge": "Workshop · 19 April 2026",
+    "featuredEventH2a": "Women's Cycle Rhythm",
+    "featuredEventH2b": "Workshop",
+    "featuredEventMeta": "KOOR Reformer, Tallinn · 14:00–15:30 · 75€",
+    "featuredEventText": "An exclusive workshop combining Reformer Pilates and hormone-friendly nutrition. Only 8 spots — join Anett and Eliisabet for a truly transformative experience.",
+    "featuredEventCta": "Buy Ticket",
+    "featuredEventSecondary": "View All Events",
     "servicesH2a": "My",
     "servicesH2b": "Services",
     "storyCta": "Read My Full Story",

@@ -9,6 +9,7 @@
     "consultation": "Konsultatsioon",
     "bookFreeCall": "Broneeri kõne",
     "announcement": "✦ TOETAN NAISI HOLISTILISE TERVISE TEEL ✦",
+    "announcementEventCta": "Töötuba 19. apr · Osta pilet →",
     "toggleMenu": "Ava menüü"
   },
 
@@ -126,6 +127,14 @@
     "parallaxH2b": "üritused",
     "parallaxText": "3-päevane luksuslik heaoluretriit · Barcelona · Tervislik küpsetamise töötuba · Tallinn",
     "parallaxCta": "Vaata üritusi",
+    "featuredEventLabel": "Tulev üritus",
+    "featuredEventBadge": "Töötuba · 19. aprill 2026",
+    "featuredEventH2a": "Naiste Tsükli Rütm",
+    "featuredEventH2b": "Workshop",
+    "featuredEventMeta": "KOOR Reformer, Tallinn · 14:00–15:30 · 75€",
+    "featuredEventText": "Eksklusiivne töötuba, kus ühendame reformer-pilatese ja hormooniteadliku toitumise. Ainult 8 kohta — liitu Anetti ja Eliisabetiga ainulaadses kogemuses.",
+    "featuredEventCta": "Osta pilet",
+    "featuredEventSecondary": "Vaata kõiki üritusi",
     "guideLabel": "Tasuta materjal",
     "guideH2": "Laadi alla minu tasuta juhend viljakuse ja soolestiku tervise kohta!",
     "guideText": "Praktilised, teaduspõhised sammud, mida saad alustada juba täna — täiesti tasuta.",
@@ -315,7 +324,23 @@
     "parallaxH2b": "ühendust",
     "parallaxText": "Kirjuta mulle otse või broneeri kõne, et leida just sulle sobiv kogemus.",
     "parallaxCta1": "Broneeri kõne",
-    "parallaxCta2": "Saada e-kiri"
+    "parallaxCta2": "Saada e-kiri",
+    "koorBadge": "Töötuba · Tallinn",
+    "koorTag": "19. aprill · KOOR Reformer",
+    "koorH2a": "Naiste Tsükli Rütm",
+    "koorH2b": "Workshop @ KOOR",
+    "koorP1": "Eksklusiivne ja praktiline töötuba naistele, kes soovivad paremini mõista oma keha loomulikku rütmi ning õppida, kuidas toetada oma hormoone teadliku toitumise ja elustiili kaudu.",
+    "koorP2": "Töötuba viivad läbi toitumisspetsialist Anett Randvee ja pilatese treener Eliisabet Valmas. Kohti on ainult 8 — hind 75€.",
+    "koorFeatures": [
+      "KOOR Reformeri tund",
+      "Praktiline teadmine hormoonisõbralikust toitumisest",
+      "Personaalse Naise Rütmi Segu valmistamine",
+      "Ühine hormoonisõbraliku mini-maiuse loomine",
+      "Läbimõeldud kingikott kaasa"
+    ],
+    "koorSpots": "Ainult 8 kohta — broneeri juba täna!",
+    "koorCta": "Osta pilet",
+    "koorMediaTag": "Tallinn, Eesti"
   },
 
   "consultation": {

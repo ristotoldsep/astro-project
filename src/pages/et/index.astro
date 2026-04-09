@@ -6,6 +6,7 @@ import heroAlina from "../../assets/images/hero-alina.avif";
 import serviceGut from "../../assets/images/service-gut.avif";
 import serviceNutrition from "../../assets/images/service-nutrition.avif";
 import serviceBiohacking from "../../assets/images/service-biohacking.avif";
+import workshopKoor from "../../assets/images/naiste-tsukli-rutm-workshop.webp";
 import { useTranslations, getLocalePath } from "../../i18n/utils";
 
 const lang = "et";
@@ -408,6 +409,46 @@ const heroSlides = [
     </div>
   </section>
 
+  <!-- ══ FEATURED EVENT CTA ══ -->
+  <section class="section" aria-labelledby="featured-event-heading">
+    <div class="container">
+      <div class="koor-home reveal">
+        <div class="koor-home__img">
+          <Picture
+            src={workshopKoor}
+            formats={["avif", "webp"]}
+            widths={[480, 768, 1024, 1280]}
+            sizes="(max-width: 768px) 90vw, 1024px"
+            alt="Naiste Tsükli Rütm Workshop KOOR Reformeris Tallinnas"
+            loading="lazy"
+            decoding="async"
+            quality={90}
+            class="koor-home-img"
+          />
+          <span class="koor-home__tag">{t("home.featuredEventBadge")}</span>
+        </div>
+        <div class="koor-home__body">
+          <span class="label">{t("home.featuredEventLabel")}</span>
+          <h2 id="featured-event-heading" style="margin-top:8px;">
+            {t("home.featuredEventH2a")}
+            <span class="serif-italic">{t("home.featuredEventH2b")}</span>
+          </h2>
+          <p style="margin-top:8px;color:var(--taupe);font-size:0.95rem;">{t("home.featuredEventMeta")}</p>
+          <p style="margin-top:12px;color:var(--taupe);">{t("home.featuredEventText")}</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;justify-content:center;">
+            <a
+              href="https://fienta.com/et/anett-x-koor"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >{t("home.featuredEventCta")}</a>
+            <a href={lp("/events")} class="btn btn-outline">{t("home.featuredEventSecondary")}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ QUOTE + PARALLAX ══ -->
   <div style="position:relative;">
     <section class="section section--linen quote_band">
@@ -641,6 +682,38 @@ const heroSlides = [
 </BaseLayout>
 
 <style>
+  .koor-home__img {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: clamp(24px, 3vw, 40px);
+    max-width: 1024px;
+    margin-inline: auto;
+  }
+  .koor-home-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .koor-home__tag {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--terracotta);
+    color: var(--cream);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .koor-home__body {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
   .services-header-row {
     display: flex;
     align-items: flex-end;
