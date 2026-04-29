@@ -126,6 +126,13 @@
     "parallaxH2b": "Eventos",
     "parallaxText": "Retiro de Bienestar de Lujo de 3 Días · Barcelona · Taller de Repostería Saludable · Tallin",
     "parallaxCta": "Explorar Eventos",
+    "featuredEventLabel": "Evento pasado",
+    "featuredEventBadge": "Taller · 19 abril 2026",
+    "featuredEventH2a": "Ritmo del Ciclo",
+    "featuredEventH2b": "Femenino Taller",
+    "featuredEventMeta": "KOOR Reformer, Tallin · 19 abril 2026",
+    "featuredEventText": "Un taller exclusivo que combinó Pilates en Reformer y nutrición consciente para las hormonas. Este evento ya ha tenido lugar — ¡mantente atenta para futuros talleres!",
+    "featuredEventCta": "Ver todos los eventos",
     "guideLabel": "Recurso gratuito",
     "guideH2": "¡Consigue mi guía sobre fertilidad y salud intestinal!",
     "guideText": "Estrategias prácticas y respaldadas por la ciencia que puedes empezar hoy — completamente gratis.",
@@ -315,7 +322,22 @@
     "parallaxH2b": "",
     "parallaxText": "Contáctame directamente o reserva una llamada para hablar sobre qué experiencia es la adecuada para ti.",
     "parallaxCta1": "Reservar llamada",
-    "parallaxCta2": "Enviar Email"
+    "parallaxCta2": "Enviar Email",
+    "koorBadge": "Taller pasado · Tallin",
+    "koorTag": "19 de abril, 2026 · KOOR Reformer",
+    "koorH2a": "Ritmo del Ciclo Femenino",
+    "koorH2b": "Taller @ KOOR",
+    "koorP1": "Un taller exclusivo y práctico para mujeres que desean comprender mejor el ritmo natural de su cuerpo y aprender a apoyar sus hormonas a través de una nutrición y un estilo de vida conscientes.",
+    "koorP2": "Impartido por la nutricionista Anett Randvee y la entrenadora de Pilates Eliisabet Valmas.",
+    "koorFeatures": [
+      "Clase de Pilates en Reformer KOOR",
+      "Conocimiento práctico sobre nutrición amigable con las hormonas",
+      "Crea tu Mezcla del Ritmo Femenino personal",
+      "Prepara juntas un mini-snack amigable con las hormonas",
+      "Bolsa de regalo cuidadosamente seleccionada para llevar a casa"
+    ],
+    "koorSpots": "Este evento ya ha tenido lugar.",
+    "koorMediaTag": "Tallin, Estonia"
   },
 
   "consultation": {
